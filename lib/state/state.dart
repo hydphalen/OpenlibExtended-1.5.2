@@ -285,4 +285,13 @@ class DownloadState {
   DownloadState({this.isDownloading = false, this.progress = 0.0, this.error, this.filePath});
 }
 
-final downloadProvider = S
+final downloadProvider = StateProvider<DownloadState>((ref) {
+  return DownloadState();
+});
+
+// ====================================================================
+// PDF VIEWER STATE
+// ====================================================================
+
+final pdfCurrentPage = StateProvider<int>((ref) => 0);
+final totalPdfPage = StateProvider<int>((ref) => 0);

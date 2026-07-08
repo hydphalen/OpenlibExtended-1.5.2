@@ -1958,8 +1958,12 @@
   "@norwegian": {
     "description": "Language: Norwegian"
   },
-  "danish": "Danish",
+    "danish": "Danish",
   "@danish": {
     "description": "Language: Danish"
+  },
+  "menu": "Menu",
+  "@menu": {
+    "description": "Menu label for reader help overlay"
   }
 }

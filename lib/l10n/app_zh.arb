@@ -1826,8 +1826,9 @@
   "hebrew": "希伯来语",
   "thai": "泰语",
   "persian": "波斯语",
-  "bengali": "孟加拉语",
+    "bengali": "孟加拉语",
   "finnish": "芬兰语",
   "norwegian": "挪威语",
-  "danish": "丹麦语"
+  "danish": "丹麦语",
+  "menu": "菜单"
 }

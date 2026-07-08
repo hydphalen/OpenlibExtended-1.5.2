@@ -148,8 +148,8 @@ class ResultPage extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
+                            Padding(
+                padding: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
                 // FIX 2: Changed PageTitleWidget back to TitleText
                 child: TitleText(AppLocalizations.of(context)!.results),
               ),
