@@ -1,0 +1,353 @@
+{
+  "@@locale": "en",
+  "appTitle": "OpenlibExtended",
+  "@appTitle": {
+    "description": "The application title"
+  },
+  "trending": "Trending",
+  "@trending": {
+    "description": "Trending tab label"
+  },
+  "genres": "Genres",
+  "@genres": {
+    "description": "Genres tab label"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings page title"
+  },
+  "libraryAndInstances": "Library & Instances",
+  "@libraryAndInstances": {
+    "description": "Library and instances section title"
+  },
+  "archiveInstance": "Archive Instance",
+  "@archiveInstance": {
+    "description": "Archive instance label"
+  },
+  "manageInstances": "Manage Instances",
+  "@manageInstances": {
+    "description": "Manage instances navigation item"
+  },
+  "appearance": "Appearance",
+  "@appearance": {
+    "description": "Appearance section title"
+  },
+  "theme": "Theme",
+  "@theme": {
+    "description": "Theme setting label"
+  },
+  "followSystem": "Follow the System",
+  "@followSystem": {
+    "description": "Follow system theme option"
+  },
+  "lightTheme": "Light theme",
+  "@lightTheme": {
+    "description": "Light theme option"
+  },
+  "darkTheme": "Dark theme",
+  "@darkTheme": {
+    "description": "Dark theme option"
+  },
+  "about": "About",
+  "@about": {
+    "description": "About page title"
+  },
+  "aboutDescription": "An Open source app to download and read books from shadow library (Anna's Archive).",
+  "@aboutDescription": {
+    "description": "Application description"
+  },
+  "forkDescription": "This is a forked version maintained by warreth for personal use and community updates.",
+  "@forkDescription": {
+    "description": "Fork version description"
+  },
+  "originalBy": "Original app by dstark5 (https://github.com/dstark5/Openlib).",
+  "@originalBy": {
+    "description": "Original app attribution"
+  },
+  "thisFork": "This Fork (by warreth)",
+  "@thisFork": {
+    "description": "This fork link text"
+  },
+  "reportIssue": "Report An Issue",
+  "@reportIssue": {
+    "description": "Report issue link text"
+  },
+  "originalProject": "Original Project (by dstark5)",
+  "@originalProject": {
+    "description": "Original project link text"
+  },
+  "license": "GPL v3.0 license",
+  "@license": {
+    "description": "License text"
+  },
+  "loading": "Loading...",
+  "@loading": {
+    "description": "Loading text"
+  },
+  "unknown": "Unknown",
+  "@unknown": {
+    "description": "Unknown text"
+  },
+  "classics": "Classics",
+  "@classics": {
+    "description": "Classics category"
+  },
+  "classicsInfo": "Timeless literary works often revered for their artistic merit and cultural significance.",
+  "@classicsInfo": {
+    "description": "Classics category description"
+  },
+  "romance": "Romance",
+  "@romance": {
+    "description": "Romance category"
+  },
+  "romanceInfo": "Stories focused on romantic relationships, exploring love, passion, and emotional connections.",
+  "@romanceInfo": {
+    "description": "Romance category description"
+  },
+  "fiction": "Fiction",
+  "@fiction": {
+    "description": "Fiction category"
+  },
+  "fictionInfo": "Narrative literature created from the imagination, not based on real events.",
+  "@fictionInfo": {
+    "description": "Fiction category description"
+  },
+  "youngAdult": "Young Adult",
+  "@youngAdult": {
+    "description": "Young Adult category"
+  },
+  "youngAdultInfo": "Books targeted at teenage readers, addressing themes relevant to adolescence.",
+  "@youngAdultInfo": {
+    "description": "Young Adult category description"
+  },
+  "fantasy": "Fantasy",
+  "@fantasy": {
+    "description": "Fantasy category"
+  },
+  "fantasyInfo": "A genre featuring magical elements, mythical creatures, and fantastical worlds.",
+  "@fantasyInfo": {
+    "description": "Fantasy category description"
+  },
+  "scienceFiction": "Science Fiction",
+  "@scienceFiction": {
+    "description": "Science Fiction category"
+  },
+  "scienceFictionInfo": "Literature that explores futuristic concepts, advanced technology, and space exploration.",
+  "@scienceFictionInfo": {
+    "description": "Science Fiction category description"
+  },
+  "nonfiction": "Nonfiction",
+  "@nonfiction": {
+    "description": "Nonfiction category"
+  },
+  "nonfictionInfo": "Works based on factual information, including essays, biographies, and documentaries.",
+  "@nonfictionInfo": {
+    "description": "Nonfiction category description"
+  },
+  "children": "Children",
+  "@children": {
+    "description": "Children category"
+  },
+  "childrenInfo": "Books aimed at young readers, often with illustrations and simple narratives.",
+  "@childrenInfo": {
+    "description": "Children category description"
+  },
+  "history": "History",
+  "@history": {
+    "description": "History category"
+  },
+  "historyInfo": "Literature that examines past events, cultures, and significant historical figures.",
+  "@historyInfo": {
+    "description": "History category description"
+  },
+  "mystery": "Mystery",
+  "@mystery": {
+    "description": "Mystery category"
+  },
+  "mysteryInfo": "Stories centered around suspenseful plots, often involving crime or puzzles to solve.",
+  "@mysteryInfo": {
+    "description": "Mystery category description"
+  },
+  "covers": "Covers",
+  "@covers": {
+    "description": "Covers category"
+  },
+  "coversInfo": "Refers to the artwork and design that visually represents a book, including reader interest.",
+  "@coversInfo": {
+    "description": "Covers category description"
+  },
+  "horror": "Horror",
+  "@horror": {
+    "description": "Horror category"
+  },
+  "horrorInfo": "A genre designed to evoke fear, dread, or terror in the reader through suspenseful storytelling.",
+  "@horrorInfo": {
+    "description": "Horror category description"
+  },
+  "historicalFiction": "Historical Fiction",
+  "@historicalFiction": {
+    "description": "Historical Fiction category"
+  },
+  "historicalFictionInfo": "Novels set in a specific historical period, blending factual events with fictional characters.",
+  "@historicalFictionInfo": {
+    "description": "Historical Fiction category description"
+  },
+  "best": "Best",
+  "@best": {
+    "description": "Best category"
+  },
+  "bestInfo": "Often refers to critically acclaimed or popular books, usually categorized by rankings or awards.",
+  "@bestInfo": {
+    "description": "Best category description"
+  },
+  "titles": "Titles",
+  "@titles": {
+    "description": "Titles category"
+  },
+  "titlesInfo": "Refers to the names of books, which often reflect their themes or subject matter.",
+  "@titlesInfo": {
+    "description": "Titles category description"
+  },
+  "middleGrade": "Middle Grade",
+  "@middleGrade": {
+    "description": "Middle Grade category"
+  },
+  "middleGradeInfo": "Books intended for readers aged 8-12, featuring age-appropriate themes and characters.",
+  "@middleGradeInfo": {
+    "description": "Middle Grade category description"
+  },
+  "paranormal": "Paranormal",
+  "@paranormal": {
+    "description": "Paranormal category"
+  },
+  "paranormalInfo": "Stories that incorporate supernatural elements, including ghosts, vampires, and otherworldly beings.",
+  "@paranormalInfo": {
+    "description": "Paranormal category description"
+  },
+  "love": "Love",
+  "@love": {
+    "description": "Love category"
+  },
+  "loveInfo": "A theme exploring the complexities and nuances of love in various forms and relationships.",
+  "@loveInfo": {
+    "description": "Love category description"
+  },
+  "queer": "Queer",
+  "@queer": {
+    "description": "Queer category"
+  },
+  "queerInfo": "Literature that represents diverse sexual orientations and gender identities within the LGBTQ+ spectrum.",
+  "@queerInfo": {
+    "description": "Queer category description"
+  },
+  "testAll": "Test All",
+  "@testAll": {
+    "description": "Test all instances button"
+  },
+  "add": "Add",
+  "@add": {
+    "description": "Add button"
+  },
+  "addCustomInstance": "Add Custom Instance",
+  "@addCustomInstance": {
+    "description": "Add custom instance dialog title"
+  },
+  "name": "Name",
+  "@name": {
+    "description": "Name label"
+  },
+  "nameHint": "e.g., My Custom Mirror",
+  "@nameHint": {
+    "description": "Name input hint"
+  },
+  "url": "URL",
+  "@url": {
+    "description": "URL label"
+  },
+  "urlHint": "https://example.com",
+  "@urlHint": {
+    "description": "URL input hint"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button"
+  },
+  "pleaseFillAllFields": "Please fill all fields",
+  "@pleaseFillAllFields": {
+    "description": "Validation error for empty fields"
+  },
+  "pleaseEnterValidUrl": "Please enter a valid URL with http:// or https://",
+  "@pleaseEnterValidUrl": {
+    "description": "Validation error for invalid URL"
+  },
+  "instanceAddedSuccessfully": "Instance added successfully",
+  "@instanceAddedSuccessfully": {
+    "description": "Success message after adding instance"
+  },
+  "deleteInstance": "Delete Instance",
+  "@deleteInstance": {
+    "description": "Delete instance dialog title"
+  },
+  "areYouSureDelete": "Are you sure you want to delete \"{instanceName}\"?",
+  "@areYouSureDelete": {
+    "description": "Delete confirmation message"
+  },
+  "delete": "Delete",
+  "@delete": {
+    "description": "Delete button"
+  },
+  "instanceDeleted": "Instance deleted",
+  "@instanceDeleted": {
+    "description": "Success message after deleting instance"
+  },
+  "cannotDeleteDefaultInstances": "Cannot delete default instances",
+  "@cannotDeleteDefaultInstances": {
+    "description": "Error message when trying to delete default instance"
+  },
+  "instancesTestedAndRanked": "Instances tested and ranked by speed",
+  "@instancesTestedAndRanked": {
+    "description": "Success message after testing instances"
+  },
+  "testingFailed": "Testing failed: {error}",
+  "@testingFailed": {
+    "description": "Error message when testing fails",
+    "placeholders": {
+      "error": {
+        "type": "String",
+        "example": "Connection timeout"
+      }
+    }
+  },
+  "myLibrary": "My Library",
+  "@myLibrary": {
+    "description": "My library page title"
+  },
+  "syncLibrary": "Sync library with storage folder",
+  "@syncLibrary": {
+    "description": "Sync library button tooltip"
+  },
+  "scrollDownToSync": "Scroll down to sync library",
+  "@scrollDownToSync": {
+    "description": "Scroll down hint"
+  },
+  "yourLibraryIsEmpty": "Your library is empty",
+  "@yourLibraryIsEmpty": {
+    "description": "Empty library message"
+  },
+  "welcomeToOpenlibExtended": "Welcome to OpenlibExtended",
+  "@welcomeToOpenlibExtended": {
+    "description": "Welcome page title"
+  },
+  "selectStorageFolder": "Please select a storage folder to continue",
+  "@selectStorageFolder": {
+    "description": "Storage selection prompt"
+  },
+  "getStarted": "Get Started",
+  "@getStarted": {
+    "description": "Get started button"
+  },
+  "next": "Next",
+  "@next": {
+    "description": "Next button"
+  }
+}

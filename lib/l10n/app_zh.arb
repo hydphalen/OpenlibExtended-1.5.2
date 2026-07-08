@@ -1,0 +1,1773 @@
+{
+  "@@locale": "zh",
+  "appTitle": "OpenlibExtended",
+  "@appTitle": {
+    "description": "应用标题"
+  },
+  "trending": "趋势",
+  "@trending": {
+    "description": "趋势标签"
+  },
+  "genres": "分类",
+  "@genres": {
+    "description": "分类标签"
+  },
+  "settings": "设置",
+  "@settings": {
+    "description": "设置页面标题"
+  },
+  "search": "搜索",
+  "@search": {
+    "description": "搜索页面标题"
+  },
+  "searchFieldEmpty": "搜索字段为空",
+  "@searchFieldEmpty": {
+    "description": "搜索字段为空错误信息"
+  },
+  "type": "类型",
+  "@type": {
+    "description": "类型筛选标签"
+  },
+  "sortBy": "排序方式",
+  "@sortBy": {
+    "description": "排序方式筛选标签"
+  },
+  "fileType": "文件类型",
+  "@fileType": {
+    "description": "文件类型筛选标签"
+  },
+  "language": "语言",
+  "@language": {
+    "description": "语言筛选标签"
+  },
+  "yearPublished": "出版年份",
+  "@yearPublished": {
+    "description": "出版年份筛选标签"
+  },
+  "libraryAndInstances": "图书馆与实例",
+  "@libraryAndInstances": {
+    "description": "图书馆和实例部分标题"
+  },
+  "archiveInstance": "存档实例",
+  "@archiveInstance": {
+    "description": "存档实例标签"
+  },
+  "manageInstances": "管理实例",
+  "@manageInstances": {
+    "description": "管理实例导航项"
+  },
+  "appearance": "外观",
+  "@appearance": {
+    "description": "外观部分标题"
+  },
+  "theme": "主题",
+  "@theme": {
+    "description": "主题设置标签"
+  },
+  "followSystem": "跟随系统",
+  "@followSystem": {
+    "description": "跟随系统主题选项"
+  },
+  "lightTheme": "浅色主题",
+  "@lightTheme": {
+    "description": "浅色主题选项"
+  },
+  "darkTheme": "深色主题",
+  "@darkTheme": {
+    "description": "深色主题选项"
+  },
+  "about": "关于",
+  "@about": {
+    "description": "关于页面标题"
+  },
+  "aboutDescription": "一个开源应用，用于从影子图书馆（Anna's Archive）下载和阅读书籍。",
+  "@aboutDescription": {
+    "description": "应用描述"
+  },
+  "forkDescription": "这是一个Fork版本，由warreth维护，用于个人使用和社区更新。",
+  "@forkDescription": {
+    "description": "Fork版本描述"
+  },
+  "originalBy": "原应用由dstark5开发（https://github.com/dstark5/Openlib）。",
+  "@originalBy": {
+    "description": "原应用归属"
+  },
+  "thisFork": "这个Fork（by warreth）",
+  "@thisFork": {
+    "description": "此Fork链接文本"
+  },
+  "reportIssue": "报告问题",
+  "@reportIssue": {
+    "description": "报告问题链接文本"
+  },
+  "originalProject": "原项目（by dstark5）",
+  "@originalProject": {
+    "description": "原项目链接文本"
+  },
+  "license": "GPL v3.0 许可证",
+  "@license": {
+    "description": "许可证文本"
+  },
+  "loading": "加载中...",
+  "@loading": {
+    "description": "加载中文本"
+  },
+  "unknown": "未知",
+  "@unknown": {
+    "description": "未知文本"
+  },
+  "classics": "经典",
+  "@classics": {
+    "description": "经典类别"
+  },
+  "classicsInfo": "因其艺术价值和文化意义而备受推崇的不朽文学作品。",
+  "@classicsInfo": {
+    "description": "经典类别描述"
+  },
+  "romance": "浪漫",
+  "@romance": {
+    "description": "浪漫类别"
+  },
+  "romanceInfo": "专注于浪漫关系的故事，探索爱情、激情和情感联系。",
+  "@romanceInfo": {
+    "description": "浪漫类别描述"
+  },
+  "fiction": "小说",
+  "@fiction": {
+    "description": "小说类别"
+  },
+  "fictionInfo": "从想象中创造的叙事文学，并非基于真实事件。",
+  "@fictionInfo": {
+    "description": "小说类别描述"
+  },
+  "youngAdult": "青少年",
+  "@youngAdult": {
+    "description": "青少年类别"
+  },
+  "youngAdultInfo": "针对青少年读者的书籍，涉及与青春期相关的主题。",
+  "@youngAdultInfo": {
+    "description": "青少年类别描述"
+  },
+  "fantasy": "奇幻",
+  "@fantasy": {
+    "description": "奇幻类别"
+  },
+  "fantasyInfo": "包含魔法元素、神话生物和奇幻世界的作品。",
+  "@fantasyInfo": {
+    "description": "奇幻类别描述"
+  },
+  "scienceFiction": "科幻",
+  "@scienceFiction": {
+    "description": "科幻类别"
+  },
+  "scienceFictionInfo": "探索未来概念、先进技术和太空探索的文学作品。",
+  "@scienceFictionInfo": {
+    "description": "科幻类别描述"
+  },
+  "nonfiction": "非虚构",
+  "@nonfiction": {
+    "description": "非虚构类别"
+  },
+  "nonfictionInfo": "基于事实信息的作品，包括散文、传记和纪录片。",
+  "@nonfictionInfo": {
+    "description": "非虚构类别描述"
+  },
+  "children": "儿童",
+  "@children": {
+    "description": "儿童类别"
+  },
+  "childrenInfo": "面向年轻读者的书籍，通常配有插图和简单的叙述。",
+  "@childrenInfo": {
+    "description": "儿童类别描述"
+  },
+  "history": "历史",
+  "@history": {
+    "description": "历史类别"
+  },
+  "historyInfo": "审视过去事件、文化和重要历史人物的文学作品。",
+  "@historyInfo": {
+    "description": "历史类别描述"
+  },
+  "mystery": "悬疑",
+  "@mystery": {
+    "description": "悬疑类别"
+  },
+  "mysteryInfo": "围绕悬疑情节展开的故事，通常涉及犯罪或待解谜题。",
+  "@mysteryInfo": {
+    "description": "悬疑类别描述"
+  },
+  "covers": "封面",
+  "@covers": {
+    "description": "封面类别"
+  },
+  "coversInfo": "指视觉上代表一本书的艺术品和设计，包括读者兴趣。",
+  "@coversInfo": {
+    "description": "封面类别描述"
+  },
+  "horror": "恐怖",
+  "@horror": {
+    "description": "恐怖类别"
+  },
+  "horrorInfo": "通过悬疑叙事激发读者恐惧、忧虑或恐怖情绪的作品。",
+  "@horrorInfo": {
+    "description": "恐怖类别描述"
+  },
+  "historicalFiction": "历史小说",
+  "@historicalFiction": {
+    "description": "历史小说类别"
+  },
+  "historicalFictionInfo": "设定在特定历史时期的小说，将真实事件与虚构人物相结合。",
+  "@historicalFictionInfo": {
+    "description": "历史小说类别描述"
+  },
+  "best": "精选",
+  "@best": {
+    "description": "精选类别"
+  },
+  "bestInfo": "通常指备受好评或流行的书籍，通常按排名或奖项分类。",
+  "@bestInfo": {
+    "description": "精选类别描述"
+  },
+  "titles": "书名",
+  "@titles": {
+    "description": "书名类别"
+  },
+  "titlesInfo": "指书籍的名称，通常反映其主题或内容。",
+  "@titlesInfo": {
+    "description": "书名类别描述"
+  },
+  "middleGrade": "中年级",
+  "@middleGrade": {
+    "description": "中年级类别"
+  },
+  "middleGradeInfo": "面向8-12岁读者的书籍，包含适合该年龄段的主题和角色。",
+  "@middleGradeInfo": {
+    "description": "中年级类别描述"
+  },
+  "paranormal": "超自然",
+  "@paranormal": {
+    "description": "超自然类别"
+  },
+  "paranormalInfo": "包含超自然元素的故事，包括幽灵、吸血鬼和其他超凡生物。",
+  "@paranormalInfo": {
+    "description": "超自然类别描述"
+  },
+  "love": "爱情",
+  "@love": {
+    "description": "爱情类别"
+  },
+  "loveInfo": "探索各种形式和关系中爱情的复杂性和细微差别。",
+  "@loveInfo": {
+    "description": "爱情类别描述"
+  },
+  "queer": "酷儿",
+  "@queer": {
+    "description": "酷儿类别"
+  },
+  "queerInfo": "代表LGBTQ+谱系中不同性取向和性别认同的文学作品。",
+  "@queerInfo": {
+    "description": "酷儿类别描述"
+  },
+  "testAll": "全部测试",
+  "@testAll": {
+    "description": "全部测试按钮"
+  },
+  "add": "添加",
+  "@add": {
+    "description": "添加按钮"
+  },
+  "addCustomInstance": "添加自定义实例",
+  "@addCustomInstance": {
+    "description": "添加自定义实例标题"
+  },
+  "name": "名称",
+  "@name": {
+    "description": "名称字段标签"
+  },
+  "nameHint": "例如，我的自定义镜像",
+  "@nameHint": {
+    "description": "名称字段提示"
+  },
+  "url": "URL",
+  "@url": {
+    "description": "URL字段标签"
+  },
+  "urlHint": "https://example.com",
+  "@urlHint": {
+    "description": "URL字段提示"
+  },
+  "cancel": "取消",
+  "@cancel": {
+    "description": "取消按钮"
+  },
+  "pleaseFillAllFields": "请填写所有字段",
+  "@pleaseFillAllFields": {
+    "description": "空字段验证错误"
+  },
+  "pleaseEnterValidUrl": "请输入有效的URL，包含http://或https://",
+  "@pleaseEnterValidUrl": {
+    "description": "无效URL验证错误"
+  },
+  "instanceAddedSuccessfully": "实例添加成功",
+  "@instanceAddedSuccessfully": {
+    "description": "添加实例成功消息"
+  },
+  "deleteInstance": "删除实例",
+  "@deleteInstance": {
+    "description": "删除实例按钮"
+  },
+    "areYouSureDelete": "确定要删除 {instanceName} 吗？",
+  "@areYouSureDelete": {
+    "description": "删除确认消息"
+  },
+  "delete": "删除",
+  "@delete": {
+    "description": "删除按钮"
+  },
+  "instanceDeleted": "实例已删除",
+  "@instanceDeleted": {
+    "description": "删除实例成功消息"
+  },
+  "cannotDeleteDefaultInstances": "无法删除默认实例",
+  "@cannotDeleteDefaultInstances": {
+    "description": "尝试删除默认实例时的错误消息"
+  },
+  "instancesTestedAndRanked": "实例已测试并按速度排序",
+  "@instancesTestedAndRanked": {
+    "description": "测试实例成功消息"
+  },
+  "testingFailed": "测试失败：{error}",
+  "@testingFailed": {
+    "description": "测试失败时的错误消息",
+    "placeholders": {
+      "error": {
+        "type": "String",
+        "example": "连接超时"
+      }
+    }
+  },
+  "myLibrary": "我的图书馆",
+  "@myLibrary": {
+    "description": "我的图书馆页面标题"
+  },
+  "syncLibrary": "同步图书馆与存储文件夹",
+  "@syncLibrary": {
+    "description": "同步图书馆按钮提示"
+  },
+  "scrollDownToSync": "向下滚动同步图书馆",
+  "@scrollDownToSync": {
+    "description": "向下滚动提示"
+  },
+  "yourLibraryIsEmpty": "您的图书馆为空",
+  "@yourLibraryIsEmpty": {
+    "description": "空图书馆消息"
+  },
+  "welcomeToOpenlibExtended": "欢迎使用OpenlibExtended",
+  "@welcomeToOpenlibExtended": {
+    "description": "欢迎页面标题"
+  },
+  "selectStorageFolder": "请选择一个存储文件夹以继续",
+  "@selectStorageFolder": {
+    "description": "存储选择提示"
+  },
+  "getStarted": "开始",
+  "@getStarted": {
+    "description": "开始按钮"
+  },
+    "next": "下一步",
+  "@next": {
+    "description": "下一步按钮"
+  },
+  "instanceChangedSuccessfully": "实例切换成功",
+  "@instanceChangedSuccessfully": {
+    "description": "实例切换成功消息"
+  },
+  "errorLoadingInstances": "加载实例列表失败",
+  "@errorLoadingInstances": {
+    "description": "加载实例列表失败消息"
+  },
+    "errorLoadingInstance": "加载实例失败",
+  "@errorLoadingInstance": {
+    "description": "加载实例失败消息"
+  },
+  "github": "Github",
+  "@github": {
+    "description": "Github部分标题"
+  },
+  "thisForkByWarreth": "此分支 (by warreth)",
+  "@thisForkByWarreth": {
+    "description": "此分支链接文本"
+  },
+  "reportAnIssue": "报告问题",
+  "@reportAnIssue": {
+    "description": "报告问题链接文本"
+  },
+  "originalProjectByDstark5": "原始项目 (by dstark5)",
+  "@originalProjectByDstark5": {
+    "description": "原始项目链接文本"
+  },
+  "licence": "许可证",
+  "@licence": {
+    "description": "许可证部分标题"
+  },
+    "gplV30License": "GPL v3.0 许可证",
+  "@gplV30License": {
+    "description": "GPL许可证链接文本"
+  },
+  "downloads": "下载",
+  "@downloads": {
+    "description": "下载部分标题"
+  },
+  "queued": "排队中",
+  "@queued": {
+    "description": "下载状态：排队中"
+  },
+  "gettingMirrors": "获取镜像中...",
+  "@gettingMirrors": {
+    "description": "下载状态：获取镜像中"
+  },
+  "findingMirror": "查找镜像中...",
+  "@findingMirror": {
+    "description": "下载状态：查找镜像中"
+  },
+  "downloading": "下载中",
+  "@downloading": {
+    "description": "下载状态：下载中"
+  },
+  "paused": "已暂停",
+  "@paused": {
+    "description": "下载状态：已暂停"
+  },
+  "verifying": "验证中",
+  "@verifying": {
+    "description": "下载状态：验证中"
+  },
+  "completed": "已完成",
+  "@completed": {
+    "description": "下载状态：已完成"
+  },
+  "failed": "失败",
+  "@failed": {
+    "description": "下载状态：失败"
+  },
+  "cancelled": "已取消",
+  "@cancelled": {
+    "description": "下载状态：已取消"
+  },
+  "pauseDownload": "暂停下载",
+  "@pauseDownload": {
+    "description": "暂停下载按钮提示"
+  },
+  "resumeDownload": "继续下载",
+  "@resumeDownload": {
+    "description": "继续下载按钮提示"
+  },
+  "cancelDownload": "取消下载",
+  "@cancelDownload": {
+    "description": "取消下载按钮提示"
+  },
+  "verify": "验证",
+  "@verify": {
+    "description": "验证按钮文本"
+  },
+    "retry": "重试",
+  "@retry": {
+    "description": "重试按钮文本"
+  },
+  "deleteBook": "删除书籍",
+  "@deleteBook": {
+    "description": "删除书籍对话框标题"
+  },
+  "permanentDeleteWarning": "此操作将永久删除且无法撤销",
+  "@permanentDeleteWarning": {
+    "description": "永久删除警告文本"
+  },
+    "bookDeleted": "书籍已删除！",
+  "@bookDeleted": {
+    "description": "书籍删除后的提示消息"
+  },
+  "manualVerificationRequired": "需要手动验证",
+  "@manualVerificationRequired": {
+    "description": "需要手动验证时的错误消息"
+  },
+    "downloadFailed": "下载失败",
+  "@downloadFailed": {
+    "description": "下载失败时的错误消息"
+  },
+  "instancesTestedAndRanked": "实例已按速度测试和排序",
+  "@instancesTestedAndRanked": {
+    "description": "实例页面的副标题文本"
+  },
+  "addCustomInstance": "添加自定义实例",
+  "@addCustomInstance": {
+    "description": "添加自定义实例对话框标题"
+  },
+  "name": "名称",
+  "@name": {
+    "description": "名称字段标签"
+  },
+  "url": "URL",
+  "@url": {
+    "description": "URL字段标签"
+  },
+  "pleaseFillAllFields": "请填写所有字段",
+  "@pleaseFillAllFields": {
+    "description": "未填写所有字段时的错误消息"
+  },
+  "instanceAddedSuccessfully": "实例添加成功",
+  "@instanceAddedSuccessfully": {
+    "description": "实例添加成功时的消息"
+  },
+  "add": "添加",
+  "@add": {
+    "description": "添加按钮文本"
+  },
+  "deleteInstance": "删除实例",
+  "@deleteInstance": {
+    "description": "删除实例对话框标题"
+  },
+  "instanceDeleted": "实例已删除",
+  "@instanceDeleted": {
+    "description": "实例删除成功时的消息"
+  },
+  "cannotDeleteDefaultInstances": "无法删除默认实例",
+  "@cannotDeleteDefaultInstances": {
+    "description": "尝试删除默认实例时的错误消息"
+  },
+  "manageInstances": "管理实例",
+  "@manageInstances": {
+    "description": "管理实例页面标题"
+  },
+  "resetToDefaultInstances": "已重置为默认实例",
+  "@resetToDefaultInstances": {
+    "description": "实例重置成功时的消息"
+  },
+  "resetToDefaults": "重置为默认值",
+  "@resetToDefaults": {
+    "description": "重置为默认值按钮的工具提示"
+  },
+  "archiveInstances": "归档实例",
+  "@archiveInstances": {
+    "description": "归档实例部分标题"
+  },
+    "noInstancesAvailable": "没有可用实例",
+  "@noInstancesAvailable": {
+    "description": "没有可用实例时的消息"
+  },
+  "instanceNameHint": "例如：我的自定义镜像",
+  "@instanceNameHint": {
+    "description": "实例名称输入框提示文字"
+  },
+  "instanceUrlHint": "https://example.com",
+  "@instanceUrlHint": {
+    "description": "实例URL输入框提示文字"
+  },
+    "custom": "自定义",
+  "@custom": {
+    "description": "自定义实例标签"
+  },
+  "addToMyLibrary": "添加到我的书库",
+  "@addToMyLibrary": {
+    "description": "Button to add book to library"
+  },
+  "manualDownload": "手动下载",
+  "@manualDownload": {
+    "description": "Button for manual download via webview"
+  },
+  "downloadStartedInBackground": "后台下载已开始",
+  "@downloadStartedInBackground": {
+    "description": "Snack bar message when download starts"
+  },
+  "fastDownloadStartedInBackground": "快速下载已在后台启动 🚀",
+  "@fastDownloadStartedInBackground": {
+    "description": "Snack bar message when fast download starts"
+  },
+  "noMirrorsAvailable": "没有可用的镜像源！",
+  "@noMirrorsAvailable": {
+    "description": "Error message when no download mirrors found"
+  },
+  "bookHasBeenDownloaded": "书籍已下载完成！",
+  "@bookHasBeenDownloaded": {
+    "description": "Snack bar message after successful download"
+  },
+  "okay": "确定",
+  "@okay": {
+    "description": "Dialog confirmation button"
+  },
+  "checksumFailed": "校验失败！",
+  "@checksumFailed": {
+    "description": "Dialog title for checksum verification failure"
+  },
+  "checksumFailedWarning": "下载的书籍可能包含恶意内容。请删除它并从其他来源获取同一本书，或自行承担使用风险。",
+  "@checksumFailedWarning": {
+    "description": "Warning message for checksum failure"
+  },
+  "noResultsFound": "未找到结果！",
+  "@noResultsFound": {
+    "description": "Message when search returns no results"
+  },
+  "pleaseWaitVerifying": "正在验证访问权限并获取下载链接，请稍候",
+  "@pleaseWaitVerifying": {
+    "description": "Loading message while verifying download access"
+  },
+  "couldNotLaunch": "无法打开 {uri}",
+  "@couldNotLaunch": {
+    "description": "Error message when URL cannot be launched",
+    "placeholders": {
+      "uri": {
+        "type": "String",
+        "description": "The URL that failed to launch"
+      }
+    }
+  },
+  "unableToOpenFile": "无法打开文件！",
+  "@unableToOpenFile": {
+    "description": "Error message when file cannot be opened"
+  },
+  "all": "全部",
+  "@all": {
+    "description": "Filter option for showing all items"
+  },
+    "mostRelevant": "最相关",
+  "@mostRelevant": {
+    "description": "Sort option for relevance"
+  },
+  "fontSize": "字体大小",
+  "@fontSize": {
+    "description": "字体大小设置标签"
+  },
+  "scale": "缩放: {scale}x",
+  "@scale": {
+    "description": "字体缩放值",
+    "placeholders": {
+      "scale": {
+        "type": "String",
+        "description": "缩放值"
+      }
+    }
+  },
+  "preview": "预览",
+  "@preview": {
+    "description": "字体大小预览文本"
+  },
+  "general": "通用",
+  "@general": {
+    "description": "通用设置部分标题"
+  },
+  "storageLocation": "存储位置",
+  "@storageLocation": {
+    "description": "存储位置设置标签"
+  },
+  "changeWhereBooksAreSaved": "更改书籍保存位置",
+  "@changeWhereBooksAreSaved": {
+    "description": "存储位置描述"
+  },
+  "reader": "阅读器",
+  "@reader": {
+    "description": "阅读器设置部分标题"
+  },
+  "openPdfExternally": "外部打开PDF",
+  "@openPdfExternally": {
+    "description": "外部打开PDF设置标签"
+  },
+  "useYourDefaultPdfViewer": "使用默认PDF阅读器",
+  "@useYourDefaultPdfViewer": {
+    "description": "外部打开PDF描述"
+  },
+  "openEpubExternally": "外部打开EPUB",
+  "@openEpubExternally": {
+    "description": "外部打开EPUB设置标签"
+  },
+  "useYourDefaultEpubReader": "使用默认EPUB阅读器",
+  "@useYourDefaultEpubReader": {
+    "description": "外部打开EPUB描述"
+  },
+  "advanced": "高级",
+  "@advanced": {
+    "description": "高级设置部分标题"
+  },
+  "manualDownloadButton": "手动下载按钮",
+  "@manualDownloadButton": {
+    "description": "手动下载按钮设置标签"
+  },
+  "showButtonToManuallyTriggerDownloads": "显示手动触发下载的按钮",
+  "@showButtonToManuallyTriggerDownloads": {
+    "description": "手动下载按钮描述"
+  },
+  "annasArchiveDonationKey": "Anna's Archive 捐赠密钥",
+  "@annasArchiveDonationKey": {
+    "description": "捐赠密钥设置标签"
+  },
+  "enterKeyForFasterDownloads": "输入密钥以获得更快的下载速度",
+  "@enterKeyForFasterDownloads": {
+    "description": "捐赠密钥描述"
+  },
+  "donationKey": "捐赠密钥",
+  "@donationKey": {
+    "description": "捐赠密钥对话框标题"
+  },
+  "enterYourKey": "输入您的密钥",
+  "@enterYourKey": {
+    "description": "捐赠密钥输入提示"
+  },
+  "usedForFasterDownloadsOnAnnasArchive": "用于在Anna's Archive上获得更快的下载速度",
+  "@usedForFasterDownloadsOnAnnasArchive": {
+    "description": "捐赠密钥对话框描述"
+  },
+  "save": "保存",
+  "@save": {
+    "description": "保存按钮"
+  },
+  "aboutOpenlibExtended": "关于 OpenlibExtended",
+  "@aboutOpenlibExtended": {
+    "description": "关于OpenlibExtended页面标题"
+  },
+  "developer": "开发者",
+  "@developer": {
+    "description": "开发者部分标题"
+  },
+  "redoOnboarding": "重新开始引导",
+  "@redoOnboarding": {
+    "description": "重新开始引导按钮标签"
+  },
+  "resetAppSetupAndStartOver": "重置应用设置并重新开始",
+  "@resetAppSetupAndStartOver": {
+    "description": "重新开始引导描述"
+  },
+  "exportLogs": "导出日志",
+  "@exportLogs": {
+    "description": "导出日志按钮标签"
+  },
+  "shareDiagnosticLogsLast5Min": "分享诊断日志（最近5分钟）",
+  "@shareDiagnosticLogsLast5Min": {
+    "description": "导出日志描述"
+  },
+  "updates": "更新",
+  "@updates": {
+    "description": "更新部分标题"
+  },
+  "version": "版本 {version}+{buildNumber}",
+  "@version": {
+    "description": "应用版本文本",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "description": "应用版本"
+      },
+      "buildNumber": {
+        "type": "String",
+        "description": "构建号"
+      }
+    }
+  },
+  "currentInstance": "当前实例",
+  "@currentInstance": {
+    "description": "当前实例标签"
+  },
+  "disabled": "（已禁用）",
+  "@disabled": {
+    "description": "已禁用实例标签"
+  },
+  "autoRankInstances": "自动排序实例",
+  "@autoRankInstances": {
+    "description": "自动排序实例设置标签"
+  },
+  "automaticallySortBySpeedOnStartup": "启动时按速度自动排序",
+  "@automaticallySortBySpeedOnStartup": {
+    "description": "自动排序实例描述"
+  },
+  "rankInstancesNow": "立即排序实例",
+  "@rankInstancesNow": {
+    "description": "立即排序实例按钮标签"
+  },
+  "includeBetaUpdates": "包含测试版更新",
+  "@includeBetaUpdates": {
+    "description": "包含测试版更新设置标签"
+  },
+  "getPreReleaseVersions": "获取预发布版本",
+  "@getPreReleaseVersions": {
+    "description": "包含测试版更新描述"
+  },
+  "checkForUpdates": "检查更新",
+  "@checkForUpdates": {
+    "description": "检查更新按钮标签"
+  },
+  "rankedFastest": "排序完成！最快: {name} ({time}ms)",
+  "@rankedFastest": {
+    "description": "排序成功消息",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "description": "最快实例名称"
+      },
+      "time": {
+        "type": "String",
+        "description": "响应时间（毫秒）"
+      }
+    }
+  },
+  "rankingComplete": "排序完成",
+  "@rankingComplete": {
+    "description": "排序完成消息"
+  },
+  "rankingFailed": "排序失败: {error}",
+  "@rankingFailed": {
+    "description": "排序失败消息",
+    "placeholders": {
+      "error": {
+        "type": "String",
+        "description": "错误信息"
+      }
+    }
+  },
+  "onLatestVersion": "您已是最新版本 ({version})",
+  "@onLatestVersion": {
+    "description": "无可用更新消息",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "description": "当前版本"
+      }
+    }
+  },
+  "failedToCheckForUpdates": "检查更新失败: {error}",
+  "@failedToCheckForUpdates": {
+    "description": "检查更新失败消息",
+    "placeholders": {
+      "error": {
+        "type": "String",
+        "description": "错误信息"
+      }
+    }
+  },
+  "failedToExportLogs": "导出日志失败: {error}",
+  "@failedToExportLogs": {
+    "description": "导出日志失败消息",
+    "placeholders": {
+      "error": {
+        "type": "String",
+        "description": "错误信息"
+      }
+    }
+  },
+  "downloadingBook": "正在下载书籍",
+  "@downloadingBook": {
+    "description": "下载进度标题"
+  },
+  "checkingMirrorAvailability": "正在检查镜像可用性",
+  "@checkingMirrorAvailability": {
+    "description": "下载进度：检查镜像"
+  },
+  "verifyingFileChecksum": "正在验证文件校验和",
+  "@verifyingFileChecksum": {
+    "description": "下载进度：验证校验和"
+  },
+  "results": "搜索结果",
+  "@results": {
+    "description": "搜索结果页面标题"
+  },
+    "scrollDownToSyncLibrary": "向下滚动同步图书馆",
+  "@scrollDownToSyncLibrary": {
+    "description": "向下滚动同步图书馆提示"
+  },
+  "noDescriptionAvailable": "暂无描述",
+  "@noDescriptionAvailable": {
+    "description": "暂无描述文本"
+  },
+  "openInSite": "在网站中打开",
+  "@openInSite": {
+    "description": "在网站中打开按钮"
+  },
+  "couldNotOpenAnnasArchive": "无法打开 Anna's Archive。",
+  "@couldNotOpenAnnasArchive": {
+    "description": "无法打开 Anna's Archive 错误消息"
+  },
+  "whatToDo": "解决方案",
+  "@whatToDo": {
+    "description": "错误解决方案标题"
+  },
+  "tryUsingVpn": "尝试使用 VPN",
+  "@tryUsingVpn": {
+    "description": "VPN 建议标题"
+  },
+  "vpnDescription": "VPN 可以帮助绕过区域限制并访问内容。",
+  "@vpnDescription": {
+    "description": "VPN 建议描述"
+  },
+  "showBlockedPageContent": "显示被阻止的页面内容",
+  "@showBlockedPageContent": {
+    "description": "显示被阻止的页面内容按钮"
+  },
+  "blockedPageContent": "被阻止的页面内容",
+  "@blockedPageContent": {
+    "description": "被阻止的页面内容对话框标题"
+  },
+  "noContentAvailable": "暂无内容",
+  "@noContentAvailable": {
+    "description": "暂无内容消息"
+  },
+  "copiedToClipboard": "已复制到剪贴板",
+  "@copiedToClipboard": {
+    "description": "已复制到剪贴板消息"
+  },
+  "copy": "复制",
+  "@copy": {
+    "description": "复制按钮标签"
+  },
+    "close": "关闭",
+  "@close": {
+    "description": "关闭按钮标签"
+  },
+  "yourPersonalGateway": "您的个人知识门户。让我们开始设置吧。",
+  "@yourPersonalGateway": {
+    "description": "欢迎页面副标题"
+  },
+  "whereShouldWeStore": "我们应该将您的书籍存储在哪里？",
+  "@whereShouldWeStore": {
+    "description": "存储选择标题"
+  },
+  "noPathSelected": "未选择路径",
+  "@noPathSelected": {
+    "description": "未选择路径文本"
+  },
+  "selectFolder": "选择文件夹",
+  "@selectFolder": {
+    "description": "选择文件夹按钮"
+  },
+  "onlyLookForPdfEpub": "我们只会在此文件夹中查找 PDF/EPUB 文件。不会递归扫描子文件夹。",
+  "@onlyLookForPdfEpub": {
+    "description": "存储文件夹描述"
+  },
+  "automaticUpdates": "自动更新",
+  "@automaticUpdates": {
+    "description": "自动更新部分标题"
+  },
+  "enableAutoUpdates": "启用自动更新",
+  "@enableAutoUpdates": {
+    "description": "启用自动更新标签"
+  },
+  "notRecommendedForFDroid": "如果您通过 F-Droid 安装，不建议启用（F-Droid 会处理更新）。",
+  "@notRecommendedForFDroid": {
+    "description": "F-Droid 警告"
+  },
+  "enableBetaUpdates": "启用测试版更新",
+  "@enableBetaUpdates": {
+    "description": "启用测试版更新标签"
+  },
+  "getPreReleaseWhenAvailable": "获取预发布版本（测试版更新）。",
+  "@getPreReleaseWhenAvailable": {
+    "description": "测试版更新描述"
+  },
+  "supportAnnasArchive": "支持 Anna's Archive",
+  "@supportAnnasArchive": {
+    "description": "支持 Anna's Archive 部分标题"
+  },
+  "donatingToAnnasArchive": "向 Anna's Archive 捐赠可以提供更快的下载速度，并帮助他们为所有人维持服务。您可以在下方输入您的密钥。",
+  "@donatingToAnnasArchive": {
+    "description": "捐赠描述"
+  },
+  "annasArchiveSecretKey": "Anna's Archive 密钥",
+  "@annasArchiveSecretKey": {
+    "description": "密钥标签"
+  },
+  "supportThisApp": "支持此应用",
+  "@supportThisApp": {
+    "description": "支持此应用部分标题"
+  },
+  "enjoyThisAppConsiderSupporting": "如果您喜欢此应用，请考虑支持其开发。这有助于我投入更多时间来改进它！",
+  "@enjoyThisAppConsiderSupporting": {
+    "description": "支持应用描述"
+  },
+  "sponsorOnGitHub": "在 GitHub 上赞助",
+  "@sponsorOnGitHub": {
+    "description": "在 GitHub 上赞助按钮"
+  },
+  "stayUpdated": "保持更新",
+  "@stayUpdated": {
+    "description": "保持更新部分标题"
+  },
+  "enableNotifications": "启用通知",
+  "@enableNotifications": {
+    "description": "启用通知标签"
+  },
+  "getNotifiedWhenDownloadsComplete": "下载完成时收到通知。",
+  "@getNotifiedWhenDownloadsComplete": {
+    "description": "通知描述"
+  },
+  "chooseTheme": "选择主题",
+  "@chooseTheme": {
+    "description": "选择主题部分标题"
+  },
+  "light": "浅色",
+  "@light": {
+    "description": "浅色主题标签"
+  },
+  "dark": "深色",
+  "@dark": {
+    "description": "深色主题标签"
+  },
+  "unableToOpenEpub": "无法打开 epub！",
+  "@unableToOpenEpub": {
+    "description": "打开 epub 错误"
+  },
+  "errorLoadingBook": "加载书籍出错：{error}",
+  "@errorLoadingBook": {
+    "description": "加载书籍错误消息",
+    "placeholders": {
+      "error": {
+        "type": "String",
+        "description": "错误信息"
+      }
+    }
+  },
+  "readerControls": "阅读器控制",
+  "@readerControls": {
+    "description": "阅读器帮助覆盖标题"
+  },
+  "arrowKeys": "方向键",
+  "@arrowKeys": {
+    "description": "方向键控制标签"
+  },
+  "tapSides": "点击两侧",
+  "@tapSides": {
+    "description": "点击两侧控制标签"
+  },
+  "useArrowKeysToTurnPages": "使用左/右方向键翻页",
+  "@useArrowKeysToTurnPages": {
+    "description": "方向键描述"
+  },
+  "tapEdgesToTurnPages": "点击左/右边缘翻页",
+  "@tapEdgesToTurnPages": {
+    "description": "点击边缘描述"
+  },
+  "zoom": "缩放",
+  "@zoom": {
+    "description": "缩放控制标签"
+  },
+  "useProvidedControls": "使用提供的控件",
+  "@useProvidedControls": {
+    "description": "使用提供控件描述"
+  },
+  "pinchToZoomPdf": "捏合缩放（PDF）",
+  "@pinchToZoomPdf": {
+    "description": "捏合缩放描述"
+  },
+  "tableOfContentsViaSidebar": "通过侧边栏查看目录",
+  "@tableOfContentsViaSidebar": {
+    "description": "目录描述"
+  },
+  "tapCenterOrSwipeForMenu": "点击中心或滑动打开菜单",
+  "@tapCenterOrSwipeForMenu": {
+    "description": "点击中心打开菜单描述"
+  },
+  "gotIt": "知道了！",
+  "@gotIt": {
+    "description": "知道了按钮"
+  },
+  "sortOptions": "排序选项",
+  "@sortOptions": {
+    "description": "排序选项对话框标题"
+  },
+  "sortByName": "按名称排序",
+  "@sortByName": {
+    "description": "按名称排序选项"
+  },
+  "sortBySize": "按大小排序",
+  "@sortBySize": {
+    "description": "按大小排序选项"
+  },
+  "sortByFileType": "按文件类型排序",
+  "@sortByFileType": {
+    "description": "按文件类型排序选项"
+  },
+  "sortByDate": "按日期排序",
+  "@sortByDate": {
+    "description": "按日期排序选项"
+  },
+  "sortDescending": "降序排列",
+  "@sortDescending": {
+    "description": "降序排列切换"
+  },
+  "sortAscending": "升序排列",
+  "@sortAscending": {
+    "description": "升序排列切换"
+  },
+  "apply": "应用",
+  "@apply": {
+    "description": "应用按钮"
+  },
+  "noBooksFound": "未找到书籍",
+  "@noBooksFound": {
+    "description": "未找到书籍消息"
+  },
+  "noBooksFoundMatching": "未找到匹配 \"{query}\" 的书籍",
+  "@noBooksFoundMatching": {
+    "description": "未找到匹配查询的书籍",
+    "placeholders": {
+      "query": {
+        "type": "String",
+        "description": "搜索查询"
+      }
+    }
+  },
+  "searchBooks": "搜索书籍...",
+  "@searchBooks": {
+    "description": "搜索书籍提示"
+  },
+  "bookmarks": "书签",
+  "@bookmarks": {
+    "description": "书签部分标题"
+  },
+  "recentlyViewed": "最近查看",
+  "@recentlyViewed": {
+    "description": "最近查看部分标题"
+  },
+  "noBookmarksYet": "暂无书签",
+  "@noBookmarksYet": {
+    "description": "暂无书签消息"
+  },
+  "noRecentlyViewedBooks": "暂无最近查看的书籍",
+  "@noRecentlyViewedBooks": {
+    "description": "暂无最近查看的书籍消息"
+  },
+  "removeBookmark": "移除书签",
+  "@removeBookmark": {
+    "description": "移除书签按钮"
+  },
+  "removeFromHistory": "从历史记录中移除",
+  "@removeFromHistory": {
+    "description": "从历史记录中移除按钮"
+  },
+  "openWithExternalApp": "用外部应用打开",
+  "@openWithExternalApp": {
+    "description": "用外部应用打开选项"
+  },
+  "deleteFile": "删除文件",
+  "@deleteFile": {
+    "description": "删除文件选项"
+  },
+  "bookInfo": "书籍信息",
+  "@bookInfo": {
+    "description": "书籍信息页面标题"
+  },
+  "fileInfo": "文件信息",
+  "@fileInfo": {
+    "description": "文件信息部分标题"
+  },
+  "fileName": "文件名",
+  "@fileName": {
+    "description": "文件名标签"
+  },
+  "fileSize": "文件大小",
+  "@fileSize": {
+    "description": "文件大小标签"
+  },
+  "fileType": "文件类型",
+  "@fileType": {
+    "description": "文件类型标签"
+  },
+  "lastModified": "最后修改",
+  "@lastModified": {
+    "description": "最后修改标签"
+  },
+  "lastOpened": "最后打开",
+  "@lastOpened": {
+    "description": "最后打开标签"
+  },
+  "openFile": "打开文件",
+  "@openFile": {
+    "description": "打开文件按钮"
+  },
+  "shareFile": "分享文件",
+  "@shareFile": {
+    "description": "分享文件按钮"
+  },
+  "deleteFilePermanently": "永久删除文件",
+  "@deleteFilePermanently": {
+    "description": "永久删除文件按钮"
+  },
+  "areYouSureDeleteFile": "确定要删除此文件吗？",
+  "@areYouSureDeleteFile": {
+    "description": "删除文件确认"
+  },
+  "fileDeleted": "文件已删除",
+  "@fileDeleted": {
+    "description": "文件已删除消息"
+  },
+  "fileDeletedError": "删除文件出错",
+  "@fileDeletedError": {
+    "description": "文件删除错误"
+  },
+  "shareVia": "分享到",
+  "@shareVia": {
+    "description": "分享到对话框标题"
+  },
+  "openWith": "打开方式",
+  "@openWith": {
+    "description": "打开方式对话框标题"
+  },
+  "selectApp": "选择应用打开此文件",
+  "@selectApp": {
+    "description": "选择应用描述"
+  },
+  "noAppsFound": "未找到可打开此文件的应用",
+  "@noAppsFound": {
+    "description": "未找到应用消息"
+  },
+  "fileOpenError": "打开文件出错",
+  "@fileOpenError": {
+    "description": "文件打开错误"
+  },
+  "fileShareError": "分享文件出错",
+  "@fileShareError": {
+    "description": "文件分享错误"
+  },
+  "fileInfoError": "获取文件信息出错",
+  "@fileInfoError": {
+    "description": "文件信息错误"
+  },
+  "fileInfoUnavailable": "文件信息不可用",
+  "@fileInfoUnavailable": {
+    "description": "文件信息不可用"
+  },
+  "unknownFileType": "未知文件类型",
+  "@unknownFileType": {
+    "description": "未知文件类型"
+  },
+  "unknownFileSize": "未知文件大小",
+  "@unknownFileSize": {
+    "description": "未知文件大小"
+  },
+  "unknownDate": "未知日期",
+  "@unknownDate": {
+    "description": "未知日期"
+  },
+  "categories": "分类",
+  "@categories": {
+    "description": "分类页面标题"
+  },
+  "browseByCategory": "按分类浏览",
+  "@browseByCategory": {
+    "description": "按分类浏览部分标题"
+  },
+  "viewAll": "查看全部",
+  "@viewAll": {
+    "description": "查看全部按钮"
+  },
+  "noBooksInCategory": "此分类下暂无书籍",
+  "@noBooksInCategory": {
+    "description": "分类下暂无书籍消息"
+  },
+  "categoryNotFound": "未找到分类",
+  "@categoryNotFound": {
+    "description": "未找到分类消息"
+  },
+  "loadingCategories": "正在加载分类...",
+  "@loadingCategories": {
+    "description": "正在加载分类消息"
+  },
+  "errorLoadingCategories": "加载分类出错",
+  "@errorLoadingCategories": {
+    "description": "加载分类错误消息"
+  },
+  "retryLoadingCategories": "重试",
+  "@retryLoadingCategories": {
+    "description": "重试加载分类按钮"
+  },
+  "noCategoriesAvailable": "暂无可用分类",
+  "@noCategoriesAvailable": {
+    "description": "暂无可用分类消息"
+  },
+  "filterByCategory": "按分类筛选",
+  "@filterByCategory": {
+    "description": "按分类筛选标签"
+  },
+  "allCategories": "所有分类",
+  "@allCategories": {
+    "description": "所有分类选项"
+  },
+  "selectedCategory": "已选择：{category}",
+  "@selectedCategory": {
+    "description": "已选择分类文本",
+    "placeholders": {
+      "category": {
+        "type": "String",
+        "description": "分类名称"
+      }
+    }
+  },
+  "noResultsInCategory": "此分类下暂无结果",
+  "@noResultsInCategory": {
+    "description": "分类下暂无结果消息"
+  },
+  "tryDifferentCategory": "请尝试其他分类",
+  "@tryDifferentCategory": {
+    "description": "尝试其他分类建议"
+  },
+  "backToCategories": "返回分类",
+  "@backToCategories": {
+    "description": "返回分类按钮"
+  },
+  "categoryDescription": "分类描述",
+  "@categoryDescription": {
+    "description": "分类描述标签"
+  },
+  "booksInCategory": "此分类下有 {count} 本书",
+  "@booksInCategory": {
+    "description": "分类下书籍数量",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "description": "书籍数量"
+      }
+    }
+  },
+  "sortCategories": "分类排序",
+  "@sortCategories": {
+    "description": "分类排序标签"
+  },
+  "sortByNameAZ": "名称（A-Z）",
+  "@sortByNameAZ": {
+    "description": "按名称 A-Z 排序"
+  },
+  "sortByNameZA": "名称（Z-A）",
+  "@sortByNameZA": {
+    "description": "按名称 Z-A 排序"
+  },
+  "sortByBookCount": "书籍数量",
+  "@sortByBookCount": {
+    "description": "按书籍数量排序"
+  },
+  "noSubcategories": "暂无子分类",
+  "@noSubcategories": {
+    "description": "暂无子分类消息"
+  },
+  "subcategories": "子分类",
+  "@subcategories": {
+    "description": "子分类标签"
+  },
+  "expandCategory": "展开分类",
+  "@expandCategory": {
+    "description": "展开分类按钮"
+  },
+  "collapseCategory": "折叠分类",
+  "@collapseCategory": {
+    "description": "折叠分类按钮"
+  },
+  "categoryEmpty": "此分类为空",
+  "@categoryEmpty": {
+    "description": "分类为空消息"
+  },
+  "addBooksToCategory": "向此分类添加书籍",
+  "@addBooksToCategory": {
+    "description": "向分类添加书籍建议"
+  },
+  "categorySettings": "分类设置",
+  "@categorySettings": {
+    "description": "分类设置标签"
+  },
+  "customizeCategoryView": "自定义分类的显示方式",
+  "@customizeCategoryView": {
+    "description": "自定义分类视图描述"
+  },
+  "showEmptyCategories": "显示空分类",
+  "@showEmptyCategories": {
+    "description": "显示空分类切换"
+  },
+  "hideEmptyCategories": "隐藏空分类",
+  "@hideEmptyCategories": {
+    "description": "隐藏空分类切换"
+  },
+  "gridView": "网格视图",
+  "@gridView": {
+    "description": "网格视图选项"
+  },
+  "listView": "列表视图",
+  "@listView": {
+    "description": "列表视图选项"
+  },
+  "compactView": "紧凑视图",
+  "@compactView": {
+    "description": "紧凑视图选项"
+  },
+  "categoryViewMode": "分类视图模式",
+  "@categoryViewMode": {
+    "description": "分类视图模式标签"
+  },
+  "selectViewMode": "选择分类的显示方式",
+  "@selectViewMode": {
+    "description": "选择视图模式描述"
+  },
+  "categoryLayout": "分类布局",
+  "@categoryLayout": {
+    "description": "分类布局标签"
+  },
+  "categoryDisplayOptions": "分类显示选项",
+  "@categoryDisplayOptions": {
+    "description": "分类显示选项标签"
+  },
+  "showCategoryIcons": "显示分类图标",
+  "@showCategoryIcons": {
+    "description": "显示分类图标切换"
+  },
+  "showCategoryCount": "显示书籍数量",
+  "@showCategoryCount": {
+    "description": "显示书籍数量切换"
+  },
+  "showCategoryDescription": "显示分类描述",
+  "@showCategoryDescription": {
+    "description": "显示分类描述切换"
+  },
+  "categoryIconSize": "分类图标大小",
+  "@categoryIconSize": {
+    "description": "分类图标大小标签"
+  },
+  "small": "小",
+  "@small": {
+    "description": "小尺寸选项"
+  },
+  "medium": "中",
+  "@medium": {
+    "description": "中尺寸选项"
+  },
+  "large": "大",
+  "@large": {
+    "description": "大尺寸选项"
+  },
+  "categoryColor": "分类颜色",
+  "@categoryColor": {
+    "description": "分类颜色标签"
+  },
+  "useDefaultColor": "使用默认颜色",
+  "@useDefaultColor": {
+    "description": "使用默认颜色选项"
+  },
+  "customColor": "自定义颜色",
+  "@customColor": {
+    "description": "自定义颜色选项"
+  },
+  "resetCategorySettings": "重置分类设置",
+  "@resetCategorySettings": {
+    "description": "重置分类设置按钮"
+  },
+  "resetToDefaultCategorySettings": "确定要重置为默认分类设置吗？",
+  "@resetToDefaultCategorySettings": {
+    "description": "重置分类设置确认"
+  },
+  "categorySettingsReset": "分类设置已重置",
+  "@categorySettingsReset": {
+    "description": "分类设置已重置消息"
+  },
+  "categorySettingsSaved": "分类设置已保存",
+  "@categorySettingsSaved": {
+    "description": "分类设置已保存消息"
+  },
+  "categorySettingsError": "保存分类设置出错",
+  "@categorySettingsError": {
+    "description": "分类设置错误"
+  },
+  "noDescription": "暂无描述",
+  "@noDescription": {
+    "description": "暂无描述文本"
+  },
+  "tapToViewBooks": "点击查看书籍",
+  "@tapToViewBooks": {
+    "description": "点击查看书籍提示"
+  },
+  "longPressForOptions": "长按查看更多选项",
+  "@longPressForOptions": {
+    "description": "长按查看更多选项提示"
+  },
+  "swipeToNavigate": "滑动导航",
+  "@swipeToNavigate": {
+    "description": "滑动导航提示"
+  },
+  "pullToRefresh": "下拉刷新",
+  "@pullToRefresh": {
+    "description": "下拉刷新提示"
+  },
+  "loadingMore": "正在加载更多...",
+  "@loadingMore": {
+    "description": "正在加载更多消息"
+  },
+  "endOfList": "已到底部",
+  "@endOfList": {
+    "description": "已到底部消息"
+  },
+  "errorLoadingMore": "加载更多内容出错",
+  "@errorLoadingMore": {
+    "description": "加载更多内容错误"
+  },
+  "retryLoading": "重试加载",
+  "@retryLoading": {
+    "description": "重试加载按钮"
+  },
+  "noMoreItems": "没有更多内容",
+  "@noMoreItems": {
+    "description": "没有更多内容消息"
+  },
+  "scrollToTop": "滚动到顶部",
+  "@scrollToTop": {
+    "description": "滚动到顶部按钮"
+  },
+  "scrollToBottom": "滚动到底部",
+  "@scrollToBottom": {
+    "description": "滚动到底部按钮"
+  },
+  "pageCounter": "第 {current} 页，共 {total} 页",
+  "@pageCounter": {
+    "description": "页码计数器文本",
+    "placeholders": {
+      "current": {
+        "type": "String",
+        "description": "当前页码"
+      },
+      "total": {
+        "type": "String",
+        "description": "总页数"
+      }
+    }
+  },
+  "goToPage": "跳转到页面",
+  "@goToPage": {
+    "description": "跳转到页面标签"
+  },
+  "enterPageNumber": "输入页码",
+  "@enterPageNumber": {
+    "description": "输入页码提示"
+  },
+  "invalidPageNumber": "无效页码",
+  "@invalidPageNumber": {
+    "description": "无效页码错误"
+  },
+  "pageNotFound": "未找到页面",
+  "@pageNotFound": {
+    "description": "未找到页面消息"
+  },
+  "loadingPage": "正在加载页面...",
+  "@loadingPage": {
+    "description": "正在加载页面消息"
+  },
+  "errorLoadingPage": "加载页面出错",
+  "@errorLoadingPage": {
+    "description": "加载页面错误消息"
+  },
+  "pageLoadTimeout": "页面加载超时",
+  "@pageLoadTimeout": {
+    "description": "页面加载超时消息"
+  },
+  "retryPageLoad": "重试加载页面",
+  "@retryPageLoad": {
+    "description": "重试加载页面按钮"
+  },
+  "pageNavigation": "页面导航",
+  "@pageNavigation": {
+    "description": "页面导航标签"
+  },
+  "previousPage": "上一页",
+  "@previousPage": {
+    "description": "上一页按钮"
+  },
+  "nextPage": "下一页",
+  "@nextPage": {
+    "description": "下一页按钮"
+  },
+  "firstPage": "第一页",
+  "@firstPage": {
+    "description": "第一页按钮"
+  },
+  "lastPage": "最后一页",
+  "@lastPage": {
+    "description": "最后一页按钮"
+  },
+  "jumpToPage": "跳转到页面",
+  "@jumpToPage": {
+    "description": "跳转到页面按钮"
+  },
+  "pageHistory": "页面历史",
+  "@pageHistory": {
+    "description": "页面历史标签"
+  },
+  "goBack": "后退",
+  "@goBack": {
+    "description": "后退按钮"
+  },
+  "goForward": "前进",
+  "@goForward": {
+    "description": "前进按钮"
+  },
+  "clearHistory": "清除历史记录",
+  "@clearHistory": {
+    "description": "清除历史记录按钮"
+  },
+  "historyCleared": "历史记录已清除",
+  "@historyCleared": {
+    "description": "历史记录已清除消息"
+  },
+  "noHistory": "暂无历史记录",
+  "@noHistory": {
+    "description": "暂无历史记录消息"
+  },
+  "pageZoom": "页面缩放",
+  "@pageZoom": {
+    "description": "页面缩放标签"
+  },
+  "zoomIn": "放大",
+  "@zoomIn": {
+    "description": "放大按钮"
+  },
+  "zoomOut": "缩小",
+  "@zoomOut": {
+    "description": "缩小按钮"
+  },
+  "resetZoom": "重置缩放",
+  "@resetZoom": {
+    "description": "重置缩放按钮"
+  },
+  "fitWidth": "适应宽度",
+  "@fitWidth": {
+    "description": "适应宽度按钮"
+  },
+  "fitHeight": "适应高度",
+  "@fitHeight": {
+    "description": "适应高度按钮"
+  },
+  "fitPage": "适应页面",
+  "@fitPage": {
+    "description": "适应页面按钮"
+  },
+  "actualSize": "实际大小",
+  "@actualSize": {
+    "description": "实际大小按钮"
+  },
+  "zoomLevel": "缩放级别：{level}%",
+  "@zoomLevel": {
+    "description": "缩放级别文本",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "description": "缩放级别百分比"
+      }
+    }
+  },
+  "zoomToFit": "适应缩放",
+  "@zoomToFit": {
+    "description": "适应缩放按钮"
+  },
+  "zoomToFill": "填充缩放",
+  "@zoomToFill": {
+    "description": "填充缩放按钮"
+  },
+  "zoomToFitWidth": "适应宽度缩放",
+  "@zoomToFitWidth": {
+    "description": "适应宽度缩放按钮"
+  },
+  "zoomToFitHeight": "适应高度缩放",
+  "@zoomToFitHeight": {
+    "description": "适应高度缩放按钮"
+  },
+  "zoomToOriginalSize": "原始大小缩放",
+  "@zoomToOriginalSize": {
+    "description": "原始大小缩放按钮"
+  },
+  "zoomToCustomLevel": "自定义级别缩放",
+  "@zoomToCustomLevel": {
+    "description": "自定义级别缩放按钮"
+  },
+  "zoomToSelection": "选区缩放",
+  "@zoomToSelection": {
+    "description": "选区缩放按钮"
+  },
+  "zoomToFitContent": "适应内容缩放",
+  "@zoomToFitContent": {
+    "description": "适应内容缩放按钮"
+  },
+  "zoomToFitPage": "适应页面缩放",
+  "@zoomToFitPage": {
+    "description": "适应页面缩放按钮"
+  },
+  "zoomToFitWidthAndHeight": "适应宽高缩放",
+  "@zoomToFitWidthAndHeight": {
+    "description": "适应宽高缩放按钮"
+  },
+  "zoomToOriginal": "原始缩放",
+  "@zoomToOriginal": {
+    "description": "原始缩放按钮"
+  },
+  "zoomToCustom": "自定义缩放",
+  "@zoomToCustom": {
+    "description": "自定义缩放按钮"
+  },
+  "zoomToSelectionArea": "选区区域缩放",
+  "@zoomToSelectionArea": {
+    "description": "选区区域缩放按钮"
+  },
+  "zoomToFitAllContent": "适应所有内容缩放",
+  "@zoomToFitAllContent": {
+    "description": "适应所有内容缩放按钮"
+  },
+  "zoomToFitEntirePage": "适应整页缩放",
+  "@zoomToFitEntirePage": {
+    "description": "适应整页缩放按钮"
+  },
+  "zoomToFitWidthAndHeightRatio": "适应宽高比缩放",
+  "@zoomToFitWidthAndHeightRatio": {
+    "description": "适应宽高比缩放按钮"
+  },
+  "zoomToOriginalAspectRatio": "原始宽高比缩放",
+  "@zoomToOriginalAspectRatio": {
+    "description": "原始宽高比缩放按钮"
+  },
+  "zoomToCustomAspectRatio": "自定义宽高比缩放",
+  "@zoomToCustomAspectRatio": {
+    "description": "自定义宽高比缩放按钮"
+  },
+  "zoomToSelectionBounds": "选区边界缩放",
+  "@zoomToSelectionBounds": {
+    "description": "选区边界缩放按钮"
+  },
+  "zoomToFitContentBounds": "适应内容边界缩放",
+  "@zoomToFitContentBounds": {
+    "description": "适应内容边界缩放按钮"
+  },
+  "zoomToFitPageBounds": "适应页面边界缩放",
+  "@zoomToFitPageBounds": {
+    "description": "适应页面边界缩放按钮"
+  },
+  "zoomToFitWidthAndHeightBounds": "适应宽高边界缩放",
+  "@zoomToFitWidthAndHeightBounds": {
+    "description": "适应宽高边界缩放按钮"
+  },
+  "zoomToOriginalBounds": "原始边界缩放",
+  "@zoomToOriginalBounds": {
+    "description": "原始边界缩放按钮"
+  },
+  "zoomToCustomBounds": "自定义边界缩放",
+  "@zoomToCustomBounds": {
+    "description": "自定义边界缩放按钮"
+  },
+  "zoomToSelectionAreaBounds": "选区区域边界缩放",
+  "@zoomToSelectionAreaBounds": {
+    "description": "选区区域边界缩放按钮"
+  },
+  "zoomToFitAllContentBounds": "适应所有内容边界缩放",
+  "@zoomToFitAllContentBounds": {
+    "description": "适应所有内容边界缩放按钮"
+  },
+  "zoomToFitEntirePageBounds": "适应整页边界缩放",
+  "@zoomToFitEntirePageBounds": {
+    "description": "适应整页边界缩放按钮"
+  },
+  "zoomToFitWidthAndHeightRatioBounds": "适应宽高比边界缩放",
+  "@zoomToFitWidthAndHeightRatioBounds": {
+    "description": "适应宽高比边界缩放按钮"
+  },
+  "zoomToOriginalAspectRatioBounds": "原始宽高比边界缩放",
+  "@zoomToOriginalAspectRatioBounds": {
+    "description": "原始宽高比边界缩放按钮"
+  },
+  "zoomToCustomAspectRatioBounds": "自定义宽高比边界缩放",
+  "@zoomToCustomAspectRatioBounds": {
+    "description": "自定义宽高比边界缩放按钮"
+  }
+}

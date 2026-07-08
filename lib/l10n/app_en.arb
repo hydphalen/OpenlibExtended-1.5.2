@@ -1,0 +1,1773 @@
+{
+  "@@locale": "en",
+  "appTitle": "OpenlibExtended",
+  "@appTitle": {
+    "description": "The application title"
+  },
+  "trending": "Trending",
+  "@trending": {
+    "description": "Trending tab label"
+  },
+  "genres": "Genres",
+  "@genres": {
+    "description": "Genres tab label"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings page title"
+  },
+  "search": "Search",
+  "@search": {
+    "description": "Search page title"
+  },
+  "searchFieldEmpty": "Search field is empty",
+  "@searchFieldEmpty": {
+    "description": "Search field empty error message"
+  },
+  "type": "Type",
+  "@type": {
+    "description": "Type filter label"
+  },
+  "sortBy": "Sort by",
+  "@sortBy": {
+    "description": "Sort by filter label"
+  },
+  "fileType": "File type",
+  "@fileType": {
+    "description": "File type filter label"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Language filter label"
+  },
+  "yearPublished": "Year Published",
+  "@yearPublished": {
+    "description": "Year published filter label"
+  },
+  "libraryAndInstances": "Library & Instances",
+  "@libraryAndInstances": {
+    "description": "Library and instances section title"
+  },
+  "archiveInstance": "Archive Instance",
+  "@archiveInstance": {
+    "description": "Archive instance label"
+  },
+  "manageInstances": "Manage Instances",
+  "@manageInstances": {
+    "description": "Manage instances navigation item"
+  },
+  "appearance": "Appearance",
+  "@appearance": {
+    "description": "Appearance section title"
+  },
+  "theme": "Theme",
+  "@theme": {
+    "description": "Theme setting label"
+  },
+  "followSystem": "Follow the System",
+  "@followSystem": {
+    "description": "Follow system theme option"
+  },
+  "lightTheme": "Light theme",
+  "@lightTheme": {
+    "description": "Light theme option"
+  },
+  "darkTheme": "Dark theme",
+  "@darkTheme": {
+    "description": "Dark theme option"
+  },
+  "about": "About",
+  "@about": {
+    "description": "About page title"
+  },
+  "aboutDescription": "An Open source app to download and read books from shadow library (Anna's Archive).",
+  "@aboutDescription": {
+    "description": "Application description"
+  },
+  "forkDescription": "This is a forked version maintained by warreth for personal use and community updates.",
+  "@forkDescription": {
+    "description": "Fork version description"
+  },
+  "originalBy": "Original app by dstark5 (https://github.com/dstark5/Openlib).",
+  "@originalBy": {
+    "description": "Original app attribution"
+  },
+  "thisFork": "This Fork (by warreth)",
+  "@thisFork": {
+    "description": "This fork link text"
+  },
+  "reportIssue": "Report An Issue",
+  "@reportIssue": {
+    "description": "Report issue link text"
+  },
+  "originalProject": "Original Project (by dstark5)",
+  "@originalProject": {
+    "description": "Original project link text"
+  },
+  "license": "GPL v3.0 license",
+  "@license": {
+    "description": "License text"
+  },
+  "loading": "Loading...",
+  "@loading": {
+    "description": "Loading text"
+  },
+  "unknown": "Unknown",
+  "@unknown": {
+    "description": "Unknown text"
+  },
+  "classics": "Classics",
+  "@classics": {
+    "description": "Classics category"
+  },
+  "classicsInfo": "Timeless literary works often revered for their artistic merit and cultural significance.",
+  "@classicsInfo": {
+    "description": "Classics category description"
+  },
+  "romance": "Romance",
+  "@romance": {
+    "description": "Romance category"
+  },
+  "romanceInfo": "Stories focused on romantic relationships, exploring love, passion, and emotional connections.",
+  "@romanceInfo": {
+    "description": "Romance category description"
+  },
+  "fiction": "Fiction",
+  "@fiction": {
+    "description": "Fiction category"
+  },
+  "fictionInfo": "Narrative literature created from the imagination, not based on real events.",
+  "@fictionInfo": {
+    "description": "Fiction category description"
+  },
+  "youngAdult": "Young Adult",
+  "@youngAdult": {
+    "description": "Young Adult category"
+  },
+  "youngAdultInfo": "Books targeted at teenage readers, addressing themes relevant to adolescence.",
+  "@youngAdultInfo": {
+    "description": "Young Adult category description"
+  },
+  "fantasy": "Fantasy",
+  "@fantasy": {
+    "description": "Fantasy category"
+  },
+  "fantasyInfo": "A genre featuring magical elements, mythical creatures, and fantastical worlds.",
+  "@fantasyInfo": {
+    "description": "Fantasy category description"
+  },
+  "scienceFiction": "Science Fiction",
+  "@scienceFiction": {
+    "description": "Science Fiction category"
+  },
+  "scienceFictionInfo": "Literature that explores futuristic concepts, advanced technology, and space exploration.",
+  "@scienceFictionInfo": {
+    "description": "Science Fiction category description"
+  },
+  "nonfiction": "Nonfiction",
+  "@nonfiction": {
+    "description": "Nonfiction category"
+  },
+  "nonfictionInfo": "Works based on factual information, including essays, biographies, and documentaries.",
+  "@nonfictionInfo": {
+    "description": "Nonfiction category description"
+  },
+  "children": "Children",
+  "@children": {
+    "description": "Children category"
+  },
+  "childrenInfo": "Books aimed at young readers, often with illustrations and simple narratives.",
+  "@childrenInfo": {
+    "description": "Children category description"
+  },
+  "history": "History",
+  "@history": {
+    "description": "History category"
+  },
+  "historyInfo": "Literature that examines past events, cultures, and significant historical figures.",
+  "@historyInfo": {
+    "description": "History category description"
+  },
+  "mystery": "Mystery",
+  "@mystery": {
+    "description": "Mystery category"
+  },
+  "mysteryInfo": "Stories centered around suspenseful plots, often involving crime or puzzles to solve.",
+  "@mysteryInfo": {
+    "description": "Mystery category description"
+  },
+  "covers": "Covers",
+  "@covers": {
+    "description": "Covers category"
+  },
+  "coversInfo": "Refers to the artwork and design that visually represents a book, including reader interest.",
+  "@coversInfo": {
+    "description": "Covers category description"
+  },
+  "horror": "Horror",
+  "@horror": {
+    "description": "Horror category"
+  },
+  "horrorInfo": "A genre designed to evoke fear, dread, or terror in the reader through suspenseful storytelling.",
+  "@horrorInfo": {
+    "description": "Horror category description"
+  },
+  "historicalFiction": "Historical Fiction",
+  "@historicalFiction": {
+    "description": "Historical Fiction category"
+  },
+  "historicalFictionInfo": "Novels set in a specific historical period, blending factual events with fictional characters.",
+  "@historicalFictionInfo": {
+    "description": "Historical Fiction category description"
+  },
+  "best": "Best",
+  "@best": {
+    "description": "Best category"
+  },
+  "bestInfo": "Often refers to critically acclaimed or popular books, usually categorized by rankings or awards.",
+  "@bestInfo": {
+    "description": "Best category description"
+  },
+  "titles": "Titles",
+  "@titles": {
+    "description": "Titles category"
+  },
+  "titlesInfo": "Refers to the names of books, which often reflect their themes or subject matter.",
+  "@titlesInfo": {
+    "description": "Titles category description"
+  },
+  "middleGrade": "Middle Grade",
+  "@middleGrade": {
+    "description": "Middle Grade category"
+  },
+  "middleGradeInfo": "Books intended for readers aged 8-12, featuring age-appropriate themes and characters.",
+  "@middleGradeInfo": {
+    "description": "Middle Grade category description"
+  },
+  "paranormal": "Paranormal",
+  "@paranormal": {
+    "description": "Paranormal category"
+  },
+  "paranormalInfo": "Stories that incorporate supernatural elements, including ghosts, vampires, and otherworldly beings.",
+  "@paranormalInfo": {
+    "description": "Paranormal category description"
+  },
+  "love": "Love",
+  "@love": {
+    "description": "Love category"
+  },
+  "loveInfo": "A theme exploring the complexities and nuances of love in various forms and relationships.",
+  "@loveInfo": {
+    "description": "Love category description"
+  },
+  "queer": "Queer",
+  "@queer": {
+    "description": "Queer category"
+  },
+  "queerInfo": "Literature that represents diverse sexual orientations and gender identities within the LGBTQ+ spectrum.",
+  "@queerInfo": {
+    "description": "Queer category description"
+  },
+  "testAll": "Test All",
+  "@testAll": {
+    "description": "Test all instances button"
+  },
+  "add": "Add",
+  "@add": {
+    "description": "Add button"
+  },
+  "addCustomInstance": "Add Custom Instance",
+  "@addCustomInstance": {
+    "description": "Add custom instance dialog title"
+  },
+  "name": "Name",
+  "@name": {
+    "description": "Name label"
+  },
+  "nameHint": "e.g., My Custom Mirror",
+  "@nameHint": {
+    "description": "Name input hint"
+  },
+  "url": "URL",
+  "@url": {
+    "description": "URL label"
+  },
+  "urlHint": "https://example.com",
+  "@urlHint": {
+    "description": "URL input hint"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button"
+  },
+  "pleaseFillAllFields": "Please fill all fields",
+  "@pleaseFillAllFields": {
+    "description": "Validation error for empty fields"
+  },
+  "pleaseEnterValidUrl": "Please enter a valid URL with http:// or https://",
+  "@pleaseEnterValidUrl": {
+    "description": "Validation error for invalid URL"
+  },
+  "instanceAddedSuccessfully": "Instance added successfully",
+  "@instanceAddedSuccessfully": {
+    "description": "Success message after adding instance"
+  },
+  "deleteInstance": "Delete Instance",
+  "@deleteInstance": {
+    "description": "Delete instance dialog title"
+  },
+  "areYouSureDelete": "Are you sure you want to delete \"{instanceName}\"?",
+  "@areYouSureDelete": {
+    "description": "Delete confirmation message"
+  },
+  "delete": "Delete",
+  "@delete": {
+    "description": "Delete button"
+  },
+  "instanceDeleted": "Instance deleted",
+  "@instanceDeleted": {
+    "description": "Success message after deleting instance"
+  },
+  "cannotDeleteDefaultInstances": "Cannot delete default instances",
+  "@cannotDeleteDefaultInstances": {
+    "description": "Error message when trying to delete default instance"
+  },
+  "instancesTestedAndRanked": "Instances tested and ranked by speed",
+  "@instancesTestedAndRanked": {
+    "description": "Success message after testing instances"
+  },
+  "testingFailed": "Testing failed: {error}",
+  "@testingFailed": {
+    "description": "Error message when testing fails",
+    "placeholders": {
+      "error": {
+        "type": "String",
+        "example": "Connection timeout"
+      }
+    }
+  },
+  "myLibrary": "My Library",
+  "@myLibrary": {
+    "description": "My library page title"
+  },
+  "syncLibrary": "Sync library with storage folder",
+  "@syncLibrary": {
+    "description": "Sync library button tooltip"
+  },
+  "scrollDownToSync": "Scroll down to sync library",
+  "@scrollDownToSync": {
+    "description": "Scroll down hint"
+  },
+  "yourLibraryIsEmpty": "Your library is empty",
+  "@yourLibraryIsEmpty": {
+    "description": "Empty library message"
+  },
+  "welcomeToOpenlibExtended": "Welcome to OpenlibExtended",
+  "@welcomeToOpenlibExtended": {
+    "description": "Welcome page title"
+  },
+  "selectStorageFolder": "Please select a storage folder to continue",
+  "@selectStorageFolder": {
+    "description": "Storage selection prompt"
+  },
+  "getStarted": "Get Started",
+  "@getStarted": {
+    "description": "Get started button"
+  },
+    "next": "Next",
+  "@next": {
+    "description": "Next button"
+  },
+  "instanceChangedSuccessfully": "Instance changed successfully",
+  "@instanceChangedSuccessfully": {
+    "description": "Instance change success message"
+  },
+  "errorLoadingInstances": "Error loading instances",
+  "@errorLoadingInstances": {
+    "description": "Error loading instances message"
+  },
+    "errorLoadingInstance": "Error loading instance",
+  "@errorLoadingInstance": {
+    "description": "Error loading instance message"
+  },
+  "github": "Github",
+  "@github": {
+    "description": "Github section title"
+  },
+  "thisForkByWarreth": "This Fork (by warreth)",
+  "@thisForkByWarreth": {
+    "description": "This fork link text"
+  },
+  "reportAnIssue": "Report An Issue",
+  "@reportAnIssue": {
+    "description": "Report issue link text"
+  },
+  "originalProjectByDstark5": "Original Project (by dstark5)",
+  "@originalProjectByDstark5": {
+    "description": "Original project link text"
+  },
+  "licence": "Licence",
+  "@licence": {
+    "description": "Licence section title"
+  },
+    "gplV30License": "GPL v3.0 license",
+  "@gplV30License": {
+    "description": "GPL license link text"
+  },
+  "downloads": "Downloads",
+  "@downloads": {
+    "description": "Downloads section title"
+  },
+  "queued": "Queued",
+  "@queued": {
+    "description": "Download status: queued"
+  },
+  "gettingMirrors": "Getting mirrors...",
+  "@gettingMirrors": {
+    "description": "Download status: getting mirrors"
+  },
+  "findingMirror": "Finding mirror...",
+  "@findingMirror": {
+    "description": "Download status: finding mirror"
+  },
+  "downloading": "Downloading",
+  "@downloading": {
+    "description": "Download status: downloading"
+  },
+  "paused": "Paused",
+  "@paused": {
+    "description": "Download status: paused"
+  },
+  "verifying": "Verifying",
+  "@verifying": {
+    "description": "Download status: verifying"
+  },
+  "completed": "Completed",
+  "@completed": {
+    "description": "Download status: completed"
+  },
+  "failed": "Failed",
+  "@failed": {
+    "description": "Download status: failed"
+  },
+  "cancelled": "Cancelled",
+  "@cancelled": {
+    "description": "Download status: cancelled"
+  },
+  "pauseDownload": "Pause download",
+  "@pauseDownload": {
+    "description": "Pause download button tooltip"
+  },
+  "resumeDownload": "Resume download",
+  "@resumeDownload": {
+    "description": "Resume download button tooltip"
+  },
+  "cancelDownload": "Cancel download",
+  "@cancelDownload": {
+    "description": "Cancel download button tooltip"
+  },
+  "verify": "Verify",
+  "@verify": {
+    "description": "Verify button text"
+  },
+    "retry": "Retry",
+  "@retry": {
+    "description": "Retry button text"
+  },
+  "deleteBook": "Delete Book",
+  "@deleteBook": {
+    "description": "Delete book dialog title"
+  },
+  "permanentDeleteWarning": "This is permanent and cannot be undone",
+  "@permanentDeleteWarning": {
+    "description": "Warning text for permanent deletion"
+  },
+    "bookDeleted": "Book has been Deleted!",
+  "@bookDeleted": {
+    "description": "Snackbar message after book deletion"
+  },
+  "manualVerificationRequired": "Manual verification required",
+  "@manualVerificationRequired": {
+    "description": "Error message when manual verification is required"
+  },
+    "downloadFailed": "Download failed",
+  "@downloadFailed": {
+    "description": "Error message when download fails"
+  },
+  "instancesTestedAndRanked": "Instances tested and ranked by speed",
+  "@instancesTestedAndRanked": {
+    "description": "Subtitle text for instances page"
+  },
+  "addCustomInstance": "Add Custom Instance",
+  "@addCustomInstance": {
+    "description": "Title for add custom instance dialog"
+  },
+  "name": "Name",
+  "@name": {
+    "description": "Label for name field"
+  },
+  "url": "URL",
+  "@url": {
+    "description": "Label for URL field"
+  },
+  "pleaseFillAllFields": "Please fill all fields",
+  "@pleaseFillAllFields": {
+    "description": "Error message when not all fields are filled"
+  },
+  "instanceAddedSuccessfully": "Instance added successfully",
+  "@instanceAddedSuccessfully": {
+    "description": "Success message when instance is added"
+  },
+  "add": "Add",
+  "@add": {
+    "description": "Button text for adding"
+  },
+  "deleteInstance": "Delete Instance",
+  "@deleteInstance": {
+    "description": "Title for delete instance dialog"
+  },
+  "instanceDeleted": "Instance deleted",
+  "@instanceDeleted": {
+    "description": "Success message when instance is deleted"
+  },
+  "cannotDeleteDefaultInstances": "Cannot delete default instances",
+  "@cannotDeleteDefaultInstances": {
+    "description": "Error message when trying to delete default instances"
+  },
+  "manageInstances": "Manage Instances",
+  "@manageInstances": {
+    "description": "Title for manage instances page"
+  },
+  "resetToDefaultInstances": "Reset to default instances",
+  "@resetToDefaultInstances": {
+    "description": "Success message when instances are reset"
+  },
+  "resetToDefaults": "Reset to Defaults",
+  "@resetToDefaults": {
+    "description": "Tooltip for reset to defaults button"
+  },
+  "archiveInstances": "Archive Instances",
+  "@archiveInstances": {
+    "description": "Title for archive instances section"
+  },
+    "noInstancesAvailable": "No instances available",
+  "@noInstancesAvailable": {
+    "description": "Message when no instances are available"
+  },
+  "instanceNameHint": "e.g., My Custom Mirror",
+  "@instanceNameHint": {
+    "description": "Hint text for instance name input"
+  },
+  "instanceUrlHint": "https://example.com",
+  "@instanceUrlHint": {
+    "description": "Hint text for instance URL input"
+  },
+    "custom": "Custom",
+  "@custom": {
+    "description": "Label for custom instances"
+  },
+  "addToMyLibrary": "Add To My Library",
+  "@addToMyLibrary": {
+    "description": "Button to add book to library"
+  },
+  "manualDownload": "Manual Download",
+  "@manualDownload": {
+    "description": "Button for manual download via webview"
+  },
+  "downloadStartedInBackground": "Download started in background",
+  "@downloadStartedInBackground": {
+    "description": "Snack bar message when download starts"
+  },
+  "fastDownloadStartedInBackground": "Fast download started in background 🚀",
+  "@fastDownloadStartedInBackground": {
+    "description": "Snack bar message when fast download starts"
+  },
+  "noMirrorsAvailable": "No mirrors available!",
+  "@noMirrorsAvailable": {
+    "description": "Error message when no download mirrors found"
+  },
+  "bookHasBeenDownloaded": "Book has been downloaded!",
+  "@bookHasBeenDownloaded": {
+    "description": "Snack bar message after successful download"
+  },
+  "okay": "Okay",
+  "@okay": {
+    "description": "Dialog confirmation button"
+  },
+  "checksumFailed": "Checksum failed!",
+  "@checksumFailed": {
+    "description": "Dialog title for checksum verification failure"
+  },
+  "checksumFailedWarning": "The downloaded book may be malicious. Delete it and get the same book from another source, or use the book at your own risk.",
+  "@checksumFailedWarning": {
+    "description": "Warning message for checksum failure"
+  },
+  "noResultsFound": "No Results Found !",
+  "@noResultsFound": {
+    "description": "Message when search returns no results"
+  },
+  "pleaseWaitVerifying": "Please wait while we verify access and fetch download links",
+  "@pleaseWaitVerifying": {
+    "description": "Loading message while verifying download access"
+  },
+  "couldNotLaunch": "Could not launch {uri}",
+  "@couldNotLaunch": {
+    "description": "Error message when URL cannot be launched",
+    "placeholders": {
+      "uri": {
+        "type": "String",
+        "description": "The URL that failed to launch"
+      }
+    }
+  },
+  "unableToOpenFile": "Unable to open file!",
+  "@unableToOpenFile": {
+    "description": "Error message when file cannot be opened"
+  },
+  "all": "All",
+  "@all": {
+    "description": "Filter option for showing all items"
+  },
+    "mostRelevant": "Most Relevant",
+  "@mostRelevant": {
+    "description": "Sort option for relevance"
+  },
+  "fontSize": "Font Size",
+  "@fontSize": {
+    "description": "Font size setting label"
+  },
+  "scale": "Scale: {scale}x",
+  "@scale": {
+    "description": "Font scale value",
+    "placeholders": {
+      "scale": {
+        "type": "String",
+        "description": "The scale value"
+      }
+    }
+  },
+  "preview": "Preview",
+  "@preview": {
+    "description": "Preview text for font size"
+  },
+  "general": "General",
+  "@general": {
+    "description": "General settings section title"
+  },
+  "storageLocation": "Storage Location",
+  "@storageLocation": {
+    "description": "Storage location setting label"
+  },
+  "changeWhereBooksAreSaved": "Change where books are saved",
+  "@changeWhereBooksAreSaved": {
+    "description": "Storage location description"
+  },
+  "reader": "Reader",
+  "@reader": {
+    "description": "Reader settings section title"
+  },
+  "openPdfExternally": "Open PDF externally",
+  "@openPdfExternally": {
+    "description": "Open PDF externally setting label"
+  },
+  "useYourDefaultPdfViewer": "Use your default PDF viewer",
+  "@useYourDefaultPdfViewer": {
+    "description": "Open PDF externally description"
+  },
+  "openEpubExternally": "Open EPUB externally",
+  "@openEpubExternally": {
+    "description": "Open EPUB externally setting label"
+  },
+  "useYourDefaultEpubReader": "Use your default EPUB reader",
+  "@useYourDefaultEpubReader": {
+    "description": "Open EPUB externally description"
+  },
+  "advanced": "Advanced",
+  "@advanced": {
+    "description": "Advanced settings section title"
+  },
+  "manualDownloadButton": "Manual Download Button",
+  "@manualDownloadButton": {
+    "description": "Manual download button setting label"
+  },
+  "showButtonToManuallyTriggerDownloads": "Show button to manually trigger downloads",
+  "@showButtonToManuallyTriggerDownloads": {
+    "description": "Manual download button description"
+  },
+  "annasArchiveDonationKey": "Anna's Archive Donation Key",
+  "@annasArchiveDonationKey": {
+    "description": "Donation key setting label"
+  },
+  "enterKeyForFasterDownloads": "Enter key for faster downloads",
+  "@enterKeyForFasterDownloads": {
+    "description": "Donation key description"
+  },
+  "donationKey": "Donation Key",
+  "@donationKey": {
+    "description": "Donation key dialog title"
+  },
+  "enterYourKey": "Enter your key",
+  "@enterYourKey": {
+    "description": "Donation key input hint"
+  },
+  "usedForFasterDownloadsOnAnnasArchive": "Used for faster downloads on Anna's Archive",
+  "@usedForFasterDownloadsOnAnnasArchive": {
+    "description": "Donation key dialog description"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Save button"
+  },
+  "aboutOpenlibExtended": "About OpenlibExtended",
+  "@aboutOpenlibExtended": {
+    "description": "About OpenlibExtended page title"
+  },
+  "developer": "Developer",
+  "@developer": {
+    "description": "Developer section title"
+  },
+  "redoOnboarding": "Redo Onboarding",
+  "@redoOnboarding": {
+    "description": "Redo onboarding button label"
+  },
+  "resetAppSetupAndStartOver": "Reset app setup and start over",
+  "@resetAppSetupAndStartOver": {
+    "description": "Redo onboarding description"
+  },
+  "exportLogs": "Export Logs",
+  "@exportLogs": {
+    "description": "Export logs button label"
+  },
+  "shareDiagnosticLogsLast5Min": "Share diagnostic logs (last 5 min)",
+  "@shareDiagnosticLogsLast5Min": {
+    "description": "Export logs description"
+  },
+  "updates": "Updates",
+  "@updates": {
+    "description": "Updates section title"
+  },
+  "version": "Version {version}+{buildNumber}",
+  "@version": {
+    "description": "App version text",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "description": "The app version"
+      },
+      "buildNumber": {
+        "type": "String",
+        "description": "The build number"
+      }
+    }
+  },
+  "currentInstance": "Current Instance",
+  "@currentInstance": {
+    "description": "Current instance label"
+  },
+  "disabled": "(disabled)",
+  "@disabled": {
+    "description": "Disabled instance label"
+  },
+  "autoRankInstances": "Auto-Rank Instances",
+  "@autoRankInstances": {
+    "description": "Auto-rank instances setting label"
+  },
+  "automaticallySortBySpeedOnStartup": "Automatically sort by speed on startup",
+  "@automaticallySortBySpeedOnStartup": {
+    "description": "Auto-rank instances description"
+  },
+  "rankInstancesNow": "Rank Instances Now",
+  "@rankInstancesNow": {
+    "description": "Rank instances now button label"
+  },
+  "includeBetaUpdates": "Include Beta Updates",
+  "@includeBetaUpdates": {
+    "description": "Include beta updates setting label"
+  },
+  "getPreReleaseVersions": "Get pre-release versions",
+  "@getPreReleaseVersions": {
+    "description": "Include beta updates description"
+  },
+  "checkForUpdates": "Check for Updates",
+  "@checkForUpdates": {
+    "description": "Check for updates button label"
+  },
+  "rankedFastest": "Ranked! Fastest: {name} ({time}ms)",
+  "@rankedFastest": {
+    "description": "Ranking success message",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "description": "The fastest instance name"
+      },
+      "time": {
+        "type": "String",
+        "description": "The response time in milliseconds"
+      }
+    }
+  },
+  "rankingComplete": "Ranking complete",
+  "@rankingComplete": {
+    "description": "Ranking complete message"
+  },
+  "rankingFailed": "Ranking failed: {error}",
+  "@rankingFailed": {
+    "description": "Ranking failed message",
+    "placeholders": {
+      "error": {
+        "type": "String",
+        "description": "The error message"
+      }
+    }
+  },
+  "onLatestVersion": "You're on the latest version ({version})",
+  "@onLatestVersion": {
+    "description": "No update available message",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "description": "The current version"
+      }
+    }
+  },
+  "failedToCheckForUpdates": "Failed to check for updates: {error}",
+  "@failedToCheckForUpdates": {
+    "description": "Update check failed message",
+    "placeholders": {
+      "error": {
+        "type": "String",
+        "description": "The error message"
+      }
+    }
+  },
+  "failedToExportLogs": "Failed to export logs: {error}",
+  "@failedToExportLogs": {
+    "description": "Export logs failed message",
+    "placeholders": {
+      "error": {
+        "type": "String",
+        "description": "The error message"
+      }
+    }
+  },
+  "downloadingBook": "Downloading Book",
+  "@downloadingBook": {
+    "description": "Download progress title"
+  },
+  "checkingMirrorAvailability": "Checking mirror availability",
+  "@checkingMirrorAvailability": {
+    "description": "Download progress: checking mirror"
+  },
+  "verifyingFileChecksum": "Verifying file checksum",
+  "@verifyingFileChecksum": {
+    "description": "Download progress: verifying checksum"
+  },
+  "results": "Results",
+  "@results": {
+    "description": "Results page title"
+  },
+    "scrollDownToSyncLibrary": "Scroll down to sync library",
+  "@scrollDownToSyncLibrary": {
+    "description": "Scroll down to sync library hint"
+  },
+  "noDescriptionAvailable": "No Description available",
+  "@noDescriptionAvailable": {
+    "description": "No description available text"
+  },
+  "openInSite": "Open in site",
+  "@openInSite": {
+    "description": "Open in site button label"
+  },
+  "couldNotOpenAnnasArchive": "Could not open Anna's Archive.",
+  "@couldNotOpenAnnasArchive": {
+    "description": "Could not open Anna's Archive error message"
+  },
+  "whatToDo": "What to do",
+  "@whatToDo": {
+    "description": "Error solution section title"
+  },
+  "tryUsingVpn": "Try using a VPN",
+  "@tryUsingVpn": {
+    "description": "VPN suggestion title"
+  },
+  "vpnDescription": "A VPN can help bypass regional blocks and access the content.",
+  "@vpnDescription": {
+    "description": "VPN suggestion description"
+  },
+  "showBlockedPageContent": "Show blocked page content",
+  "@showBlockedPageContent": {
+    "description": "Show blocked page content button"
+  },
+  "blockedPageContent": "Blocked Page Content",
+  "@blockedPageContent": {
+    "description": "Blocked page content dialog title"
+  },
+  "noContentAvailable": "No content available",
+  "@noContentAvailable": {
+    "description": "No content available message"
+  },
+  "copiedToClipboard": "Copied to clipboard",
+  "@copiedToClipboard": {
+    "description": "Copied to clipboard message"
+  },
+  "copy": "Copy",
+  "@copy": {
+    "description": "Copy button label"
+  },
+    "close": "Close",
+  "@close": {
+    "description": "Close button label"
+  },
+  "yourPersonalGateway": "Your personal gateway to a world of knowledge. Let's get you set up.",
+  "@yourPersonalGateway": {
+    "description": "Welcome page subtitle"
+  },
+  "whereShouldWeStore": "Where should we store your books?",
+  "@whereShouldWeStore": {
+    "description": "Storage selection title"
+  },
+  "noPathSelected": "No path selected",
+  "@noPathSelected": {
+    "description": "No path selected text"
+  },
+  "selectFolder": "Select Folder",
+  "@selectFolder": {
+    "description": "Select folder button"
+  },
+  "onlyLookForPdfEpub": "We'll only look for PDF/EPUB files in this folder. No recursive scanning of subfolders.",
+  "@onlyLookForPdfEpub": {
+    "description": "Storage folder description"
+  },
+  "automaticUpdates": "Automatic Updates",
+  "@automaticUpdates": {
+    "description": "Automatic updates section title"
+  },
+  "enableAutoUpdates": "Enable Auto-Updates",
+  "@enableAutoUpdates": {
+    "description": "Enable auto updates label"
+  },
+  "notRecommendedForFDroid": "Not recommended if you installed via F-Droid (F-Droid handles updates).",
+  "@notRecommendedForFDroid": {
+    "description": "F-Droid warning"
+  },
+  "enableBetaUpdates": "Enable Beta Updates",
+  "@enableBetaUpdates": {
+    "description": "Enable beta updates label"
+  },
+  "getPreReleaseWhenAvailable": "Get pre-release versions (beta updates) when available.",
+  "@getPreReleaseWhenAvailable": {
+    "description": "Beta updates description"
+  },
+  "supportAnnasArchive": "Support Anna's Archive",
+  "@supportAnnasArchive": {
+    "description": "Support Anna's Archive section title"
+  },
+  "donatingToAnnasArchive": "Donating to Anna's Archive provides faster downloads and helps them keep the service running for everyone. You can enter your secret key below.",
+  "@donatingToAnnasArchive": {
+    "description": "Donation description"
+  },
+  "annasArchiveSecretKey": "Anna's Archive Secret Key",
+  "@annasArchiveSecretKey": {
+    "description": "Secret key label"
+  },
+  "supportThisApp": "Support This App",
+  "@supportThisApp": {
+    "description": "Support this app section title"
+  },
+  "enjoyThisAppConsiderSupporting": "If you enjoy this app, consider supporting its development. It helps me dedicate more time to making it better!",
+  "@enjoyThisAppConsiderSupporting": {
+    "description": "Support app description"
+  },
+  "sponsorOnGitHub": "Sponsor on GitHub",
+  "@sponsorOnGitHub": {
+    "description": "Sponsor on GitHub button"
+  },
+  "stayUpdated": "Stay Updated",
+  "@stayUpdated": {
+    "description": "Stay updated section title"
+  },
+  "enableNotifications": "Enable Notifications",
+  "@enableNotifications": {
+    "description": "Enable notifications label"
+  },
+  "getNotifiedWhenDownloadsComplete": "Get notified when downloads complete.",
+  "@getNotifiedWhenDownloadsComplete": {
+    "description": "Notifications description"
+  },
+  "chooseTheme": "Choose a Theme",
+  "@chooseTheme": {
+    "description": "Choose theme section title"
+  },
+  "light": "Light",
+  "@light": {
+    "description": "Light theme label"
+  },
+  "dark": "Dark",
+  "@dark": {
+    "description": "Dark theme label"
+  },
+  "unableToOpenEpub": "Unable to open epub!",
+  "@unableToOpenEpub": {
+    "description": "Error opening epub"
+  },
+  "errorLoadingBook": "Error loading book: {error}",
+  "@errorLoadingBook": {
+    "description": "Error loading book message",
+    "placeholders": {
+      "error": {
+        "type": "String",
+        "description": "The error message"
+      }
+    }
+  },
+  "readerControls": "Reader Controls",
+  "@readerControls": {
+    "description": "Reader help overlay title"
+  },
+  "arrowKeys": "Arrow Keys",
+  "@arrowKeys": {
+    "description": "Arrow keys control label"
+  },
+  "tapSides": "Tap Sides",
+  "@tapSides": {
+    "description": "Tap sides control label"
+  },
+  "useArrowKeysToTurnPages": "Use Left/Right arrows to turn pages",
+  "@useArrowKeysToTurnPages": {
+    "description": "Arrow keys description"
+  },
+  "tapEdgesToTurnPages": "Tap left/right edges to turn pages",
+  "@tapEdgesToTurnPages": {
+    "description": "Tap edges description"
+  },
+  "zoom": "Zoom",
+  "@zoom": {
+    "description": "Zoom control label"
+  },
+  "useProvidedControls": "Use provided controls",
+  "@useProvidedControls": {
+    "description": "Use provided controls description"
+  },
+  "pinchToZoomPdf": "Pinch to zoom (PDF)",
+  "@pinchToZoomPdf": {
+    "description": "Pinch to zoom description"
+  },
+  "tableOfContentsViaSidebar": "Table of Contents via sidebar",
+  "@tableOfContentsViaSidebar": {
+    "description": "Table of contents description"
+  },
+  "tapCenterOrSwipeForMenu": "Tap center or swipe for menu",
+  "@tapCenterOrSwipeForMenu": {
+    "description": "Tap center for menu description"
+  },
+  "gotIt": "Got it!",
+  "@gotIt": {
+    "description": "Got it button"
+  },
+  "sortOptions": "Sort Options",
+  "@sortOptions": {
+    "description": "Sort options dialog title"
+  },
+  "sortByName": "Sort by Name",
+  "@sortByName": {
+    "description": "Sort by name option"
+  },
+  "sortBySize": "Sort by Size",
+  "@sortBySize": {
+    "description": "Sort by size option"
+  },
+  "sortByFileType": "Sort by File Type",
+  "@sortByFileType": {
+    "description": "Sort by file type option"
+  },
+  "sortByDate": "Sort by Date",
+  "@sortByDate": {
+    "description": "Sort by date option"
+  },
+  "sortDescending": "Sort Descending",
+  "@sortDescending": {
+    "description": "Sort descending toggle"
+  },
+  "sortAscending": "Sort Ascending",
+  "@sortAscending": {
+    "description": "Sort ascending toggle"
+  },
+  "apply": "Apply",
+  "@apply": {
+    "description": "Apply button"
+  },
+  "noBooksFound": "No books found",
+  "@noBooksFound": {
+    "description": "No books found message"
+  },
+  "noBooksFoundMatching": "No books found matching \"{query}\"",
+  "@noBooksFoundMatching": {
+    "description": "No books found matching query",
+    "placeholders": {
+      "query": {
+        "type": "String",
+        "description": "The search query"
+      }
+    }
+  },
+  "searchBooks": "Search books...",
+  "@searchBooks": {
+    "description": "Search books hint"
+  },
+  "bookmarks": "Bookmarks",
+  "@bookmarks": {
+    "description": "Bookmarks section title"
+  },
+  "recentlyViewed": "Recently Viewed",
+  "@recentlyViewed": {
+    "description": "Recently viewed section title"
+  },
+  "noBookmarksYet": "No bookmarks yet",
+  "@noBookmarksYet": {
+    "description": "No bookmarks message"
+  },
+  "noRecentlyViewedBooks": "No recently viewed books",
+  "@noRecentlyViewedBooks": {
+    "description": "No recently viewed books message"
+  },
+  "removeBookmark": "Remove Bookmark",
+  "@removeBookmark": {
+    "description": "Remove bookmark button"
+  },
+  "removeFromHistory": "Remove from History",
+  "@removeFromHistory": {
+    "description": "Remove from history button"
+  },
+  "openWithExternalApp": "Open with external app",
+  "@openWithExternalApp": {
+    "description": "Open with external app option"
+  },
+  "deleteFile": "Delete File",
+  "@deleteFile": {
+    "description": "Delete file option"
+  },
+  "bookInfo": "Book Info",
+  "@bookInfo": {
+    "description": "Book info page title"
+  },
+  "fileInfo": "File Info",
+  "@fileInfo": {
+    "description": "File info section title"
+  },
+  "fileName": "File Name",
+  "@fileName": {
+    "description": "File name label"
+  },
+  "fileSize": "File Size",
+  "@fileSize": {
+    "description": "File size label"
+  },
+  "fileType": "File Type",
+  "@fileType": {
+    "description": "File type label"
+  },
+  "lastModified": "Last Modified",
+  "@lastModified": {
+    "description": "Last modified label"
+  },
+  "lastOpened": "Last Opened",
+  "@lastOpened": {
+    "description": "Last opened label"
+  },
+  "openFile": "Open File",
+  "@openFile": {
+    "description": "Open file button"
+  },
+  "shareFile": "Share File",
+  "@shareFile": {
+    "description": "Share file button"
+  },
+  "deleteFilePermanently": "Delete File Permanently",
+  "@deleteFilePermanently": {
+    "description": "Delete file permanently button"
+  },
+  "areYouSureDeleteFile": "Are you sure you want to delete this file?",
+  "@areYouSureDeleteFile": {
+    "description": "Delete file confirmation"
+  },
+  "fileDeleted": "File deleted",
+  "@fileDeleted": {
+    "description": "File deleted message"
+  },
+  "fileDeletedError": "Error deleting file",
+  "@fileDeletedError": {
+    "description": "File deletion error"
+  },
+  "shareVia": "Share via",
+  "@shareVia": {
+    "description": "Share via dialog title"
+  },
+  "openWith": "Open with",
+  "@openWith": {
+    "description": "Open with dialog title"
+  },
+  "selectApp": "Select an app to open this file",
+  "@selectApp": {
+    "description": "Select app description"
+  },
+  "noAppsFound": "No apps found to open this file",
+  "@noAppsFound": {
+    "description": "No apps found message"
+  },
+  "fileOpenError": "Error opening file",
+  "@fileOpenError": {
+    "description": "File open error"
+  },
+  "fileShareError": "Error sharing file",
+  "@fileShareError": {
+    "description": "File share error"
+  },
+  "fileInfoError": "Error getting file info",
+  "@fileInfoError": {
+    "description": "File info error"
+  },
+  "fileInfoUnavailable": "File info unavailable",
+  "@fileInfoUnavailable": {
+    "description": "File info unavailable"
+  },
+  "unknownFileType": "Unknown file type",
+  "@unknownFileType": {
+    "description": "Unknown file type"
+  },
+  "unknownFileSize": "Unknown file size",
+  "@unknownFileSize": {
+    "description": "Unknown file size"
+  },
+  "unknownDate": "Unknown date",
+  "@unknownDate": {
+    "description": "Unknown date"
+  },
+  "categories": "Categories",
+  "@categories": {
+    "description": "Categories page title"
+  },
+  "browseByCategory": "Browse by Category",
+  "@browseByCategory": {
+    "description": "Browse by category section title"
+  },
+  "viewAll": "View All",
+  "@viewAll": {
+    "description": "View all button"
+  },
+  "noBooksInCategory": "No books in this category",
+  "@noBooksInCategory": {
+    "description": "No books in category message"
+  },
+  "categoryNotFound": "Category not found",
+  "@categoryNotFound": {
+    "description": "Category not found message"
+  },
+  "loadingCategories": "Loading categories...",
+  "@loadingCategories": {
+    "description": "Loading categories message"
+  },
+  "errorLoadingCategories": "Error loading categories",
+  "@errorLoadingCategories": {
+    "description": "Error loading categories message"
+  },
+  "retryLoadingCategories": "Retry",
+  "@retryLoadingCategories": {
+    "description": "Retry loading categories button"
+  },
+  "noCategoriesAvailable": "No categories available",
+  "@noCategoriesAvailable": {
+    "description": "No categories available message"
+  },
+  "filterByCategory": "Filter by Category",
+  "@filterByCategory": {
+    "description": "Filter by category label"
+  },
+  "allCategories": "All Categories",
+  "@allCategories": {
+    "description": "All categories option"
+  },
+  "selectedCategory": "Selected: {category}",
+  "@selectedCategory": {
+    "description": "Selected category text",
+    "placeholders": {
+      "category": {
+        "type": "String",
+        "description": "The category name"
+      }
+    }
+  },
+  "noResultsInCategory": "No results in this category",
+  "@noResultsInCategory": {
+    "description": "No results in category message"
+  },
+  "tryDifferentCategory": "Try a different category",
+  "@tryDifferentCategory": {
+    "description": "Try different category suggestion"
+  },
+  "backToCategories": "Back to Categories",
+  "@backToCategories": {
+    "description": "Back to categories button"
+  },
+  "categoryDescription": "Category Description",
+  "@categoryDescription": {
+    "description": "Category description label"
+  },
+  "booksInCategory": "{count} books in this category",
+  "@booksInCategory": {
+    "description": "Books in category count",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "description": "The number of books"
+      }
+    }
+  },
+  "sortCategories": "Sort Categories",
+  "@sortCategories": {
+    "description": "Sort categories label"
+  },
+  "sortByNameAZ": "Name (A-Z)",
+  "@sortByNameAZ": {
+    "description": "Sort by name A-Z"
+  },
+  "sortByNameZA": "Name (Z-A)",
+  "@sortByNameZA": {
+    "description": "Sort by name Z-A"
+  },
+  "sortByBookCount": "Book Count",
+  "@sortByBookCount": {
+    "description": "Sort by book count"
+  },
+  "noSubcategories": "No subcategories",
+  "@noSubcategories": {
+    "description": "No subcategories message"
+  },
+  "subcategories": "Subcategories",
+  "@subcategories": {
+    "description": "Subcategories label"
+  },
+  "expandCategory": "Expand Category",
+  "@expandCategory": {
+    "description": "Expand category button"
+  },
+  "collapseCategory": "Collapse Category",
+  "@collapseCategory": {
+    "description": "Collapse category button"
+  },
+  "categoryEmpty": "This category is empty",
+  "@categoryEmpty": {
+    "description": "Category empty message"
+  },
+  "addBooksToCategory": "Add books to this category",
+  "@addBooksToCategory": {
+    "description": "Add books to category suggestion"
+  },
+  "categorySettings": "Category Settings",
+  "@categorySettings": {
+    "description": "Category settings label"
+  },
+  "customizeCategoryView": "Customize how categories are displayed",
+  "@customizeCategoryView": {
+    "description": "Customize category view description"
+  },
+  "showEmptyCategories": "Show Empty Categories",
+  "@showEmptyCategories": {
+    "description": "Show empty categories toggle"
+  },
+  "hideEmptyCategories": "Hide Empty Categories",
+  "@hideEmptyCategories": {
+    "description": "Hide empty categories toggle"
+  },
+  "gridView": "Grid View",
+  "@gridView": {
+    "description": "Grid view option"
+  },
+  "listView": "List View",
+  "@listView": {
+    "description": "List view option"
+  },
+  "compactView": "Compact View",
+  "@compactView": {
+    "description": "Compact view option"
+  },
+  "categoryViewMode": "Category View Mode",
+  "@categoryViewMode": {
+    "description": "Category view mode label"
+  },
+  "selectViewMode": "Select how categories are displayed",
+  "@selectViewMode": {
+    "description": "Select view mode description"
+  },
+  "categoryLayout": "Category Layout",
+  "@categoryLayout": {
+    "description": "Category layout label"
+  },
+  "categoryDisplayOptions": "Category Display Options",
+  "@categoryDisplayOptions": {
+    "description": "Category display options label"
+  },
+  "showCategoryIcons": "Show Category Icons",
+  "@showCategoryIcons": {
+    "description": "Show category icons toggle"
+  },
+  "showCategoryCount": "Show Book Count",
+  "@showCategoryCount": {
+    "description": "Show book count toggle"
+  },
+  "showCategoryDescription": "Show Category Description",
+  "@showCategoryDescription": {
+    "description": "Show category description toggle"
+  },
+  "categoryIconSize": "Category Icon Size",
+  "@categoryIconSize": {
+    "description": "Category icon size label"
+  },
+  "small": "Small",
+  "@small": {
+    "description": "Small size option"
+  },
+  "medium": "Medium",
+  "@medium": {
+    "description": "Medium size option"
+  },
+  "large": "Large",
+  "@large": {
+    "description": "Large size option"
+  },
+  "categoryColor": "Category Color",
+  "@categoryColor": {
+    "description": "Category color label"
+  },
+  "useDefaultColor": "Use Default Color",
+  "@useDefaultColor": {
+    "description": "Use default color option"
+  },
+  "customColor": "Custom Color",
+  "@customColor": {
+    "description": "Custom color option"
+  },
+  "resetCategorySettings": "Reset Category Settings",
+  "@resetCategorySettings": {
+    "description": "Reset category settings button"
+  },
+  "resetToDefaultCategorySettings": "Reset to default category settings?",
+  "@resetToDefaultCategorySettings": {
+    "description": "Reset category settings confirmation"
+  },
+  "categorySettingsReset": "Category settings reset",
+  "@categorySettingsReset": {
+    "description": "Category settings reset message"
+  },
+  "categorySettingsSaved": "Category settings saved",
+  "@categorySettingsSaved": {
+    "description": "Category settings saved message"
+  },
+  "categorySettingsError": "Error saving category settings",
+  "@categorySettingsError": {
+    "description": "Category settings error"
+  },
+  "noDescription": "No description",
+  "@noDescription": {
+    "description": "No description text"
+  },
+  "tapToViewBooks": "Tap to view books",
+  "@tapToViewBooks": {
+    "description": "Tap to view books hint"
+  },
+  "longPressForOptions": "Long press for options",
+  "@longPressForOptions": {
+    "description": "Long press for options hint"
+  },
+  "swipeToNavigate": "Swipe to navigate",
+  "@swipeToNavigate": {
+    "description": "Swipe to navigate hint"
+  },
+  "pullToRefresh": "Pull to refresh",
+  "@pullToRefresh": {
+    "description": "Pull to refresh hint"
+  },
+  "loadingMore": "Loading more...",
+  "@loadingMore": {
+    "description": "Loading more message"
+  },
+  "endOfList": "End of list",
+  "@endOfList": {
+    "description": "End of list message"
+  },
+  "errorLoadingMore": "Error loading more items",
+  "@errorLoadingMore": {
+    "description": "Error loading more items"
+  },
+  "retryLoading": "Retry Loading",
+  "@retryLoading": {
+    "description": "Retry loading button"
+  },
+  "noMoreItems": "No more items to load",
+  "@noMoreItems": {
+    "description": "No more items message"
+  },
+  "scrollToTop": "Scroll to Top",
+  "@scrollToTop": {
+    "description": "Scroll to top button"
+  },
+  "scrollToBottom": "Scroll to Bottom",
+  "@scrollToBottom": {
+    "description": "Scroll to bottom button"
+  },
+  "pageCounter": "Page {current} of {total}",
+  "@pageCounter": {
+    "description": "Page counter text",
+    "placeholders": {
+      "current": {
+        "type": "String",
+        "description": "Current page number"
+      },
+      "total": {
+        "type": "String",
+        "description": "Total pages"
+      }
+    }
+  },
+  "goToPage": "Go to Page",
+  "@goToPage": {
+    "description": "Go to page label"
+  },
+  "enterPageNumber": "Enter page number",
+  "@enterPageNumber": {
+    "description": "Enter page number hint"
+  },
+  "invalidPageNumber": "Invalid page number",
+  "@invalidPageNumber": {
+    "description": "Invalid page number error"
+  },
+  "pageNotFound": "Page not found",
+  "@pageNotFound": {
+    "description": "Page not found message"
+  },
+  "loadingPage": "Loading page...",
+  "@loadingPage": {
+    "description": "Loading page message"
+  },
+  "errorLoadingPage": "Error loading page",
+  "@errorLoadingPage": {
+    "description": "Error loading page message"
+  },
+  "pageLoadTimeout": "Page load timeout",
+  "@pageLoadTimeout": {
+    "description": "Page load timeout message"
+  },
+  "retryPageLoad": "Retry Page Load",
+  "@retryPageLoad": {
+    "description": "Retry page load button"
+  },
+  "pageNavigation": "Page Navigation",
+  "@pageNavigation": {
+    "description": "Page navigation label"
+  },
+  "previousPage": "Previous Page",
+  "@previousPage": {
+    "description": "Previous page button"
+  },
+  "nextPage": "Next Page",
+  "@nextPage": {
+    "description": "Next page button"
+  },
+  "firstPage": "First Page",
+  "@firstPage": {
+    "description": "First page button"
+  },
+  "lastPage": "Last Page",
+  "@lastPage": {
+    "description": "Last page button"
+  },
+  "jumpToPage": "Jump to Page",
+  "@jumpToPage": {
+    "description": "Jump to page button"
+  },
+  "pageHistory": "Page History",
+  "@pageHistory": {
+    "description": "Page history label"
+  },
+  "goBack": "Go Back",
+  "@goBack": {
+    "description": "Go back button"
+  },
+  "goForward": "Go Forward",
+  "@goForward": {
+    "description": "Go forward button"
+  },
+  "clearHistory": "Clear History",
+  "@clearHistory": {
+    "description": "Clear history button"
+  },
+  "historyCleared": "History cleared",
+  "@historyCleared": {
+    "description": "History cleared message"
+  },
+  "noHistory": "No history available",
+  "@noHistory": {
+    "description": "No history message"
+  },
+  "pageZoom": "Page Zoom",
+  "@pageZoom": {
+    "description": "Page zoom label"
+  },
+  "zoomIn": "Zoom In",
+  "@zoomIn": {
+    "description": "Zoom in button"
+  },
+  "zoomOut": "Zoom Out",
+  "@zoomOut": {
+    "description": "Zoom out button"
+  },
+  "resetZoom": "Reset Zoom",
+  "@resetZoom": {
+    "description": "Reset zoom button"
+  },
+  "fitWidth": "Fit Width",
+  "@fitWidth": {
+    "description": "Fit width button"
+  },
+  "fitHeight": "Fit Height",
+  "@fitHeight": {
+    "description": "Fit height button"
+  },
+  "fitPage": "Fit Page",
+  "@fitPage": {
+    "description": "Fit page button"
+  },
+  "actualSize": "Actual Size",
+  "@actualSize": {
+    "description": "Actual size button"
+  },
+  "zoomLevel": "Zoom Level: {level}%",
+  "@zoomLevel": {
+    "description": "Zoom level text",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "description": "The zoom level percentage"
+      }
+    }
+  },
+  "zoomToFit": "Zoom to Fit",
+  "@zoomToFit": {
+    "description": "Zoom to fit button"
+  },
+  "zoomToFill": "Zoom to Fill",
+  "@zoomToFill": {
+    "description": "Zoom to fill button"
+  },
+  "zoomToFitWidth": "Zoom to Fit Width",
+  "@zoomToFitWidth": {
+    "description": "Zoom to fit width button"
+  },
+  "zoomToFitHeight": "Zoom to Fit Height",
+  "@zoomToFitHeight": {
+    "description": "Zoom to fit height button"
+  },
+  "zoomToOriginalSize": "Zoom to Original Size",
+  "@zoomToOriginalSize": {
+    "description": "Zoom to original size button"
+  },
+  "zoomToCustomLevel": "Zoom to Custom Level",
+  "@zoomToCustomLevel": {
+    "description": "Zoom to custom level button"
+  },
+  "zoomToSelection": "Zoom to Selection",
+  "@zoomToSelection": {
+    "description": "Zoom to selection button"
+  },
+  "zoomToFitContent": "Zoom to Fit Content",
+  "@zoomToFitContent": {
+    "description": "Zoom to fit content button"
+  },
+  "zoomToFitPage": "Zoom to Fit Page",
+  "@zoomToFitPage": {
+    "description": "Zoom to fit page button"
+  },
+  "zoomToFitWidthAndHeight": "Zoom to Fit Width and Height",
+  "@zoomToFitWidthAndHeight": {
+    "description": "Zoom to fit width and height button"
+  },
+  "zoomToOriginal": "Zoom to Original",
+  "@zoomToOriginal": {
+    "description": "Zoom to original button"
+  },
+  "zoomToCustom": "Zoom to Custom",
+  "@zoomToCustom": {
+    "description": "Zoom to custom button"
+  },
+  "zoomToSelectionArea": "Zoom to Selection Area",
+  "@zoomToSelectionArea": {
+    "description": "Zoom to selection area button"
+  },
+  "zoomToFitAllContent": "Zoom to Fit All Content",
+  "@zoomToFitAllContent": {
+    "description": "Zoom to fit all content button"
+  },
+  "zoomToFitEntirePage": "Zoom to Fit Entire Page",
+  "@zoomToFitEntirePage": {
+    "description": "Zoom to fit entire page button"
+  },
+  "zoomToFitWidthAndHeightRatio": "Zoom to Fit Width and Height Ratio",
+  "@zoomToFitWidthAndHeightRatio": {
+    "description": "Zoom to fit width and height ratio button"
+  },
+  "zoomToOriginalAspectRatio": "Zoom to Original Aspect Ratio",
+  "@zoomToOriginalAspectRatio": {
+    "description": "Zoom to original aspect ratio button"
+  },
+  "zoomToCustomAspectRatio": "Zoom to Custom Aspect Ratio",
+  "@zoomToCustomAspectRatio": {
+    "description": "Zoom to custom aspect ratio button"
+  },
+  "zoomToSelectionBounds": "Zoom to Selection Bounds",
+  "@zoomToSelectionBounds": {
+    "description": "Zoom to selection bounds button"
+  },
+  "zoomToFitContentBounds": "Zoom to Fit Content Bounds",
+  "@zoomToFitContentBounds": {
+    "description": "Zoom to fit content bounds button"
+  },
+  "zoomToFitPageBounds": "Zoom to Fit Page Bounds",
+  "@zoomToFitPageBounds": {
+    "description": "Zoom to fit page bounds button"
+  },
+  "zoomToFitWidthAndHeightBounds": "Zoom to Fit Width and Height Bounds",
+  "@zoomToFitWidthAndHeightBounds": {
+    "description": "Zoom to fit width and height bounds button"
+  },
+  "zoomToOriginalBounds": "Zoom to Original Bounds",
+  "@zoomToOriginalBounds": {
+    "description": "Zoom to original bounds button"
+  },
+  "zoomToCustomBounds": "Zoom to Custom Bounds",
+  "@zoomToCustomBounds": {
+    "description": "Zoom to custom bounds button"
+  },
+  "zoomToSelectionAreaBounds": "Zoom to Selection Area Bounds",
+  "@zoomToSelectionAreaBounds": {
+    "description": "Zoom to selection area bounds button"
+  },
+  "zoomToFitAllContentBounds": "Zoom to Fit All Content Bounds",
+  "@zoomToFitAllContentBounds": {
+    "description": "Zoom to fit all content bounds button"
+  },
+  "zoomToFitEntirePageBounds": "Zoom to Fit Entire Page Bounds",
+  "@zoomToFitEntirePageBounds": {
+    "description": "Zoom to fit entire page bounds button"
+  },
+  "zoomToFitWidthAndHeightRatioBounds": "Zoom to Fit Width and Height Ratio Bounds",
+  "@zoomToFitWidthAndHeightRatioBounds": {
+    "description": "Zoom to fit width and height ratio bounds button"
+  },
+  "zoomToOriginalAspectRatioBounds": "Zoom to Original Aspect Ratio Bounds",
+  "@zoomToOriginalAspectRatioBounds": {
+    "description": "Zoom to original aspect ratio bounds button"
+  },
+  "zoomToCustomAspectRatioBounds": "Zoom to Custom Aspect Ratio Bounds",
+  "@zoomToCustomAspectRatioBounds": {
+    "description": "Zoom to custom aspect ratio bounds button"
+  }
+}

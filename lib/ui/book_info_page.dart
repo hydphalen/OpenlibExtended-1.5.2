@@ -1,0 +1,768 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+// Package imports:
+import 'package:dio/dio.dart' show CancelToken;
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
+import 'package:openlib/services/annas_archieve.dart';
+import 'package:openlib/services/database.dart';
+import 'package:openlib/services/download_file.dart';
+import 'package:openlib/services/download_manager.dart';
+import 'package:openlib/services/platform_utils.dart';
+import 'package:openlib/services/share_book.dart';
+import 'package:openlib/ui/components/book_info_widget.dart';
+import 'package:openlib/ui/components/error_widget.dart';
+import 'package:openlib/ui/components/file_buttons_widget.dart';
+import 'package:openlib/ui/components/snack_bar_widget.dart';
+import 'package:openlib/ui/webview_page.dart';
+import 'package:openlib/state/state.dart'
+    show
+        bookInfoProvider,
+        totalFileSizeInBytes,
+        downloadedFileSizeInBytes,
+        downloadProgressProvider,
+        getTotalFileSize,
+        getDownloadedFileSize,
+        cancelCurrentDownload,
+        mirrorStatusProvider,
+        ProcessState,
+        CheckSumProcessState,
+        downloadState,
+        checkSumState,
+        checkIdExists,
+        getBookByIdProvider,
+        myLibraryProvider,
+        showManualDownloadButtonProvider,
+        downloadManagerProvider,
+        donationKeyProvider;
+
+class BookInfoPage extends ConsumerWidget {
+  const BookInfoPage({super.key, required this.url});
+
+  final String url;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final bookInfo = ref.watch(bookInfoProvider(url));
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        title: const Text("OpenlibExtended"),
+        titleTextStyle: Theme.of(context).textTheme.displayLarge,
+        actions: [
+          bookInfo.maybeWhen(data: (data) {
+            return IconButton(
+              icon: Icon(
+                Icons.share_sharp,
+                color: Theme.of(context).colorScheme.tertiary,
+              ),
+              iconSize: 19.0,
+              onPressed: () async {
+                await shareBook(data.title, data.link, data.thumbnail ?? '');
+              },
+            );
+          }, orElse: () {
+            return const SizedBox.shrink();
+          })
+        ],
+      ),
+      body: bookInfo.when(
+        skipLoadingOnRefresh: false,
+        data: (data) {
+          return BookInfoWidget(
+              data: data, child: ActionButtonWidget(data: data));
+        },
+        error: (err, _) {
+          return CustomErrorWidget(
+            error: err,
+            stackTrace: _,
+            onRefresh: () {
+              ref.invalidate(bookInfoProvider(url));
+            },
+          );
+        },
+        loading: () {
+          return Center(
+              child: SizedBox(
+            width: 25,
+            height: 25,
+            child: CircularProgressIndicator(
+              color: Theme.of(context).colorScheme.secondary,
+              strokeCap: StrokeCap.round,
+            ),
+          ));
+        },
+      ),
+    );
+  }
+}
+
+class ActionButtonWidget extends ConsumerStatefulWidget {
+  const ActionButtonWidget({super.key, required this.data});
+  final BookInfoData data;
+
+  @override
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _ActionButtonWidgetState();
+}
+
+class _ActionButtonWidgetState extends ConsumerState<ActionButtonWidget> {
+  @override
+  Widget build(BuildContext context) {
+    final isBookExist = ref.watch(checkIdExists(widget.data.md5));
+    final bookData = ref.watch(getBookByIdProvider(widget.data.md5));
+
+    return isBookExist.when(
+      data: (isExists) {
+        if (isExists) {
+          // Get fileName from database for existing books
+          final fileName = bookData.whenOrNull(data: (book) => book?.fileName);
+          return FileOpenAndDeleteButtons(
+            id: widget.data.md5,
+            format: widget.data.format!,
+            fileName: fileName,
+            onDelete: () async {
+              await Future.delayed(const Duration(seconds: 1));
+              // ignore: unused_result
+              ref.refresh(checkIdExists(widget.data.md5));
+              // ignore: unused_result
+              ref.refresh(getBookByIdProvider(widget.data.md5));
+            },
+          );
+        } else {
+          final showManualButton = ref.watch(showManualDownloadButtonProvider);
+
+          return Padding(
+            padding: const EdgeInsets.only(top: 21, bottom: 21),
+            child: Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                // Button for "Add To My Library" (background download)
+                TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Theme.of(context).colorScheme.secondary,
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    textStyle: const TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                    ),
+                  ),
+                  onPressed: () async {
+                    String? downloadUrl = widget.data.mirror;
+                    bool isFastDownload = widget.data.isFastDownload;
+
+                    // Try to fetch fast download link if key is present and not already fast
+                    final donationKey = ref.read(donationKeyProvider);
+                    if (donationKey.isNotEmpty && !isFastDownload) {
+                      try {
+                        final annasArchive = AnnasArchieve();
+                        final fastLink = await annasArchive.getFastDownloadUrl(
+                            widget.data.md5, donationKey);
+                        if (fastLink != null) {
+                          downloadUrl = fastLink;
+                          isFastDownload = true;
+                        }
+                      } catch (e) {
+                        // Fallback to normal mirror
+                      }
+                    }
+
+                    if (downloadUrl != null && downloadUrl != '') {
+                      // On Linux, use WebView UI flow since headless webview is not supported
+                      // Unless it is a fast download (isDirectLink), which doesn't need scraping
+                      if (PlatformUtils.isLinux && !isFastDownload) {
+                        // Navigate to webview page to get mirrors
+                        final List<String>? mirrors = await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                Webview(url: downloadUrl!),
+                          ),
+                        );
+
+                        if (mirrors != null &&
+                            mirrors.isNotEmpty &&
+                            context.mounted) {
+                          // Start download with fetched mirrors
+                          final downloadManager =
+                              ref.read(downloadManagerProvider);
+                          final task = DownloadTask(
+                            id: '${widget.data.md5}_${DateTime.now().millisecondsSinceEpoch}',
+                            md5: widget.data.md5,
+                            title: widget.data.title,
+                            author: widget.data.author,
+                            thumbnail: widget.data.thumbnail,
+                            publisher: widget.data.publisher,
+                            info: widget.data.info,
+                            format: widget.data.format!,
+                            description: widget.data.description,
+                            link: widget.data.link,
+                            mirrors: mirrors,
+                          );
+
+                          await downloadManager.addDownload(task);
+
+                                                    if (context.mounted) {
+                            final message = isFastDownload
+                                ? AppLocalizations.of(context)!.fastDownloadStartedInBackground
+                                : AppLocalizations.of(context)!.downloadStartedInBackground;
+                            showSnackBar(
+                              context: context,
+                              message: message,
+                            );
+                          }
+                          ref.invalidate(myLibraryProvider);
+                        }
+                      } else {
+                        // Other platforms (or fast download on Linux): use background fetch
+                        final downloadManager =
+                            ref.read(downloadManagerProvider);
+                        final task = DownloadTask(
+                          id: '${widget.data.md5}_${DateTime.now().millisecondsSinceEpoch}',
+                          md5: widget.data.md5,
+                          title: widget.data.title,
+                          author: widget.data.author,
+                          thumbnail: widget.data.thumbnail,
+                          publisher: widget.data.publisher,
+                          info: widget.data.info,
+                          format: widget.data.format!,
+                          description: widget.data.description,
+                          link: widget.data.link,
+                          mirrors: [], // Will be fetched in background
+                          mirrorUrl: downloadUrl, // Store mirror URL for retry
+                          isDirectLink: isFastDownload,
+                        );
+
+                        await downloadManager.addDownloadWithMirrorUrl(
+                          task,
+                          downloadUrl,
+                        );
+
+                        if (context.mounted) {
+                                                    final message = isFastDownload
+                              ? AppLocalizations.of(context)!.fastDownloadStartedInBackground
+                              : AppLocalizations.of(context)!.downloadStartedInBackground;
+                          showSnackBar(
+                            context: context,
+                            message: message,
+                          );
+                          ref.invalidate(myLibraryProvider);
+                        }
+                      }
+                    } else {
+                      showSnackBar(
+                          context: context, message: AppLocalizations.of(context)!.noMirrorsAvailable);
+                    }
+                  },
+                  child: Text(AppLocalizations.of(context)!.addToMyLibrary),
+                ),
+                // Button for "Manual Download" (opens webview for captcha) - only shown if setting is enabled
+                if (showManualButton)
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: Theme.of(context)
+                          .colorScheme
+                          .tertiary
+                          .withValues(alpha: 0.2),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 8),
+                      textStyle: const TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                    onPressed: () async {
+                      if (widget.data.mirror != null &&
+                          widget.data.mirror != '') {
+                        // Navigate to webview page
+                        final List<String>? mirrors = await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                Webview(url: widget.data.mirror!),
+                          ),
+                        );
+
+                        if (mirrors != null &&
+                            mirrors.isNotEmpty &&
+                            context.mounted) {
+                          // Start download in background with fetched mirrors
+                          final downloadManager =
+                              ref.read(downloadManagerProvider);
+                          final task = DownloadTask(
+                            id: '${widget.data.md5}_${DateTime.now().millisecondsSinceEpoch}',
+                            md5: widget.data.md5,
+                            title: widget.data.title,
+                            author: widget.data.author,
+                            thumbnail: widget.data.thumbnail,
+                            publisher: widget.data.publisher,
+                            info: widget.data.info,
+                            format: widget.data.format!,
+                            description: widget.data.description,
+                            link: widget.data.link,
+                            mirrors: mirrors, // Use manually fetched mirrors
+                          );
+
+                                                    await downloadManager.addDownload(task);
+
+                          if (context.mounted) {
+                            showSnackBar(
+                              context: context,
+                              message: AppLocalizations.of(context)!.downloadStartedInBackground,
+                            );
+                          }
+                          ref.invalidate(myLibraryProvider);
+                        }
+                      } else {
+                        showSnackBar(
+                            context: context, message: AppLocalizations.of(context)!.noMirrorsAvailable);
+                      }
+                    },
+                    child: Text(
+                      AppLocalizations.of(context)!.manualDownload,
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary,
+                      ),
+                    ),
+                  )
+              ],
+            ),
+          );
+        }
+      },
+      error: (error, stackTrace) {
+        return Text(error.toString());
+      },
+      loading: () {
+        return CircularProgressIndicator(
+          color: Theme.of(context).colorScheme.secondary,
+          strokeCap: StrokeCap.round,
+        );
+      },
+    );
+  }
+}
+
+Future<void> downloadFileWidget(WidgetRef ref, BuildContext context,
+    BookInfoData data, List<String> mirrors) async {
+  showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return _ShowDialog(title: data.title);
+      });
+
+  String? downloadedFileName;
+
+  downloadFile(
+      mirrors: mirrors,
+      md5: data.md5,
+      format: data.format!,
+      title: data.title,
+      author: data.author,
+      info: data.info,
+      onStart: () {
+        ref.read(downloadState.notifier).state = ProcessState.running;
+      },
+      onFileName: (String fileName) {
+        downloadedFileName = fileName;
+      },
+      onProgress: (int rcv, int total) async {
+        if (ref.read(totalFileSizeInBytes) != total) {
+          ref.read(totalFileSizeInBytes.notifier).state = total;
+        }
+        ref.read(downloadedFileSizeInBytes.notifier).state = rcv;
+        ref.read(downloadProgressProvider.notifier).state = rcv / total;
+
+        if (rcv / total == 1.0) {
+          MyLibraryDb dataBase = MyLibraryDb.instance;
+
+          await dataBase.insert(MyBook(
+              id: data.md5,
+              title: data.title,
+              author: data.author,
+              thumbnail: data.thumbnail,
+              link: data.link,
+              publisher: data.publisher,
+              info: data.info,
+              format: data.format,
+              description: data.description,
+              fileName: downloadedFileName));
+
+          ref.read(downloadState.notifier).state = ProcessState.complete;
+          ref.read(checkSumState.notifier).state = CheckSumProcessState.running;
+
+          try {
+            final checkSum = await verifyFileCheckSum(
+                md5Hash: data.md5,
+                fileName: downloadedFileName ?? "${data.md5}.${data.format}");
+            if (checkSum == true) {
+              ref.read(checkSumState.notifier).state =
+                  CheckSumProcessState.success;
+            } else {
+              ref.read(checkSumState.notifier).state =
+                  CheckSumProcessState.failed;
+            }
+          } catch (_) {
+            ref.read(checkSumState.notifier).state =
+                CheckSumProcessState.failed;
+          }
+                    // ignore: unused_result
+          ref.refresh(checkIdExists(data.md5));
+          ref.invalidate(myLibraryProvider);
+          // ignore: use_build_context_synchronously
+          showSnackBar(context: context, message: AppLocalizations.of(context)!.bookHasBeenDownloaded);
+        }
+      },
+      cancelDownlaod: (CancelToken downloadToken) {
+        ref.read(cancelCurrentDownload.notifier).state = downloadToken;
+      },
+      mirrorStatus: (val) {
+        ref.read(mirrorStatusProvider.notifier).state = val;
+      },
+      onDownlaodFailed: (msg) {
+        Navigator.of(context).pop();
+        showSnackBar(context: context, message: msg.toString());
+      });
+}
+
+class _ShowDialog extends ConsumerWidget {
+  final String title;
+
+  const _ShowDialog({required this.title});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final downloadProgress = ref.watch(downloadProgressProvider);
+    final fileSize = ref.watch(getTotalFileSize);
+    final downloadedFileSize = ref.watch(getDownloadedFileSize);
+    final mirrorStatus = ref.watch(mirrorStatusProvider);
+    final downloadProcessState = ref.watch(downloadState);
+    final checkSumVerifyState = ref.watch(checkSumState);
+
+    if (downloadProgress == 1.0 &&
+        (checkSumVerifyState == CheckSumProcessState.failed ||
+            checkSumVerifyState == CheckSumProcessState.success)) {
+      Future.delayed(const Duration(seconds: 1), () {
+        if (!context.mounted) return;
+        Navigator.of(context).pop();
+        if (checkSumVerifyState == CheckSumProcessState.failed) {
+          _showWarningFileDialog(context);
+        }
+      });
+    }
+
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Container(
+            width: double.infinity,
+            height: 345,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: Theme.of(context).colorScheme.tertiaryContainer,
+            ),
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Text(
+                      AppLocalizations.of(context)!.downloadingBook,
+                      style: TextStyle(
+                          fontSize: 19,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.tertiary,
+                          decoration: TextDecoration.none),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Text(
+                      title,
+                      style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context)
+                              .colorScheme
+                              .tertiary
+                              .withAlpha(170),
+                          decoration: TextDecoration.none),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      textAlign: TextAlign.start,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          mirrorStatus
+                              ? const Icon(
+                                  Icons.check_circle,
+                                  size: 15,
+                                  color: Colors.green,
+                                )
+                              : SizedBox(
+                                  width: 9,
+                                  height: 9,
+                                  child: CircularProgressIndicator(
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                    strokeWidth: 2.5,
+                                    strokeCap: StrokeCap.round,
+                                  ),
+                                ),
+                          const SizedBox(
+                            width: 3,
+                          ),
+                          Text(
+                            AppLocalizations.of(context)!.checkingMirrorAvailability,
+                            style: TextStyle(
+                                fontSize: 11.5,
+                                fontWeight: FontWeight.bold,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .tertiary
+                                    .withAlpha(140),
+                                decoration: TextDecoration.none),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                            textAlign: TextAlign.start,
+                          ),
+                        ]),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          switch (downloadProcessState) {
+                            ProcessState.waiting => Icon(
+                                Icons.timer_sharp,
+                                size: 15,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .tertiary
+                                    .withAlpha(140),
+                              ),
+                            ProcessState.running => SizedBox(
+                                width: 9,
+                                height: 9,
+                                child: CircularProgressIndicator(
+                                  color:
+                                      Theme.of(context).colorScheme.secondary,
+                                  strokeWidth: 2.5,
+                                  strokeCap: StrokeCap.round,
+                                ),
+                              ),
+                            ProcessState.complete => const Icon(
+                                Icons.check_circle,
+                                size: 15,
+                                color: Colors.green,
+                              ),
+                          },
+                          const SizedBox(
+                            width: 3,
+                          ),
+                          Text(
+                            AppLocalizations.of(context)!.downloading,
+                            style: TextStyle(
+                                fontSize: 11.5,
+                                fontWeight: FontWeight.bold,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .tertiary
+                                    .withAlpha(140),
+                                decoration: TextDecoration.none),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                            textAlign: TextAlign.start,
+                          ),
+                        ]),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          switch (checkSumVerifyState) {
+                            CheckSumProcessState.waiting => Icon(
+                                Icons.timer_sharp,
+                                size: 15,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .tertiary
+                                    .withAlpha(140),
+                              ),
+                            CheckSumProcessState.running => SizedBox(
+                                width: 9,
+                                height: 9,
+                                child: CircularProgressIndicator(
+                                  color:
+                                      Theme.of(context).colorScheme.secondary,
+                                  strokeWidth: 2.5,
+                                  strokeCap: StrokeCap.round,
+                                ),
+                              ),
+                            CheckSumProcessState.failed => const Icon(
+                                Icons.close,
+                                size: 15,
+                                color: Colors.red,
+                              ),
+                            CheckSumProcessState.success => const Icon(
+                                Icons.check_circle,
+                                size: 15,
+                                color: Colors.green,
+                              ),
+                          },
+                          const SizedBox(
+                            width: 3,
+                          ),
+                          Text(
+                            AppLocalizations.of(context)!.verifyingFileChecksum,
+                            style: TextStyle(
+                                fontSize: 11.5,
+                                fontWeight: FontWeight.bold,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .tertiary
+                                    .withAlpha(140),
+                                decoration: TextDecoration.none),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                            textAlign: TextAlign.start,
+                          ),
+                        ]),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Text(
+                          '$downloadedFileSize/$fileSize',
+                          style: TextStyle(
+                              fontSize: 9,
+                              fontWeight: FontWeight.bold,
+                              color: Theme.of(context).colorScheme.secondary,
+                              decoration: TextDecoration.none,
+                              letterSpacing: 1),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          textAlign: TextAlign.start,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.all(Radius.circular(50)),
+                      child: LinearProgressIndicator(
+                        color: Theme.of(context).colorScheme.secondary,
+                        backgroundColor: Theme.of(context)
+                            .colorScheme
+                            .tertiary
+                            .withAlpha(50),
+                        value: downloadProgress,
+                        minHeight: 4,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        TextButton(
+                          style: TextButton.styleFrom(
+                              backgroundColor:
+                                  Theme.of(context).colorScheme.secondary,
+                              textStyle: const TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                              )),
+                          onPressed: () {
+                            ref.read(cancelCurrentDownload).cancel();
+                            Navigator.of(context).pop();
+                          },
+                                                    child: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: Text(AppLocalizations.of(context)!.cancel),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+Future<void> _showWarningFileDialog(BuildContext context) async {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text(
+          AppLocalizations.of(context)!.checksumFailed,
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).colorScheme.secondary,
+              decoration: TextDecoration.none,
+              letterSpacing: 1),
+        ),
+        content: SingleChildScrollView(
+          child: ListBody(
+            children: <Widget>[
+              Text(
+                AppLocalizations.of(context)!.checksumFailedWarning,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.tertiary.withAlpha(170),
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            child: Text(
+              AppLocalizations.of(context)!.okay,
+              style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.secondary,
+                  decoration: TextDecoration.none,
+                  letterSpacing: 1),
+            ),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
