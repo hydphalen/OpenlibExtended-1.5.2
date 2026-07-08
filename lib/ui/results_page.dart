@@ -1,6 +1,6 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:openlib/gen_l10n/app_localizations.dart';
 
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -52,11 +52,11 @@ class ResultPage extends ConsumerWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: CustomScrollView(
                 slivers: <Widget>[
-                  const SliverToBoxAdapter(
+                                    SliverToBoxAdapter(
                     child: Padding(
-                      padding: EdgeInsets.only(bottom: 10),
+                      padding: const EdgeInsets.only(bottom: 10),
                       // FIX 1: Changed PageTitleWidget back to TitleText
-                      child: TitleText(AppLocalizations.of(context)!.results), 
+                      child: TitleText(AppLocalizations.of(context)!.results),
                     ),
                   ),
                   SliverList.builder(

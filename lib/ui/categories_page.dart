@@ -4,7 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:openlib/gen_l10n/app_localizations.dart';
 
 // Project imports:
 import 'package:openlib/ui/components/page_title_widget.dart';

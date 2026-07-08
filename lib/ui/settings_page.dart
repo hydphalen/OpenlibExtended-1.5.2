@@ -4,7 +4,7 @@ import 'dart:io';
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:openlib/gen_l10n/app_localizations.dart';
 
 // Package imports:
 import 'package:device_info_plus/device_info_plus.dart';
@@ -176,7 +176,7 @@ class SettingsPage extends ConsumerWidget {
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.zero,
                   ),
-                  items: const [
+                                    items: [
                     DropdownMenuItem(
                         value: ThemeMode.system,
                         child: Text(AppLocalizations.of(context)!.followSystem)),
@@ -320,7 +320,7 @@ class SettingsPage extends ConsumerWidget {
                     title: Text(AppLocalizations.of(context)!.donationKey),
                     content: TextField(
                       controller: controller,
-                      decoration: const InputDecoration(
+                                            decoration: InputDecoration(
                         hintText: AppLocalizations.of(context)!.enterYourKey,
                         helperText: AppLocalizations.of(context)!.usedForFasterDownloadsOnAnnasArchive,
                       ),
@@ -408,11 +408,11 @@ class SettingsPage extends ConsumerWidget {
                 }
               },
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 5, right: 5, top: 20, bottom: 5),
+                        Padding(
+              padding: const EdgeInsets.only(left: 5, right: 5, top: 20, bottom: 5),
               child: Text(
                 AppLocalizations.of(context)!.updates,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
@@ -619,12 +619,12 @@ class _InstanceSelectorWidgetState
                                       overflow: TextOverflow.ellipsis,
                                     ),
                                   ),
-                                  if (!instance.enabled)
-                                    const Padding(
-                                      padding: EdgeInsets.only(left: 4.0),
+                                                                    if (!instance.enabled)
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 4.0),
                                       child: Text(
                                         AppLocalizations.of(context)!.disabled,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 10, color: Colors.grey),
                                       ),
                                     ),

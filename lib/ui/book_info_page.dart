@@ -1,6 +1,6 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:openlib/gen_l10n/app_localizations.dart';
 
 // Package imports:
 import 'package:dio/dio.dart' show CancelToken;
@@ -568,11 +568,12 @@ class _ShowDialog extends ConsumerWidget {
                                   strokeCap: StrokeCap.round,
                                 ),
                               ),
-                            ProcessState.complete => const Icon(
+                                                        ProcessState.complete => const Icon(
                                 Icons.check_circle,
                                 size: 15,
                                 color: Colors.green,
                               ),
+                            _ => const SizedBox.shrink(),
                           },
                           const SizedBox(
                             width: 3,
@@ -622,11 +623,12 @@ class _ShowDialog extends ConsumerWidget {
                                 size: 15,
                                 color: Colors.red,
                               ),
-                            CheckSumProcessState.success => const Icon(
+                                                        CheckSumProcessState.success => const Icon(
                                 Icons.check_circle,
                                 size: 15,
                                 color: Colors.green,
                               ),
+                            _ => const SizedBox.shrink(),
                           },
                           const SizedBox(
                             width: 3,

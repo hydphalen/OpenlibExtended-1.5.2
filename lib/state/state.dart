@@ -10,7 +10,7 @@ import 'package:flutter/services.dart';
 // Package imports:
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:openlib/gen_l10n/app_localizations.dart';
 
 // Project imports:
 // NOTE: These imports are crucial and must exist in your project structure.

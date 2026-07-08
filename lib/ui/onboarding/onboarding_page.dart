@@ -10,7 +10,7 @@ import 'package:openlib/state/state.dart';
 import 'package:openlib/ui/settings_page.dart' show scanAndImportBooks;
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:openlib/gen_l10n/app_localizations.dart';
 
 class OnboardingPage extends ConsumerStatefulWidget {
   const OnboardingPage({super.key});
