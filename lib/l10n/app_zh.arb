@@ -34,7 +34,7 @@
   },
   "fileType": "文件类型",
   "@fileType": {
-    "description": "文件类型筛选标签"
+    "description": "文件类型标签"
   },
   "language": "语言",
   "@language": {
@@ -54,7 +54,7 @@
   },
   "manageInstances": "管理实例",
   "@manageInstances": {
-    "description": "管理实例导航项"
+    "description": "管理实例页面标题"
   },
   "appearance": "外观",
   "@appearance": {
@@ -120,7 +120,7 @@
   "@classics": {
     "description": "经典类别"
   },
-  "classicsInfo": "因其艺术价值和文化意义而备受推崇的不朽文学作品。",
+  "classicsInfo": "因其艺术价值和文化意义而备受推崇的永恒文学作品。",
   "@classicsInfo": {
     "description": "经典类别描述"
   },
@@ -136,7 +136,7 @@
   "@fiction": {
     "description": "小说类别"
   },
-  "fictionInfo": "从想象中创造的叙事文学，并非基于真实事件。",
+  "fictionInfo": "从想象力创作的叙事文学，不基于真实事件。",
   "@fictionInfo": {
     "description": "小说类别描述"
   },
@@ -144,7 +144,7 @@
   "@youngAdult": {
     "description": "青少年类别"
   },
-  "youngAdultInfo": "针对青少年读者的书籍，涉及与青春期相关的主题。",
+  "youngAdultInfo": "面向青少年读者的书籍，涉及与青春期相关的主题。",
   "@youngAdultInfo": {
     "description": "青少年类别描述"
   },
@@ -152,7 +152,7 @@
   "@fantasy": {
     "description": "奇幻类别"
   },
-  "fantasyInfo": "包含魔法元素、神话生物和奇幻世界的作品。",
+  "fantasyInfo": "包含魔法元素、神话生物和奇幻世界的类型。",
   "@fantasyInfo": {
     "description": "奇幻类别描述"
   },
@@ -200,7 +200,7 @@
   "@covers": {
     "description": "封面类别"
   },
-  "coversInfo": "指视觉上代表一本书的艺术品和设计，包括读者兴趣。",
+  "coversInfo": "指视觉上代表一本书的艺术品和设计，影响读者兴趣。",
   "@coversInfo": {
     "description": "封面类别描述"
   },
@@ -248,7 +248,7 @@
   "@paranormal": {
     "description": "超自然类别"
   },
-  "paranormalInfo": "包含超自然元素的故事，包括幽灵、吸血鬼和其他超凡生物。",
+  "paranormalInfo": "包含超自然元素的故事，包括鬼魂、吸血鬼和其他超凡生物。",
   "@paranormalInfo": {
     "description": "超自然类别描述"
   },
@@ -256,7 +256,7 @@
   "@love": {
     "description": "爱情类别"
   },
-  "loveInfo": "探索各种形式和关系中爱情的复杂性和细微差别。",
+  "loveInfo": "探索各种形式和关系中爱情的复杂性和微妙之处的主题。",
   "@loveInfo": {
     "description": "爱情类别描述"
   },
@@ -274,11 +274,11 @@
   },
   "add": "添加",
   "@add": {
-    "description": "添加按钮"
+    "description": "添加按钮文本"
   },
   "addCustomInstance": "添加自定义实例",
   "@addCustomInstance": {
-    "description": "添加自定义实例标题"
+    "description": "添加自定义实例对话框标题"
   },
   "name": "名称",
   "@name": {
@@ -302,7 +302,7 @@
   },
   "pleaseFillAllFields": "请填写所有字段",
   "@pleaseFillAllFields": {
-    "description": "空字段验证错误"
+    "description": "未填写所有字段时的错误消息"
   },
   "pleaseEnterValidUrl": "请输入有效的URL，包含http://或https://",
   "@pleaseEnterValidUrl": {
@@ -310,13 +310,13 @@
   },
   "instanceAddedSuccessfully": "实例添加成功",
   "@instanceAddedSuccessfully": {
-    "description": "添加实例成功消息"
+    "description": "实例添加成功时的消息"
   },
   "deleteInstance": "删除实例",
   "@deleteInstance": {
-    "description": "删除实例按钮"
+    "description": "删除实例对话框标题"
   },
-    "areYouSureDelete": "确定要删除 {instanceName} 吗？",
+  "areYouSureDelete": "确定要删除 {instanceName} 吗？",
   "@areYouSureDelete": {
     "description": "删除确认消息"
   },
@@ -326,15 +326,15 @@
   },
   "instanceDeleted": "实例已删除",
   "@instanceDeleted": {
-    "description": "删除实例成功消息"
+    "description": "实例删除成功时的消息"
   },
   "cannotDeleteDefaultInstances": "无法删除默认实例",
   "@cannotDeleteDefaultInstances": {
     "description": "尝试删除默认实例时的错误消息"
   },
-  "instancesTestedAndRanked": "实例已测试并按速度排序",
+  "instancesTestedAndRanked": "实例已按速度测试和排序",
   "@instancesTestedAndRanked": {
-    "description": "测试实例成功消息"
+    "description": "实例页面的副标题文本"
   },
   "testingFailed": "测试失败：{error}",
   "@testingFailed": {
@@ -374,7 +374,7 @@
   "@getStarted": {
     "description": "开始按钮"
   },
-    "next": "下一步",
+  "next": "下一步",
   "@next": {
     "description": "下一步按钮"
   },
@@ -386,7 +386,7 @@
   "@errorLoadingInstances": {
     "description": "加载实例列表失败消息"
   },
-    "errorLoadingInstance": "加载实例失败",
+  "errorLoadingInstance": "加载实例失败",
   "@errorLoadingInstance": {
     "description": "加载实例失败消息"
   },
@@ -410,7 +410,7 @@
   "@licence": {
     "description": "许可证部分标题"
   },
-    "gplV30License": "GPL v3.0 许可证",
+  "gplV30License": "GPL v3.0 许可证",
   "@gplV30License": {
     "description": "GPL许可证链接文本"
   },
@@ -470,7 +470,7 @@
   "@verify": {
     "description": "验证按钮文本"
   },
-    "retry": "重试",
+  "retry": "重试",
   "@retry": {
     "description": "重试按钮文本"
   },
@@ -482,7 +482,7 @@
   "@permanentDeleteWarning": {
     "description": "永久删除警告文本"
   },
-    "bookDeleted": "书籍已删除！",
+  "bookDeleted": "书籍已删除！",
   "@bookDeleted": {
     "description": "书籍删除后的提示消息"
   },
@@ -490,53 +490,9 @@
   "@manualVerificationRequired": {
     "description": "需要手动验证时的错误消息"
   },
-    "downloadFailed": "下载失败",
+  "downloadFailed": "下载失败",
   "@downloadFailed": {
     "description": "下载失败时的错误消息"
-  },
-  "instancesTestedAndRanked": "实例已按速度测试和排序",
-  "@instancesTestedAndRanked": {
-    "description": "实例页面的副标题文本"
-  },
-  "addCustomInstance": "添加自定义实例",
-  "@addCustomInstance": {
-    "description": "添加自定义实例对话框标题"
-  },
-  "name": "名称",
-  "@name": {
-    "description": "名称字段标签"
-  },
-  "url": "URL",
-  "@url": {
-    "description": "URL字段标签"
-  },
-  "pleaseFillAllFields": "请填写所有字段",
-  "@pleaseFillAllFields": {
-    "description": "未填写所有字段时的错误消息"
-  },
-  "instanceAddedSuccessfully": "实例添加成功",
-  "@instanceAddedSuccessfully": {
-    "description": "实例添加成功时的消息"
-  },
-  "add": "添加",
-  "@add": {
-    "description": "添加按钮文本"
-  },
-  "deleteInstance": "删除实例",
-  "@deleteInstance": {
-    "description": "删除实例对话框标题"
-  },
-  "instanceDeleted": "实例已删除",
-  "@instanceDeleted": {
-    "description": "实例删除成功时的消息"
-  },
-  "cannotDeleteDefaultInstances": "无法删除默认实例",
-  "@cannotDeleteDefaultInstances": {
-    "description": "尝试删除默认实例时的错误消息"
-  },
-  "manageInstances": "管理实例",
-  "@manageInstances": {
-    "description": "管理实例页面标题"
   },
   "resetToDefaultInstances": "已重置为默认实例",
   "@resetToDefaultInstances": {
@@ -550,7 +506,7 @@
   "@archiveInstances": {
     "description": "归档实例部分标题"
   },
-    "noInstancesAvailable": "没有可用实例",
+  "noInstancesAvailable": "没有可用实例",
   "@noInstancesAvailable": {
     "description": "没有可用实例时的消息"
   },
@@ -562,7 +518,7 @@
   "@instanceUrlHint": {
     "description": "实例URL输入框提示文字"
   },
-    "custom": "自定义",
+  "custom": "自定义",
   "@custom": {
     "description": "自定义实例标签"
   },
@@ -628,7 +584,7 @@
   "@all": {
     "description": "Filter option for showing all items"
   },
-    "mostRelevant": "最相关",
+  "mostRelevant": "最相关",
   "@mostRelevant": {
     "description": "Sort option for relevance"
   },
@@ -866,7 +822,7 @@
   "@results": {
     "description": "搜索结果页面标题"
   },
-    "scrollDownToSyncLibrary": "向下滚动同步图书馆",
+  "scrollDownToSyncLibrary": "向下滚动同步图书馆",
   "@scrollDownToSyncLibrary": {
     "description": "向下滚动同步图书馆提示"
   },
@@ -914,7 +870,7 @@
   "@copy": {
     "description": "复制按钮标签"
   },
-    "close": "关闭",
+  "close": "关闭",
   "@close": {
     "description": "关闭按钮标签"
   },
@@ -1161,10 +1117,6 @@
   "fileSize": "文件大小",
   "@fileSize": {
     "description": "文件大小标签"
-  },
-  "fileType": "文件类型",
-  "@fileType": {
-    "description": "文件类型标签"
   },
   "lastModified": "最后修改",
   "@lastModified": {
@@ -1769,5 +1721,113 @@
   "zoomToCustomAspectRatioBounds": "自定义宽高比边界缩放",
   "@zoomToCustomAspectRatioBounds": {
     "description": "自定义宽高比边界缩放按钮"
-  }
+  },
+  "historicalRomance": "历史浪漫",
+  "@historicalRomance": {
+    "description": "历史浪漫类别"
+  },
+  "historicalRomanceInfo": "以历史为背景的浪漫小说。",
+  "@historicalRomanceInfo": {
+    "description": "历史浪漫类别描述"
+  },
+  "contemporary": "当代",
+  "@contemporary": {
+    "description": "当代类别"
+  },
+  "contemporaryInfo": "设定在现代的作品，通常涉及当前社会问题和引起共鸣的角色。",
+  "@contemporaryInfo": {
+    "description": "当代类别描述"
+  },
+  "thriller": "惊悚",
+  "@thriller": {
+    "description": "惊悚类别"
+  },
+  "thrillerInfo": "专注于兴奋、紧张和意外转折的悬疑类型。",
+  "@thrillerInfo": {
+    "description": "惊悚类别描述"
+  },
+  "women": "女性",
+  "@women": {
+    "description": "女性类别"
+  },
+  "womenInfo": "探索女性经历、观点和赋权的文学作品。",
+  "@womenInfo": {
+    "description": "女性类别描述"
+  },
+  "biography": "传记",
+  "@biography": {
+    "description": "传记类别"
+  },
+  "biographyInfo": "详细描述个人生平故事的非虚构作品，突出其成就和挑战。",
+  "@biographyInfo": {
+    "description": "传记类别描述"
+  },
+  "lgbtq": "LGBTQ",
+  "@lgbtq": {
+    "description": "LGBTQ类别"
+  },
+  "lgbtqInfo": "代表女同性恋、男同性恋、双性恋、跨性别者和酷儿社区经历的包容性文学。",
+  "@lgbtqInfo": {
+    "description": "LGBTQ类别描述"
+  },
+  "series": "系列",
+  "@series": {
+    "description": "系列类别"
+  },
+  "seriesInfo": "遵循共同故事情节或角色设定的相关书籍集合。",
+  "@seriesInfo": {
+    "description": "系列类别描述"
+  },
+  "titleChallenge": "书名挑战",
+  "@titleChallenge": {
+    "description": "书名挑战类别"
+  },
+  "titleChallengeInfo": "指鼓励对书名进行创造性思考的提示或竞赛。",
+  "@titleChallengeInfo": {
+    "description": "书名挑战类别描述"
+  },
+  "anyBooks": "所有书籍",
+  "unknownBooks": "未知书籍",
+  "fictionBooks": "小说",
+  "nonFictionBooks": "非小说",
+  "comicBooks": "漫画书",
+  "magazine": "杂志",
+  "standardsDocument": "标准文档",
+  "journalArticle": "期刊文章",
+  "newest": "最新",
+  "oldest": "最旧",
+  "largest": "最大",
+  "smallest": "最小",
+  "before1980": "1980年以前",
+  "english": "英语",
+  "spanish": "西班牙语",
+  "french": "法语",
+  "german": "德语",
+  "italian": "意大利语",
+  "portuguese": "葡萄牙语",
+  "russian": "俄语",
+  "chinese": "中文",
+  "japanese": "日语",
+  "korean": "韩语",
+  "arabic": "阿拉伯语",
+  "hindi": "印地语",
+  "malayalam": "马拉雅拉姆语",
+  "dutch": "荷兰语",
+  "polish": "波兰语",
+  "turkish": "土耳其语",
+  "swedish": "瑞典语",
+  "indonesian": "印尼语",
+  "vietnamese": "越南语",
+  "czech": "捷克语",
+  "greek": "希腊语",
+  "romanian": "罗马尼亚语",
+  "hungarian": "匈牙利语",
+  "ukrainian": "乌克兰语",
+  "hebrew": "希伯来语",
+  "thai": "泰语",
+  "persian": "波斯语",
+  "bengali": "孟加拉语",
+  "finnish": "芬兰语",
+  "norwegian": "挪威语",
+  "danish": "丹麦语"
 }

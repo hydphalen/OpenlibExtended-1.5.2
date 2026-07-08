@@ -32,9 +32,9 @@
   "@sortBy": {
     "description": "Sort by filter label"
   },
-  "fileType": "File type",
+  "fileType": "File Type",
   "@fileType": {
-    "description": "File type filter label"
+    "description": "File type label"
   },
   "language": "Language",
   "@language": {
@@ -54,7 +54,7 @@
   },
   "manageInstances": "Manage Instances",
   "@manageInstances": {
-    "description": "Manage instances navigation item"
+    "description": "Title for manage instances page"
   },
   "appearance": "Appearance",
   "@appearance": {
@@ -200,7 +200,7 @@
   "@covers": {
     "description": "Covers category"
   },
-  "coversInfo": "Refers to the artwork and design that visually represents a book, including reader interest.",
+  "coversInfo": "Refers to the artwork and design that visually represents a book, influencing reader interest.",
   "@coversInfo": {
     "description": "Covers category description"
   },
@@ -274,15 +274,15 @@
   },
   "add": "Add",
   "@add": {
-    "description": "Add button"
+    "description": "Button text for adding"
   },
   "addCustomInstance": "Add Custom Instance",
   "@addCustomInstance": {
-    "description": "Add custom instance dialog title"
+    "description": "Title for add custom instance dialog"
   },
   "name": "Name",
   "@name": {
-    "description": "Name label"
+    "description": "Label for name field"
   },
   "nameHint": "e.g., My Custom Mirror",
   "@nameHint": {
@@ -290,7 +290,7 @@
   },
   "url": "URL",
   "@url": {
-    "description": "URL label"
+    "description": "Label for URL field"
   },
   "urlHint": "https://example.com",
   "@urlHint": {
@@ -302,7 +302,7 @@
   },
   "pleaseFillAllFields": "Please fill all fields",
   "@pleaseFillAllFields": {
-    "description": "Validation error for empty fields"
+    "description": "Error message when not all fields are filled"
   },
   "pleaseEnterValidUrl": "Please enter a valid URL with http:// or https://",
   "@pleaseEnterValidUrl": {
@@ -310,11 +310,11 @@
   },
   "instanceAddedSuccessfully": "Instance added successfully",
   "@instanceAddedSuccessfully": {
-    "description": "Success message after adding instance"
+    "description": "Success message when instance is added"
   },
   "deleteInstance": "Delete Instance",
   "@deleteInstance": {
-    "description": "Delete instance dialog title"
+    "description": "Title for delete instance dialog"
   },
   "areYouSureDelete": "Are you sure you want to delete \"{instanceName}\"?",
   "@areYouSureDelete": {
@@ -326,15 +326,15 @@
   },
   "instanceDeleted": "Instance deleted",
   "@instanceDeleted": {
-    "description": "Success message after deleting instance"
+    "description": "Success message when instance is deleted"
   },
   "cannotDeleteDefaultInstances": "Cannot delete default instances",
   "@cannotDeleteDefaultInstances": {
-    "description": "Error message when trying to delete default instance"
+    "description": "Error message when trying to delete default instances"
   },
   "instancesTestedAndRanked": "Instances tested and ranked by speed",
   "@instancesTestedAndRanked": {
-    "description": "Success message after testing instances"
+    "description": "Subtitle text for instances page"
   },
   "testingFailed": "Testing failed: {error}",
   "@testingFailed": {
@@ -374,7 +374,7 @@
   "@getStarted": {
     "description": "Get started button"
   },
-    "next": "Next",
+  "next": "Next",
   "@next": {
     "description": "Next button"
   },
@@ -386,7 +386,7 @@
   "@errorLoadingInstances": {
     "description": "Error loading instances message"
   },
-    "errorLoadingInstance": "Error loading instance",
+  "errorLoadingInstance": "Error loading instance",
   "@errorLoadingInstance": {
     "description": "Error loading instance message"
   },
@@ -410,7 +410,7 @@
   "@licence": {
     "description": "Licence section title"
   },
-    "gplV30License": "GPL v3.0 license",
+  "gplV30License": "GPL v3.0 license",
   "@gplV30License": {
     "description": "GPL license link text"
   },
@@ -470,7 +470,7 @@
   "@verify": {
     "description": "Verify button text"
   },
-    "retry": "Retry",
+  "retry": "Retry",
   "@retry": {
     "description": "Retry button text"
   },
@@ -482,7 +482,7 @@
   "@permanentDeleteWarning": {
     "description": "Warning text for permanent deletion"
   },
-    "bookDeleted": "Book has been Deleted!",
+  "bookDeleted": "Book has been Deleted!",
   "@bookDeleted": {
     "description": "Snackbar message after book deletion"
   },
@@ -490,53 +490,9 @@
   "@manualVerificationRequired": {
     "description": "Error message when manual verification is required"
   },
-    "downloadFailed": "Download failed",
+  "downloadFailed": "Download failed",
   "@downloadFailed": {
     "description": "Error message when download fails"
-  },
-  "instancesTestedAndRanked": "Instances tested and ranked by speed",
-  "@instancesTestedAndRanked": {
-    "description": "Subtitle text for instances page"
-  },
-  "addCustomInstance": "Add Custom Instance",
-  "@addCustomInstance": {
-    "description": "Title for add custom instance dialog"
-  },
-  "name": "Name",
-  "@name": {
-    "description": "Label for name field"
-  },
-  "url": "URL",
-  "@url": {
-    "description": "Label for URL field"
-  },
-  "pleaseFillAllFields": "Please fill all fields",
-  "@pleaseFillAllFields": {
-    "description": "Error message when not all fields are filled"
-  },
-  "instanceAddedSuccessfully": "Instance added successfully",
-  "@instanceAddedSuccessfully": {
-    "description": "Success message when instance is added"
-  },
-  "add": "Add",
-  "@add": {
-    "description": "Button text for adding"
-  },
-  "deleteInstance": "Delete Instance",
-  "@deleteInstance": {
-    "description": "Title for delete instance dialog"
-  },
-  "instanceDeleted": "Instance deleted",
-  "@instanceDeleted": {
-    "description": "Success message when instance is deleted"
-  },
-  "cannotDeleteDefaultInstances": "Cannot delete default instances",
-  "@cannotDeleteDefaultInstances": {
-    "description": "Error message when trying to delete default instances"
-  },
-  "manageInstances": "Manage Instances",
-  "@manageInstances": {
-    "description": "Title for manage instances page"
   },
   "resetToDefaultInstances": "Reset to default instances",
   "@resetToDefaultInstances": {
@@ -550,7 +506,7 @@
   "@archiveInstances": {
     "description": "Title for archive instances section"
   },
-    "noInstancesAvailable": "No instances available",
+  "noInstancesAvailable": "No instances available",
   "@noInstancesAvailable": {
     "description": "Message when no instances are available"
   },
@@ -562,7 +518,7 @@
   "@instanceUrlHint": {
     "description": "Hint text for instance URL input"
   },
-    "custom": "Custom",
+  "custom": "Custom",
   "@custom": {
     "description": "Label for custom instances"
   },
@@ -626,11 +582,11 @@
   },
   "all": "All",
   "@all": {
-    "description": "Filter option for showing all items"
+    "description": "Filter option: All"
   },
-    "mostRelevant": "Most Relevant",
+  "mostRelevant": "Most Relevant",
   "@mostRelevant": {
-    "description": "Sort option for relevance"
+    "description": "Sort option: Most Relevant"
   },
   "fontSize": "Font Size",
   "@fontSize": {
@@ -866,7 +822,7 @@
   "@results": {
     "description": "Results page title"
   },
-    "scrollDownToSyncLibrary": "Scroll down to sync library",
+  "scrollDownToSyncLibrary": "Scroll down to sync library",
   "@scrollDownToSyncLibrary": {
     "description": "Scroll down to sync library hint"
   },
@@ -914,7 +870,7 @@
   "@copy": {
     "description": "Copy button label"
   },
-    "close": "Close",
+  "close": "Close",
   "@close": {
     "description": "Close button label"
   },
@@ -1161,10 +1117,6 @@
   "fileSize": "File Size",
   "@fileSize": {
     "description": "File size label"
-  },
-  "fileType": "File Type",
-  "@fileType": {
-    "description": "File type label"
   },
   "lastModified": "Last Modified",
   "@lastModified": {
@@ -1769,5 +1721,245 @@
   "zoomToCustomAspectRatioBounds": "Zoom to Custom Aspect Ratio Bounds",
   "@zoomToCustomAspectRatioBounds": {
     "description": "Zoom to custom aspect ratio bounds button"
+  },
+  "historicalRomance": "Historical Romance",
+  "@historicalRomance": {
+    "description": "Historical Romance category"
+  },
+  "historicalRomanceInfo": "Novels combining romantic plots set against a historical backdrop.",
+  "@historicalRomanceInfo": {
+    "description": "Historical Romance category description"
+  },
+  "contemporary": "Contemporary",
+  "@contemporary": {
+    "description": "Contemporary category"
+  },
+  "contemporaryInfo": "Works set in modern times, often addressing current social issues and relatable characters.",
+  "@contemporaryInfo": {
+    "description": "Contemporary category description"
+  },
+  "thriller": "Thriller",
+  "@thriller": {
+    "description": "Thriller category"
+  },
+  "thrillerInfo": "A suspenseful genre focused on excitement, tension, and unexpected twists.",
+  "@thrillerInfo": {
+    "description": "Thriller category description"
+  },
+  "women": "Women",
+  "@women": {
+    "description": "Women category"
+  },
+  "womenInfo": "Literature that explores women's experiences, perspectives, and empowerment.",
+  "@womenInfo": {
+    "description": "Women category description"
+  },
+  "biography": "Biography",
+  "@biography": {
+    "description": "Biography category"
+  },
+  "biographyInfo": "Nonfiction works detailing the life story of an individual, highlighting their achievements and challenges.",
+  "@biographyInfo": {
+    "description": "Biography category description"
+  },
+  "lgbtq": "LGBTQ",
+  "@lgbtq": {
+    "description": "LGBTQ category"
+  },
+  "lgbtqInfo": "Inclusive literature representing the experiences of the lesbian, gay, bisexual, transgender, and queer community.",
+  "@lgbtqInfo": {
+    "description": "LGBTQ category description"
+  },
+  "series": "Series",
+  "@series": {
+    "description": "Series category"
+  },
+  "seriesInfo": "A collection of related books that follow a common storyline or set of characters.",
+  "@seriesInfo": {
+    "description": "Series category description"
+  },
+  "titleChallenge": "Title Challenge",
+  "@titleChallenge": {
+    "description": "Title Challenge category"
+  },
+  "titleChallengeInfo": "Refers to prompts or contests encouraging creative thinking about book titles.",
+  "@titleChallengeInfo": {
+    "description": "Title Challenge category description"
+  },
+  "anyBooks": "Any Books",
+  "@anyBooks": {
+    "description": "Filter option: Any Books"
+  },
+  "unknownBooks": "Unknown Books",
+  "@unknownBooks": {
+    "description": "Filter option: Unknown Books"
+  },
+  "fictionBooks": "Fiction Books",
+  "@fictionBooks": {
+    "description": "Filter option: Fiction Books"
+  },
+  "nonFictionBooks": "Non-fiction Books",
+  "@nonFictionBooks": {
+    "description": "Filter option: Non-fiction Books"
+  },
+  "comicBooks": "Comic Books",
+  "@comicBooks": {
+    "description": "Filter option: Comic Books"
+  },
+  "magazine": "Magazine",
+  "@magazine": {
+    "description": "Filter option: Magazine"
+  },
+  "standardsDocument": "Standards Document",
+  "@standardsDocument": {
+    "description": "Filter option: Standards Document"
+  },
+  "journalArticle": "Journal Article",
+  "@journalArticle": {
+    "description": "Filter option: Journal Article"
+  },
+  "newest": "Newest",
+  "@newest": {
+    "description": "Sort option: Newest"
+  },
+  "oldest": "Oldest",
+  "@oldest": {
+    "description": "Sort option: Oldest"
+  },
+  "largest": "Largest",
+  "@largest": {
+    "description": "Sort option: Largest"
+  },
+  "smallest": "Smallest",
+  "@smallest": {
+    "description": "Sort option: Smallest"
+  },
+  "before1980": "Before 1980",
+  "@before1980": {
+    "description": "Year filter: Before 1980"
+  },
+  "english": "English",
+  "@english": {
+    "description": "Language: English"
+  },
+  "spanish": "Spanish",
+  "@spanish": {
+    "description": "Language: Spanish"
+  },
+  "french": "French",
+  "@french": {
+    "description": "Language: French"
+  },
+  "german": "German",
+  "@german": {
+    "description": "Language: German"
+  },
+  "italian": "Italian",
+  "@italian": {
+    "description": "Language: Italian"
+  },
+  "portuguese": "Portuguese",
+  "@portuguese": {
+    "description": "Language: Portuguese"
+  },
+  "russian": "Russian",
+  "@russian": {
+    "description": "Language: Russian"
+  },
+  "chinese": "Chinese",
+  "@chinese": {
+    "description": "Language: Chinese"
+  },
+  "japanese": "Japanese",
+  "@japanese": {
+    "description": "Language: Japanese"
+  },
+  "korean": "Korean",
+  "@korean": {
+    "description": "Language: Korean"
+  },
+  "arabic": "Arabic",
+  "@arabic": {
+    "description": "Language: Arabic"
+  },
+  "hindi": "Hindi",
+  "@hindi": {
+    "description": "Language: Hindi"
+  },
+  "malayalam": "Malayalam",
+  "@malayalam": {
+    "description": "Language: Malayalam"
+  },
+  "dutch": "Dutch",
+  "@dutch": {
+    "description": "Language: Dutch"
+  },
+  "polish": "Polish",
+  "@polish": {
+    "description": "Language: Polish"
+  },
+  "turkish": "Turkish",
+  "@turkish": {
+    "description": "Language: Turkish"
+  },
+  "swedish": "Swedish",
+  "@swedish": {
+    "description": "Language: Swedish"
+  },
+  "indonesian": "Indonesian",
+  "@indonesian": {
+    "description": "Language: Indonesian"
+  },
+  "vietnamese": "Vietnamese",
+  "@vietnamese": {
+    "description": "Language: Vietnamese"
+  },
+  "czech": "Czech",
+  "@czech": {
+    "description": "Language: Czech"
+  },
+  "greek": "Greek",
+  "@greek": {
+    "description": "Language: Greek"
+  },
+  "romanian": "Romanian",
+  "@romanian": {
+    "description": "Language: Romanian"
+  },
+  "hungarian": "Hungarian",
+  "@hungarian": {
+    "description": "Language: Hungarian"
+  },
+  "ukrainian": "Ukrainian",
+  "@ukrainian": {
+    "description": "Language: Ukrainian"
+  },
+  "hebrew": "Hebrew",
+  "@hebrew": {
+    "description": "Language: Hebrew"
+  },
+  "thai": "Thai",
+  "@thai": {
+    "description": "Language: Thai"
+  },
+  "persian": "Persian",
+  "@persian": {
+    "description": "Language: Persian"
+  },
+  "bengali": "Bengali",
+  "@bengali": {
+    "description": "Language: Bengali"
+  },
+  "finnish": "Finnish",
+  "@finnish": {
+    "description": "Language: Finnish"
+  },
+  "norwegian": "Norwegian",
+  "@norwegian": {
+    "description": "Language: Norwegian"
+  },
+  "danish": "Danish",
+  "@danish": {
+    "description": "Language: Danish"
   }
 }

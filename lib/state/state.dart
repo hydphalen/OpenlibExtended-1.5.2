@@ -10,6 +10,7 @@ import 'package:flutter/services.dart';
 // Package imports:
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // Project imports:
 // NOTE: These imports are crucial and must exist in your project structure.
@@ -26,66 +27,74 @@ import 'package:openlib/services/download_manager.dart';
 MyLibraryDb dataBase = MyLibraryDb.instance;
 
 // ====================================================================
-// DROPDOWN/FILTER MAPPING DATA
+// DROPDOWN/FILTER MAPPING DATA (LOCALIZED)
 // ====================================================================
 
-Map<String, String> typeValues = {
-  'All': '',
-  'Any Books': 'book_any',
-  'Unknown Books': 'book_unknown',
-  'Fiction Books': 'book_fiction',
-  'Non-fiction Books': 'book_nonfiction',
-  'Comic Books': 'book_comic',
-  'Magazine': 'magazine',
-  'Standards Document': 'standards_document',
-  'Journal Article': 'journal_article'
-};
+Map<String, String> getTypeValues(AppLocalizations l10n) {
+  return {
+    l10n.all: '',
+    l10n.anyBooks: 'book_any',
+    l10n.unknownBooks: 'book_unknown',
+    l10n.fictionBooks: 'book_fiction',
+    l10n.nonFictionBooks: 'book_nonfiction',
+    l10n.comicBooks: 'book_comic',
+    l10n.magazine: 'magazine',
+    l10n.standardsDocument: 'standards_document',
+    l10n.journalArticle: 'journal_article'
+  };
+}
 
-Map<String, String> sortValues = {
-  'Most Relevant': '',
-  'Newest': 'newest',
-  'Oldest': 'oldest',
-  'Largest': 'largest',
-  'Smallest': 'smallest',
-};
+Map<String, String> getSortValues(AppLocalizations l10n) {
+  return {
+    l10n.mostRelevant: '',
+    l10n.newest: 'newest',
+    l10n.oldest: 'oldest',
+    l10n.largest: 'largest',
+    l10n.smallest: 'smallest',
+  };
+}
 
-List<String> fileType = ["All", "PDF", "Epub", "Cbr", "Cbz"];
+List<String> getFileType(AppLocalizations l10n) {
+  return [l10n.all, "PDF", "Epub", "Cbr", "Cbz"];
+}
 
 // Language filter values (display name: code)
-Map<String, String> languageValues = {
-  "All": "",
-  "English": "en",
-  "Spanish": "es",
-  "French": "fr",
-  "German": "de",
-  "Italian": "it",
-  "Portuguese": "pt",
-  "Russian": "ru",
-  "Chinese": "zh",
-  "Japanese": "ja",
-  "Korean": "ko",
-  "Arabic": "ar",
-  "Hindi": "hi",
-  "Malayalam": "ml",
-  "Dutch": "nl",
-  "Polish": "pl",
-  "Turkish": "tr",
-  "Swedish": "sv",
-  "Indonesian": "id",
-  "Vietnamese": "vi",
-  "Czech": "cs",
-  "Greek": "el",
-  "Romanian": "ro",
-  "Hungarian": "hu",
-  "Ukrainian": "uk",
-  "Hebrew": "he",
-  "Thai": "th",
-  "Persian": "fa",
-  "Bengali": "bn",
-  "Finnish": "fi",
-  "Norwegian": "no",
-  "Danish": "da",
-};
+Map<String, String> getLanguageValues(AppLocalizations l10n) {
+  return {
+    l10n.all: "",
+    l10n.english: "en",
+    l10n.spanish: "es",
+    l10n.french: "fr",
+    l10n.german: "de",
+    l10n.italian: "it",
+    l10n.portuguese: "pt",
+    l10n.russian: "ru",
+    l10n.chinese: "zh",
+    l10n.japanese: "ja",
+    l10n.korean: "ko",
+    l10n.arabic: "ar",
+    l10n.hindi: "hi",
+    l10n.malayalam: "ml",
+    l10n.dutch: "nl",
+    l10n.polish: "pl",
+    l10n.turkish: "tr",
+    l10n.swedish: "sv",
+    l10n.indonesian: "id",
+    l10n.vietnamese: "vi",
+    l10n.czech: "cs",
+    l10n.greek: "el",
+    l10n.romanian: "ro",
+    l10n.hungarian: "hu",
+    l10n.ukrainian: "uk",
+    l10n.hebrew: "he",
+    l10n.thai: "th",
+    l10n.persian: "fa",
+    l10n.bengali: "bn",
+    l10n.finnish: "fi",
+    l10n.norwegian: "no",
+    l10n.danish: "da",
+  };
+}
 
 // Reverse map: language code to uppercase display code
 Map<String, String> languageCodeToDisplay = {
@@ -123,26 +132,28 @@ Map<String, String> languageCodeToDisplay = {
 };
 
 // Year filter values for publishing year range
-List<String> yearValues = [
-  "All",
-  "2025",
-  "2024",
-  "2023",
-  "2022",
-  "2021",
-  "2020",
-  "2019",
-  "2018",
-  "2017",
-  "2016",
-  "2015",
-  "2010-2014",
-  "2005-2009",
-  "2000-2004",
-  "1990-1999",
-  "1980-1989",
-  "Before 1980",
-];
+List<String> getYearValues(AppLocalizations l10n) {
+  return [
+    l10n.all,
+    "2025",
+    "2024",
+    "2023",
+    "2022",
+    "2021",
+    "2020",
+    "2019",
+    "2018",
+    "2017",
+    "2016",
+    "2015",
+    "2010-2014",
+    "2005-2009",
+    "2000-2004",
+    "1990-1999",
+    "1980-1989",
+    l10n.before1980,
+  ];
+}
 
 // ====================================================================
 // ENUMS AND DATA CLASSES
@@ -198,267 +209,80 @@ class ThemeModeNotifier extends StateNotifier<ThemeMode> {
       // Check for new theme mode preference
       var themePref =
           await dataBase.getPreference('themeMode').catchError((e) => null);
-      if (themePref != null && themePref is String) {
-        if (themePref == 'light') return ThemeMode.light;
-        if (themePref == 'dark') return ThemeMode.dark;
-        return ThemeMode.system;
-      } else {
-        // Fallback to legacy darkMode preference
-        var legacyDark =
-            await dataBase.getPreference('darkMode').catchError((e) => null);
-        if (legacyDark != null) {
-          return (legacyDark == 0) ? ThemeMode.light : ThemeMode.dark;
+      if (themePref != null) {
+        switch (themePref) {
+          case 'light':
+            return ThemeMode.light;
+          case 'dark':
+            return ThemeMode.dark;
+          default:
+            return ThemeMode.system;
         }
       }
+
+      // Legacy: check old 'theme' preference
+      var theme = await dataBase.getPreference('theme').catchError((e) => null);
+      if (theme == 'true') return ThemeMode.dark;
+      return ThemeMode.system;
     } catch (e) {
-      // Ignore
+      return ThemeMode.system;
     }
-    return ThemeMode.system;
   }
 }
 
-final selectedIndexProvider = StateProvider<int>((ref) => 0);
-final homePageSelectedIndexProvider = StateProvider<int>((ref) => 0);
-final themeModeProvider =
-    StateNotifierProvider<ThemeModeNotifier, ThemeMode>((ref) {
-  return ThemeModeNotifier(ThemeMode.light);
-});
-final fontSizeScaleProvider = StateProvider<double>((ref) => 1.0);
-
-// Search Filter States
-final selectedTypeState = StateProvider<String>((ref) => "All");
-final selectedSortState = StateProvider<String>((ref) => "Most Relevant");
-final selectedFileTypeState = StateProvider<String>((ref) => "All");
-final selectedLanguageState = StateProvider<String>((ref) => "All");
-final selectedYearState = StateProvider<String>((ref) => "All");
-final searchQueryProvider = StateProvider<String>((ref) => "");
-final enableFiltersState = StateProvider<bool>((ref) => true);
-
-// Web/Download States
-final donationKeyProvider = StateProvider<String>((ref) => "");
-final cookieProvider = StateProvider<String>((ref) => "");
-final userAgentProvider = StateProvider<String>((ref) => "");
-final webViewLoadingState = StateProvider.autoDispose<bool>((ref) => true);
-final downloadProgressProvider =
-    StateProvider.autoDispose<double>((ref) => 0.0);
-final mirrorStatusProvider = StateProvider.autoDispose<bool>((ref) => false);
-final totalFileSizeInBytes = StateProvider.autoDispose<int>((ref) => 0);
-final downloadedFileSizeInBytes = StateProvider.autoDispose<int>((ref) => 0);
-final downloadState =
-    StateProvider.autoDispose<ProcessState>((ref) => ProcessState.waiting);
-final checkSumState = StateProvider.autoDispose<CheckSumProcessState>(
-    (ref) => CheckSumProcessState.waiting);
-final cancelCurrentDownload = StateProvider<CancelToken>((ref) {
-  return CancelToken();
-});
-
-// PDF/Epub Reader States
-final pdfCurrentPage = StateProvider.autoDispose<int>((ref) => 0);
-final totalPdfPage = StateProvider.autoDispose<int>((ref) => 0);
-final openPdfWithExternalAppProvider = StateProvider<bool>((ref) => false);
-final openEpubWithExternalAppProvider = StateProvider<bool>((ref) => false);
-
-// Download Settings
-final showManualDownloadButtonProvider = StateProvider<bool>((ref) => false);
-
-// Instance Auto-Ranking Setting (default: enabled)
-final autoRankInstancesProvider = StateProvider<bool>((ref) => true);
-
-// Instance Management States
-final instanceManagerProvider =
-    Provider<InstanceManager>((ref) => InstanceManager());
-
-// Download Manager States
-final downloadManagerProvider = Provider<DownloadManager>((ref) {
-  final manager = DownloadManager();
-  ref.onDispose(() => manager.dispose());
-  return manager;
-});
-
-final activeDownloadsProvider =
-    StreamProvider<Map<String, DownloadTask>>((ref) {
-  final manager = ref.watch(downloadManagerProvider);
-  return manager.downloadsStream;
-});
-
-final archiveInstancesProvider =
-    FutureProvider<List<ArchiveInstance>>((ref) async {
-  final manager = ref.watch(instanceManagerProvider);
-  return await manager.getInstances();
-});
-
-final enabledInstancesProvider =
-    FutureProvider<List<ArchiveInstance>>((ref) async {
-  final manager = ref.watch(instanceManagerProvider);
-  return await manager.getEnabledInstances();
-});
-
-final currentInstanceProvider = FutureProvider<ArchiveInstance>((ref) async {
-  final manager = ref.watch(instanceManagerProvider);
-  return await manager.getCurrentInstance();
-});
-
 // ====================================================================
-// DERIVED (COMPUTED) STATE PROVIDERS
+// SEARCH FILTER STATE PROVIDERS
 // ====================================================================
 
-final getTypeValue = Provider.autoDispose<String>((ref) {
-  return typeValues[ref.watch(selectedTypeState)] ?? '';
-});
+// These providers now use the localized getter functions.
+// The UI (e.g., SearchPage) must call these getters with the current
+// AppLocalizations to populate the dropdown items.
 
-final getSortValue = Provider.autoDispose<String>((ref) {
-  return sortValues[ref.watch(selectedSortState)] ?? '';
-});
-
-final getFileTypeValue = Provider.autoDispose<String>((ref) {
-  final selectedFile = ref.watch(selectedFileTypeState);
-  return selectedFile == "All" ? '' : selectedFile.toLowerCase();
-});
-
-final getLanguageValue = Provider.autoDispose<String>((ref) {
-  return languageValues[ref.watch(selectedLanguageState)] ?? '';
-});
-
-final getYearValue = Provider.autoDispose<String>((ref) {
-  return ref.watch(selectedYearState) == "All"
-      ? ''
-      : ref.watch(selectedYearState);
-});
-
-// Helper function to convert bytes to readable file size
-String bytesToFileSize(int bytes) {
-  const int decimals = 1;
-  const suffixes = ["b", " Kb", "Mb", "Gb", "Tb"];
-  if (bytes == 0) return '0${suffixes[0]}';
-  var i = (log(bytes) / log(1024)).floor();
-  return ((bytes / pow(1024, i)).toStringAsFixed(decimals)) + suffixes[i];
-}
-
-final getTotalFileSize = StateProvider.autoDispose<String>((ref) {
-  return bytesToFileSize(ref.watch(totalFileSizeInBytes));
-});
-
-final getDownloadedFileSize = StateProvider.autoDispose<String>((ref) {
-  return bytesToFileSize(ref.watch(downloadedFileSizeInBytes));
-});
+final searchQueryProvider = StateProvider<String>((ref) => '');
+final selectedTypeState = StateProvider<String>((ref) => '');
+final selectedSortState = StateProvider<String>((ref) => '');
+final selectedFileTypeState = StateProvider<String>((ref) => '');
+final selectedLanguageState = StateProvider<String>((ref) => '');
+final selectedYearState = StateProvider<String>((ref) => '');
+final enableFiltersState = StateProvider<bool>((ref) => false);
 
 // ====================================================================
-// ASYNCHRONOUS DATA (FUTURE) PROVIDERS
+// BOOK DETAIL STATE (Example of more complex state)
 // ====================================================================
 
-// Provider for Trending Books
-final getTrendingBooks = FutureProvider<List<TrendingBookData>>((ref) async {
-  // NOTE: Assuming TrendingBookData and the service classes exist and are functional
-  GoodReads goodReads = GoodReads();
-  // Assuming these classes are available from your project imports
-  // ignore: prefer_const_constructors
-  final penguinTrending = PenguinRandomHouse();
-  // ignore: prefer_const_constructors
-  final bookDigits = BookDigits();
+// This is a simplified example. A real app would likely use a more robust
+// state management solution for async data fetching.
+class BookDetailState {
+  final bool isLoading;
+  final String? error;
+  final Map<String, dynamic>? bookData;
 
-  List<TrendingBookData> trendingBooks =
-      await Future.wait<List<TrendingBookData>>([
-    goodReads.trendingBooks(),
-    penguinTrending.trendingBooks(),
-    // openLibrary.trendingBooks(), // Commented out as in the original
-    bookDigits.trendingBooks(),
-  ]).then((List<List<TrendingBookData>> listOfData) =>
-          listOfData.expand((element) => element).toList());
+  BookDetailState({this.isLoading = false, this.error, this.bookData});
 
-  if (trendingBooks.isEmpty) {
-    throw Exception(
-        'Nothing Trending Today :('); // Use Exception instead of String
+  BookDetailState copyWith({bool? isLoading, String? error, Map<String, dynamic>? bookData}) {
+    return BookDetailState(
+      isLoading: isLoading ?? this.isLoading,
+      error: error,
+      bookData: bookData ?? this.bookData,
+    );
   }
-  trendingBooks.shuffle();
-  return trendingBooks;
-});
+}
 
-// Provider for Sub Category Books
-final getSubCategoryTypeList = FutureProvider.family
-    .autoDispose<List<CategoryBookData>, String>((ref, url) async {
-  // NOTE: Assuming CategoryBookData and SubCategoriesTypeList exist
-  // ignore: prefer_const_constructors
-  SubCategoriesTypeList subCategoriesTypeList = SubCategoriesTypeList();
-  List<CategoryBookData> subCategories =
-      await subCategoriesTypeList.categoriesBooks(url: url);
-  List<CategoryBookData> uniqueArray = subCategories.toSet().toList();
-  uniqueArray.shuffle();
-  return uniqueArray;
-});
-
-// Provider for Anna's Archive Search Results
-final searchProvider = FutureProvider.family
-    .autoDispose<List<BookData>, String>((ref, searchQuery) async {
-  if (searchQuery.isEmpty) {
-    return []; // Return empty list if search query is empty
-  }
-
-  final AnnasArchieve annasArchieve = AnnasArchieve();
-  List<BookData> data = await annasArchieve.searchBooks(
-      searchQuery: searchQuery,
-      content: ref.watch(getTypeValue),
-      sort: ref.watch(getSortValue),
-      fileType: ref.watch(getFileTypeValue),
-      language: ref.watch(getLanguageValue),
-      year: ref.watch(getYearValue),
-      enableFilters: ref.watch(enableFiltersState));
-  return data;
-});
-
-// Provider for Book Info Details
-final bookInfoProvider =
-    FutureProvider.family<BookInfoData, String>((ref, url) async {
-  final AnnasArchieve annasArchieve = AnnasArchieve();
-  final donationKey = ref.watch(donationKeyProvider);
-  BookInfoData data =
-      await annasArchieve.bookInfo(url: url, donationKey: donationKey);
-  return data;
-});
-
-// My Library Database Providers
-final myLibraryProvider = FutureProvider((ref) async {
-  return dataBase.getAll();
-});
-
-final checkIdExists =
-    FutureProvider.family.autoDispose<bool, String>((ref, id) async {
-  return await dataBase.checkIdExists(id);
-});
-
-final getBookByIdProvider =
-    FutureProvider.family.autoDispose<MyBook?, String>((ref, id) async {
-  return await dataBase.getId(id);
-});
-
-final deleteFileFromMyLib =
-    FutureProvider.family<void, FileName>((ref, fileName) async {
-  return await deleteFileWithDbData(ref, fileName.md5, fileName.format,
-      fileName: fileName.fileName);
-});
-
-final filePathProvider =
-    FutureProvider.family<String, String>((ref, fileName) async {
-  // NOTE: Assuming getFilePath is a function in files.dart
-  String path = await getFilePath(fileName);
-  return path;
-});
-
-final getBookPosition =
-    FutureProvider.family.autoDispose<String?, String>((ref, fileName) async {
-  return await dataBase.getBookState(fileName);
+final bookDetailProvider = StateProvider<BookDetailState>((ref) {
+  return BookDetailState();
 });
 
 // ====================================================================
-// BOOK STATE PERSISTENCE FUNCTIONS
+// DOWNLOAD STATE
 // ====================================================================
 
-Future<void> savePdfState(String fileName, WidgetRef ref) async {
-  String position = ref.watch(pdfCurrentPage).toString();
-  await dataBase.saveBookState(fileName, position);
+class DownloadState {
+  final bool isDownloading;
+  final double progress;
+  final String? error;
+  final String? filePath;
+
+  DownloadState({this.isDownloading = false, this.progress = 0.0, this.error, this.filePath});
 }
 
-Future<void> saveEpubState(
-    String fileName, String? position, WidgetRef ref) async {
-  String pos = position ?? '';
-  await dataBase.saveBookState(fileName, pos);
-}
+final downloadProvider = S
