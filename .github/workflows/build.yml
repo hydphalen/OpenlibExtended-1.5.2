@@ -293,7 +293,7 @@ jobs:
           channel: "stable"
           cache: true
 
-            - name: Build Linux
+      - name: Build Linux
         run: |
           flutter pub get
           flutter gen-l10n
