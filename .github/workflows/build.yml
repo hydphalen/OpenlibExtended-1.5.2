@@ -126,7 +126,7 @@ jobs:
           keyPassword=$KEY_PASSWORD
           EOF
           fi
-            - name: Get dependencies
+      - name: Get dependencies
         run: flutter pub get
 
       - name: Generate localizations
@@ -178,7 +178,7 @@ jobs:
           key: pods-${{ runner.os }}-${{ hashFiles('ios/Podfile.lock') }}
           restore-keys: |
             pods-${{ runner.os }}-
-            - name: Get dependencies
+      - name: Get dependencies
         run: flutter pub get
 
       - name: Generate localizations
@@ -221,7 +221,7 @@ jobs:
           channel: "stable"
           cache: true
 
-            - name: Get dependencies
+      - name: Get dependencies
         run: flutter pub get
 
       - name: Generate localizations
