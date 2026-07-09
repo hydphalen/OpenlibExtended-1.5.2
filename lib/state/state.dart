@@ -336,3 +336,40 @@ Future<void> savePdfState(String fileName, WidgetRef ref) async {
     // Ignore save errors
   }
 }
+
+// ====================================================================
+// EPUB EXTERNAL APP PROVIDER
+// ====================================================================
+
+final openEpubWithExternalAppProvider = StateProvider<bool>((ref) => false);
+
+// ====================================================================
+// SAVE EPUB STATE FUNCTION
+// ====================================================================
+
+Future<void> saveEpubState(String fileName, String? cfi, WidgetRef ref) async {
+  try {
+    final db = MyLibraryDb.instance;
+    if (cfi != null && cfi.isNotEmpty) {
+      await db.saveBookState(fileName, cfi);
+    }
+  } catch (e) {
+    // Ignore save errors
+  }
+}
+
+// ====================================================================
+// DELETE FILE FROM MY LIBRARY PROVIDER
+// ====================================================================
+
+final deleteFileFromMyLib = FutureProvider.family<void, FileName>((ref, fileName) async {
+  try {
+    final db = MyLibraryDb.instance;
+    // Delete book state
+    await db.deleteBookState(fileName.fileName ?? '');
+    // Delete book from library
+    await db.delete(fileName.md5);
+  } catch (e) {
+    // Ignore delete errors
+  }
+});
