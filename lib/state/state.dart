@@ -306,10 +306,24 @@ final openPdfWithExternalAppProvider = StateProvider<bool>((ref) => false);
 // DOWNLOAD STATE PROVIDERS
 // ====================================================================
 
-final mirrorStatusProvider = StateProvider<String>((ref) => '');
+final mirrorStatusProvider = StateProvider<bool>((ref) => false);
 final downloadState = StateProvider<ProcessState>((ref) => ProcessState.waiting);
 final checkSumState = StateProvider<CheckSumProcessState>((ref) => CheckSumProcessState.waiting);
 final cancelCurrentDownload = StateProvider<CancelToken?>((ref) => null);
+final downloadProgressProvider = StateProvider<double>((ref) => 0.0);
+final totalFileSizeInBytes = StateProvider<int>((ref) => 0);
+final downloadedFileSizeInBytes = StateProvider<int>((ref) => 0);
+final getTotalFileSize = Provider<int>((ref) => ref.watch(totalFileSizeInBytes));
+final getDownloadedFileSize = Provider<int>((ref) => ref.watch(downloadedFileSizeInBytes));
+
+// ====================================================================
+// MY LIBRARY PROVIDER
+// ====================================================================
+
+final myLibraryProvider = FutureProvider<List<MyBook>>((ref) async {
+  final db = MyLibraryDb.instance;
+  return await db.getAllBooks();
+});
 
 // ====================================================================
 // FILE PATH PROVIDER (Family)

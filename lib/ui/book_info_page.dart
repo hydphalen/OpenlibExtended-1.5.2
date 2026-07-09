@@ -698,8 +698,8 @@ class _ShowDialog extends ConsumerWidget {
                                 fontWeight: FontWeight.w900,
                                 color: Colors.white,
                               )),
-                          onPressed: () {
-                            ref.read(cancelCurrentDownload).cancel();
+                                                    onPressed: () {
+                            ref.read(cancelCurrentDownload)?.cancel();
                             Navigator.of(context).pop();
                           },
                                                     child: Padding(
