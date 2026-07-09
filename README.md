@@ -25,7 +25,7 @@
 - **内置阅读器** — 支持 EPUB 和 PDF，自定义手势操作
 - **书库管理** — 追踪藏书、发现热门书籍、导出文件
 
-## 📸 截图预览
+## 📸 截图预览（当然，他会是中文的）
 
 [<img src="screenshots/Screenshot_1.png" width=160>](screenshots/Screenshot_1.png)
 [<img src="screenshots/Screenshot_2.png" width=160>](screenshots/Screenshot_2.png)
