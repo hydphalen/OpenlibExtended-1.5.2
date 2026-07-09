@@ -1,54 +1,31 @@
 <div align="center">
 
-<img src="assets/icons/appIcon.png" width="150">
+<img src="assets/icons/appIcon.jpg" width="150">
 
-# OpenlibExtended
+# OpenLib Extended 中文版
 
-**The ultimate open-source cross-platform client for Anna's Archive. <br/> Download, organize, and read your favorite books on any device.**
-> Fork from [openlib](https://github.com/dstark5/Openlib) with more features and desktop support!
+**基于 Anna's Archive 的开源跨平台图书客户端**<br/>
+**下载、管理、阅读你喜爱的书籍**
 
-[![made-with-flutter](https://img.shields.io/badge/Made%20with-Flutter-4361ee.svg?style=for-the-badge)](https://flutter.dev/)
-[![AGPLv3 License](https://img.shields.io/badge/License-AGPL%20v3-e63946.svg?style=for-the-badge)](https://opensource.org/licenses/)
-[![Latest release](https://img.shields.io/github/release/warreth/OpenlibExtended.svg?style=for-the-badge)](https://github.com/warreth/OpenlibExtended/releases)
-[![Downloads](https://img.shields.io/github/downloads/warreth/OpenlibExtended/total.svg?style=for-the-badge)](https://github.com/warreth/OpenlibExtended/releases)
+> 基于 [Openlib](https://github.com/dstark5/Openlib) 的 Fork，新增更多功能与桌面端支持！
 
-[<img src="github_releases.png"
-     alt="Get it on GitHub"
-     height="110">](https://github.com/warreth/OpenlibExtended/releases)
+[![Flutter](https://img.shields.io/badge/Flutter-4361ee.svg?style=for-the-badge)](https://flutter.dev/)
+[![License](https://img.shields.io/badge/许可证-AGPL%20v3-e63946.svg?style=for-the-badge)](https://opensource.org/licenses/)
+[![Release](https://img.shields.io/github/release/hydphalen/OpenlibExtended-1.5.2.svg?style=for-the-badge)](https://github.com/hydphalen/OpenlibExtended-1.5.2/releases)
 
-**[📖 Frequently Asked Questions (FAQ)](./FAQ.md)**
+[<img src="github_releases.png" alt="下载最新版" height="110">](https://github.com/hydphalen/OpenlibExtended-1.5.2/releases)
+
 </div>
 
-## Features ✨
+## ✨ 功能特性
 
-- **Cross-Platform Support**
-  Native performance on Android, iOS, Windows, Linux, and macOS.
+- **跨平台支持** — Android、iOS、Windows、Linux、macOS 全平台覆盖
+- **智能下载** — 多镜像自动切换，确保下载稳定可靠
+- **高级搜索** — 按语言、格式、年份筛选，支持实时搜索建议
+- **内置阅读器** — 支持 EPUB 和 PDF，自定义手势操作
+- **书库管理** — 追踪藏书、发现热门书籍、导出文件
 
-- **Resilient Downloads**
-  Multi-instance engine automatically balances and fails over between mirrors to guarantee downloads.
-
-- **Advanced Search**
-  Filter by language, extension, and year. Includes instant search suggestions as you type.
-
-- **Built-in Reader**
-  Integrated EPUB and PDF reader with customizable tap zones and gesture support.
-
-- **Library Management**
-  Track your collection, discover trending books, and export files to other apps.
-
-## Star History ⭐️
-
-[![Star History Chart](https://api.star-history.com/svg?repos=warreth/OpenlibExtended&type=Date)](https://star-history.com/#warreth/OpenlibExtended&Date)
-
-## Roadmap 🎯
-
-- [ ] **Web Version**: Run OpenlibExtended directly in your browser.
-- [ ] **Cloud Sync**: Sync your library and reading progress with Booklore.
-- [ ] **Enhanced Formats**: Native support for CBR, CBZ, and AZW3.
-- [ ] **Metadata Editor**: Fix and organize book details manually.
-- [ ] **MacOs release**
-
-## Screenshots 🖼️
+## 📸 截图预览
 
 [<img src="screenshots/Screenshot_1.png" width=160>](screenshots/Screenshot_1.png)
 [<img src="screenshots/Screenshot_2.png" width=160>](screenshots/Screenshot_2.png)
@@ -56,33 +33,29 @@
 [<img src="screenshots/Screenshot_4.png" width=160>](screenshots/Screenshot_4.png)
 [<img src="screenshots/Screenshot_5.png" width=160>](screenshots/Screenshot_5.png)
 
-## Installation 📦
+## 📦 下载安装
 
-Grab the latest release from [GitHub Releases](https://github.com/warreth/OpenlibExtended/releases).
+从 [GitHub Releases](https://github.com/hydphalen/OpenlibExtended-1.5.2/releases) 下载最新版本。
 
-**Note:** Publishing this app to the Play Store violates their terms.
-
-## Development 🛠️
+## 🛠️ 开发构建
 
 ```bash
-git clone https://github.com/warreth/OpenlibExtended.git
+git clone https://github.com/hydphalen/OpenlibExtended-1.5.2.git
 flutter pub get
 flutter run
 ```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+## 📝 更新日志
 
-## Donate 🎁
+### v1.6.8-zh-cn
+- 中文化界面
+- 修复分类页面编译错误
+- 优化用户体验
 
-If you like the app, consider supporting the original source or the development of this client.
+## 📄 许可证
 
-- [**Donate To Anna’s Archive**](https://annas-archive.org/donate?tier=1) (Support the library itself)
-- [**Sponsor me on GitHub 💖**](https://github.com/sponsors/warreth) (Support the app development)
+基于 [AGPL v3.0](https://www.gnu.org/licenses/agpl-3.0.html) 开源。
 
-## License 📜
+## ⚠️ 免责声明
 
-Licensed under [AGPL v3.0](https://www.gnu.org/licenses/agpl-3.0.html).
-
-## Disclaimer ⚠️
-
-OpenlibExtended does not own or have any affiliation with the books available through the app. All books are the property of their respective owners and are protected by copyright law. OpenlibExtended is not responsible for any infringement of copyright or other intellectual property rights that may result from the use of the books available through the app. By using the app, you agree to use the books only for personal, non-commercial purposes and in compliance with all applicable laws and regulations.
+本应用仅为技术学习用途，所有书籍版权归原作者所有。请遵守当地法律法规，仅用于个人学习。
