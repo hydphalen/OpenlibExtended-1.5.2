@@ -10,9 +10,6 @@ import 'package:openlib/gen_l10n/app_localizations.dart';
 import 'package:openlib/ui/components/page_title_widget.dart';
 import 'package:openlib/ui/extensions.dart';
 import 'package:openlib/ui/results_page.dart';
-import 'package:openlib/ui/components/error_widget.dart';
-import 'package:openlib/state/state.dart'
-    show getSubCategoryTypeList, enableFiltersState;
 
 class CategoryBook {
   final String title;
@@ -177,112 +174,91 @@ class CategoriesPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final categoriesTypeValues = getLocalizedCategories(AppLocalizations.of(context)!);
-    return ref.watch(getSubCategoryTypeList).when(
-      data: (data) {
-        return Column(
-          children: [
-                                    TitleText("Categories"),
-            Expanded(
-              child: CustomScrollView(
-                slivers: [
-                  SliverGrid(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: MediaQuery.of(context).size.width > 600
-                          ? 4
-                          : 2,
-                      childAspectRatio: 1.0,
-                    ),
-                    delegate: SliverChildBuilderDelegate(
-                      (BuildContext context, int index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ResultPage(
-                                    title: data[index].title!,
-                                    tag: data[index].tag!,
-                                  ),
-                                ),
-                              );
-                            },
-                            child: Stack(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: CachedNetworkImage(
-                                    imageUrl: data[index].thumbnail!,
-                                    fit: BoxFit.cover,
-                                    width: double.infinity,
-                                    height: double.infinity,
-                                    placeholder: (context, url) => Container(
-                                      color: Colors.grey[300],
-                                    ),
-                                    errorWidget: (context, url, error) =>
-                                        Container(
-                                      color: Colors.grey[300],
-                                      child: const Icon(Icons.error),
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                  bottom: 0,
-                                  left: 0,
-                                  right: 0,
-                                  child: Container(
-                                    padding: const EdgeInsets.all(8.0),
-                                    decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          Colors.black.withOpacity(0.7),
-                                          Colors.transparent,
-                                        ],
-                                        begin: Alignment.bottomCenter,
-                                        end: Alignment.topCenter,
-                                      ),
-                                    ),
-                                    child: Text(
-                                      data[index].title!,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displayMedium,
-                                      maxLines: 2,
-                                    ),
-                                  ),
-                                ),
-                              ],
+    return Column(
+      children: [
+        TitleText("Categories"),
+        Expanded(
+          child: CustomScrollView(
+            slivers: [
+              SliverGrid(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: MediaQuery.of(context).size.width > 600
+                      ? 4
+                      : 2,
+                  childAspectRatio: 1.0,
+                ),
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ResultPage(
+                                title: categoriesTypeValues[index].title,
+                                tag: categoriesTypeValues[index].tag,
+                              ),
                             ),
-                          ),
-                        );
-                      },
-                      childCount: data.length,
-                    ),
-                  ),
-                ],
+                          );
+                        },
+                        child: Stack(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: CachedNetworkImage(
+                                imageUrl: categoriesTypeValues[index].thumbnail,
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                                height: double.infinity,
+                                placeholder: (context, url) => Container(
+                                  color: Colors.grey[300],
+                                ),
+                                errorWidget: (context, url, error) =>
+                                    Container(
+                                  color: Colors.grey[300],
+                                  child: const Icon(Icons.error),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              bottom: 0,
+                              left: 0,
+                              right: 0,
+                              child: Container(
+                                padding: const EdgeInsets.all(8.0),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Colors.black.withOpacity(0.7),
+                                      Colors.transparent,
+                                    ],
+                                    begin: Alignment.bottomCenter,
+                                    end: Alignment.topCenter,
+                                  ),
+                                ),
+                                child: Text(
+                                  categoriesTypeValues[index].title,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .displayMedium,
+                                  maxLines: 2,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                  childCount: categoriesTypeValues.length,
+                ),
               ),
-            ),
-          ],
-        );
-      },
-      error: (error, _) {
-        return CustomErrorWidget(
-          error: error,
-          stackTrace: _,
-        );
-      },
-            loading: () {
-        return Center(
-            child: SizedBox(
-          width: 25,
-          height: 25,
-          child: CircularProgressIndicator(
-            color: Theme.of(context).colorScheme.secondary,
-            strokeCap: StrokeCap.round,
+            ],
           ),
-        ));
-      },
+        ),
+      ],
     );
   }
 }
