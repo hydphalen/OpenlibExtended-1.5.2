@@ -8,9 +8,31 @@
   "@offline": {
     "description": "离线状态标签"
   },
-  "error": "错误",
+    "error": "错误",
   "@error": {
     "description": "错误标签"
+  },
+  "welcomeTo": "欢迎来到",
+  "@welcomeTo": {
+    "description": "欢迎消息前缀"
+  },
+  "areYouSureDeleteInstance": "确定要删除 {name} 吗？",
+  "@areYouSureDeleteInstance": {
+    "description": "删除实例确认消息",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "description": "实例名称"
+      }
+    }
+  },
+  "testAndRankAllInstances": "测试并排序所有实例",
+  "@testAndRankAllInstances": {
+    "description": "测试并排序所有实例按钮提示"
+  },
+  "dragToReorderPriority": "拖动以重新排序优先级",
+  "@dragToReorderPriority": {
+    "description": "拖动以重新排序优先级提示"
   },
   "trending": "趋势",
   "@trending": {

@@ -181,7 +181,7 @@ class CategoriesPage extends ConsumerWidget {
       data: (data) {
         return Column(
           children: [
-            const PageTitleWidget(title: "Categories"),
+                        PageTitleWidget(title: "Categories"),
             Expanded(
               child: CustomScrollView(
                 slivers: [
@@ -272,7 +272,7 @@ class CategoriesPage extends ConsumerWidget {
           stackTrace: _,
         );
       },
-      loading: () {
+            loading: () {
         return Center(
             child: SizedBox(
           width: 25,
@@ -282,6 +282,7 @@ class CategoriesPage extends ConsumerWidget {
             strokeCap: StrokeCap.round,
           ),
         ));
-      }));
+      },
+    );
   }
 }

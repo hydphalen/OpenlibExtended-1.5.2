@@ -437,3 +437,54 @@ final archiveInstancesProvider = FutureProvider<List<ArchiveInstance>>((ref) asy
   final manager = ref.read(instanceManagerProvider);
   return await manager.getInstances();
 });
+
+/// Provider for the currently selected instance
+final currentInstanceProvider = FutureProvider<ArchiveInstance?>((ref) async {
+  final manager = ref.read(instanceManagerProvider);
+  return await manager.getCurrentInstance();
+});
+
+/// Provider for auto-rank instances setting
+final autoRankInstancesProvider = StateProvider<bool>((ref) => false);
+
+// ====================================================================
+// THEME & UI PROVIDERS
+// ====================================================================
+
+/// Theme mode provider
+final themeModeProvider = StateProvider<ThemeMode>((ref) => ThemeMode.system);
+
+/// Font size scale provider
+final fontSizeScaleProvider = StateProvider<double>((ref) => 1.0);
+
+// ====================================================================
+// BOOK DATA PROVIDERS
+// ====================================================================
+
+/// Provider for trending books
+final getTrendingBooks = FutureProvider<List<dynamic>>((ref) async {
+  // TODO: Implement trending books fetching
+  return [];
+});
+
+/// Provider for search results
+final searchProvider = FutureProvider.family<List<dynamic>, String>((ref, query) async {
+  // TODO: Implement search
+  return [];
+});
+
+/// Provider for subcategory type list
+final getSubCategoryTypeList = FutureProvider<List<dynamic>>((ref) async {
+  // TODO: Implement subcategory type list
+  return [];
+});
+
+// ====================================================================
+// DOWNLOAD PROVIDERS
+// ====================================================================
+
+/// Provider for active downloads
+final activeDownloadsProvider = FutureProvider<List<dynamic>>((ref) async {
+  // TODO: Implement active downloads
+  return [];
+});
