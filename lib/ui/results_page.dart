@@ -26,14 +26,19 @@ extension StringExtension on String {
 }
 
 class ResultPage extends ConsumerWidget {
-  const ResultPage({super.key, required this.searchQuery});
+  const ResultPage({super.key, this.searchQuery, this.title, this.tag})
+      : assert(searchQuery != null || (title != null && tag != null),
+            'Either searchQuery or both title and tag must be provided');
 
-  final String searchQuery;
+  final String? searchQuery;
+  final String? title;
+  final String? tag;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final searchBooks = ref.watch(app_state.searchProvider(searchQuery));
-    final String capitalizedQuery = searchQuery.capitalizeFirst;
+    final query = tag ?? searchQuery!;
+    final searchBooks = ref.watch(app_state.searchProvider(query));
+    final String capitalizedQuery = (title ?? searchQuery!).capitalizeFirst;
 
     return Scaffold(
       appBar: AppBar(
@@ -135,7 +140,7 @@ class ResultPage extends ConsumerWidget {
             stackTrace: stackTrace,
             onRefresh: () {
               // ignore: unused_result
-              ref.refresh(app_state.searchProvider(searchQuery));
+                            ref.refresh(app_state.searchProvider(query));
             },
           );
         },
