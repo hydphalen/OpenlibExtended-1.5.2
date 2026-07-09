@@ -185,9 +185,9 @@ class SettingsPage extends ConsumerWidget {
                     DropdownMenuItem(
                         value: ThemeMode.dark, child: Text(AppLocalizations.of(context)!.darkTheme)),
                   ],
-                  onChanged: (ThemeMode? val) {
+                                    onChanged: (ThemeMode? val) {
                     if (val != null) {
-                      ref.read(themeModeProvider.notifier).setTheme(val);
+                      ref.read(themeModeProvider.notifier).state = val;
                     }
                   },
                 ),
@@ -570,13 +570,13 @@ class _InstanceSelectorWidgetState
       data: (currentInstance) {
         return allInstancesAsync.when(
           data: (instances) {
-            final selectedId = _selectedInstanceId ?? currentInstance.id;
+                        final selectedId = _selectedInstanceId ?? currentInstance?.id;
 
             // Ensure selected instance is in the list (handle disabled instances)
             final selectedInstanceExists =
                 instances.any((i) => i.id == selectedId);
             final effectiveSelectedId =
-                selectedInstanceExists ? selectedId : currentInstance.id;
+                selectedInstanceExists ? selectedId : currentInstance?.id;
 
             return Padding(
               padding: const EdgeInsets.only(left: 5, right: 5, top: 10),

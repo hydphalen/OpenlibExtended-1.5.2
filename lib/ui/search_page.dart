@@ -23,11 +23,11 @@ import 'package:openlib/state/state.dart'
         selectedFileTypeState,
         selectedLanguageState,
         selectedYearState,
-        getTypeValues,
-        getFileType,
-        getSortValues,
-        getLanguageValues,
-        getYearValues,
+        typeValues,
+        fileType,
+        sortValues,
+        languageValues,
+        yearValues,
         enableFiltersState;
 
 // ====================================================================
@@ -140,14 +140,6 @@ class _SearchPageState extends ConsumerState<SearchPage> {
     final isLoadingSuggestions =
         ref.watch(suggestionsLoadingProvider); // Loading state
 
-    // Get localized filter values
-    final l10n = AppLocalizations.of(context)!;
-    final typeValues = getTypeValues(l10n);
-    final sortValues = getSortValues(l10n);
-    final fileType = getFileType(l10n);
-    final languageValues = getLanguageValues(l10n);
-    final yearValues = getYearValues(l10n);
-
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Padding(
@@ -158,7 +150,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
           children: [
             const SizedBox(height: 8),
             const ActiveDownloadsWidget(),
-                        TitleText(l10n.search),
+                        TitleText(AppLocalizations.of(context)!.search),
             // Search Input Field
             Padding(
               padding: const EdgeInsets.only(left: 7, right: 7, top: 10),
@@ -200,9 +192,296 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                   filled: true,
                   hintStyle: const TextStyle(
                       color: Colors.grey, fontWeight: FontWeight.bold),
-                                    hintText: l10n.search,
+                                    hintText: AppLocalizations.of(context)!.search,
                   // Remove explicit fillColor to use the theme default (Dark Grey in Dark Mode)
                 ),
                 onSubmitted: (String value) => onSubmit(context),
                 style: TextStyle(
-                  color: Theme.of(context).col
+                  color: Theme.of(context).colorScheme.tertiary,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
+                ),
+                onChanged:
+                    _onSearchQueryChanged, // <--- Calls the debounced function
+              ),
+            ),
+
+            // --- Suggestions List (NEW) ---
+            if (suggestions.isNotEmpty && _searchController.text.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(left: 15, right: 15, top: 8),
+                child: Container(
+                  constraints: const BoxConstraints(maxHeight: 250),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.surface,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.1),
+                        blurRadius: 5,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: suggestions.length,
+                    itemBuilder: (context, index) {
+                      final suggestion = suggestions[index];
+                      return ListTile(
+                        dense: true,
+                        title: Text(
+                          suggestion,
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: Theme.of(context).colorScheme.onSurface),
+                        ),
+                        leading: const Icon(Icons.book, size: 18),
+                        onTap: () {
+                          // 1. Update the state with the selected suggestion
+                          ref.read(searchQueryProvider.notifier).state =
+                              suggestion;
+
+                          // 2. Clear the suggestion list
+                          ref.read(searchSuggestionProvider.notifier).state =
+                              [];
+
+                          // 3. Immediately perform search
+                          onSubmit(context);
+                        },
+                      );
+                    },
+                  ),
+                ),
+              ),
+            // -----------------------------
+
+            // Dropdown Filters (Unchanged)
+            Padding(
+              padding: const EdgeInsets.only(left: 7, right: 7, top: 19),
+              child: SizedBox(
+                width: 250,
+                child: DropdownButtonFormField(
+                  decoration: InputDecoration(
+                                        labelText: AppLocalizations.of(context)!.type,
+                    labelStyle: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
+                    enabledBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Theme.of(context).colorScheme.tertiary,
+                          width: 2),
+                      borderRadius: const BorderRadius.all(Radius.circular(50)),
+                    ),
+                  ),
+                  icon: const Icon(Icons.arrow_drop_down),
+                  initialValue: dropdownTypeValue,
+                  items: typeValues.keys
+                      .toList()
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(
+                        value,
+                        style: const TextStyle(
+                            fontSize: 12, fontWeight: FontWeight.bold),
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: (String? val) {
+                    ref.read(selectedTypeState.notifier).state = val ?? '';
+                    MyLibraryDb.instance
+                        .savePreference('filterType', val ?? 'All');
+                  },
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 7, right: 7, top: 19),
+              child: SizedBox(
+                width: 210,
+                child: DropdownButtonFormField(
+                  decoration: InputDecoration(
+                                        labelText: AppLocalizations.of(context)!.sortBy,
+                    labelStyle: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
+                    enabledBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Theme.of(context).colorScheme.tertiary,
+                          width: 2),
+                      borderRadius: const BorderRadius.all(Radius.circular(50)),
+                    ),
+                  ),
+                  initialValue: dropdownSortValue,
+                  items: sortValues.keys
+                      .toList()
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(
+                        value,
+                        style: const TextStyle(
+                            fontSize: 12, fontWeight: FontWeight.bold),
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: (String? val) {
+                    ref.read(selectedSortState.notifier).state = val ?? '';
+                    MyLibraryDb.instance
+                        .savePreference('filterSort', val ?? 'Most Relevant');
+                  },
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 7, right: 7, top: 19),
+              child: SizedBox(
+                width: 165,
+                child: DropdownButtonFormField(
+                  decoration: InputDecoration(
+                                        labelText: AppLocalizations.of(context)!.fileType,
+                    labelStyle: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
+                    enabledBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Theme.of(context).colorScheme.tertiary,
+                          width: 2),
+                      borderRadius: const BorderRadius.all(Radius.circular(50)),
+                    ),
+                  ),
+                  initialValue: dropDownFileTypeValue,
+                  items: fileType.map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(
+                        value,
+                        style: const TextStyle(
+                            fontSize: 12, fontWeight: FontWeight.bold),
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: (String? val) {
+                    ref.read(selectedFileTypeState.notifier).state =
+                        val ?? 'All';
+                    MyLibraryDb.instance
+                        .savePreference('filterFileType', val ?? 'All');
+                  },
+                ),
+              ),
+            ),
+            // Language filter dropdown
+            Padding(
+              padding: const EdgeInsets.only(left: 7, right: 7, top: 19),
+              child: SizedBox(
+                width: 200,
+                child: DropdownButtonFormField(
+                  decoration: InputDecoration(
+                                        labelText: AppLocalizations.of(context)!.language,
+                    labelStyle: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
+                    enabledBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Theme.of(context).colorScheme.tertiary,
+                          width: 2),
+                      borderRadius: const BorderRadius.all(Radius.circular(50)),
+                    ),
+                  ),
+                  initialValue: dropdownLanguageValue,
+                  items: languageValues.keys
+                      .toList()
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(
+                        value,
+                        style: const TextStyle(
+                            fontSize: 12, fontWeight: FontWeight.bold),
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: (String? val) {
+                    ref.read(selectedLanguageState.notifier).state =
+                        val ?? 'All';
+                    MyLibraryDb.instance
+                        .savePreference('filterLanguage', val ?? 'All');
+                  },
+                ),
+              ),
+            ),
+            // Year filter dropdown
+            Padding(
+              padding: const EdgeInsets.only(left: 7, right: 7, top: 19),
+              child: SizedBox(
+                width: 180,
+                child: DropdownButtonFormField(
+                  decoration: InputDecoration(
+                                        labelText: AppLocalizations.of(context)!.yearPublished,
+                    labelStyle: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
+                    enabledBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey, width: 2),
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Theme.of(context).colorScheme.tertiary,
+                          width: 2),
+                      borderRadius: const BorderRadius.all(Radius.circular(50)),
+                    ),
+                  ),
+                  initialValue: dropdownYearValue,
+                  items:
+                      yearValues.map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(
+                        value,
+                        style: const TextStyle(
+                            fontSize: 12, fontWeight: FontWeight.bold),
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: (String? val) {
+                    ref.read(selectedYearState.notifier).state = val ?? 'All';
+                    MyLibraryDb.instance
+                        .savePreference('filterYear', val ?? 'All');
+                  },
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

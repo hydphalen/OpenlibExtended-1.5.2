@@ -149,7 +149,7 @@ class ActiveDownloadsWidget extends ConsumerWidget {
                         .withValues(alpha: 0.2),
                   ),
                   itemBuilder: (context, index) {
-                    final task = downloads.values.elementAt(index);
+                    final task = downloads[index];
                     return _DownloadItem(
                       task: task,
                       bytesToFileSize: _bytesToFileSize,

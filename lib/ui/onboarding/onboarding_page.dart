@@ -458,14 +458,14 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _ThemeCard(
+                            _ThemeCard(
                   title: AppLocalizations.of(context)!.light,
                   icon: Icons.light_mode,
                   selected: mode == ThemeMode.light,
                   onTap: () {
                     ref
                         .read(themeModeProvider.notifier)
-                        .setTheme(ThemeMode.light);
+                        .state = ThemeMode.light;
                   }),
               const SizedBox(width: 20),
               _ThemeCard(
@@ -475,7 +475,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                   onTap: () {
                     ref
                         .read(themeModeProvider.notifier)
-                        .setTheme(ThemeMode.dark);
+                        .state = ThemeMode.dark;
                   }),
             ],
           ),

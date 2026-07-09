@@ -15,9 +15,9 @@ class HomePage extends ConsumerStatefulWidget {
 }
 
 class _HomePageState extends ConsumerState<HomePage> {
-  final List<Widget> _pages = const [
+    final List<Widget> _pages = const [
     TrendingPage(),
-    GenresPage(),
+    CategoriesPage(),
   ];
 
   @override

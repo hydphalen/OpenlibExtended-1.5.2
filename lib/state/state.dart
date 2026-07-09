@@ -457,6 +457,19 @@ final themeModeProvider = StateProvider<ThemeMode>((ref) => ThemeMode.system);
 /// Font size scale provider
 final fontSizeScaleProvider = StateProvider<double>((ref) => 1.0);
 
+/// Home page selected index provider
+final homePageSelectedIndexProvider = StateProvider<int>((ref) => 0);
+
+/// Selected index provider (for bottom navigation)
+final selectedIndexProvider = StateProvider<int>((ref) => 0);
+
+/// User agent provider
+final userAgentProvider = StateProvider<String>((ref) =>
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+
+/// Cookie provider
+final cookieProvider = StateProvider<String>((ref) => '');
+
 // ====================================================================
 // BOOK DATA PROVIDERS
 // ====================================================================
@@ -483,8 +496,8 @@ final getSubCategoryTypeList = FutureProvider<List<dynamic>>((ref) async {
 // DOWNLOAD PROVIDERS
 // ====================================================================
 
-/// Provider for active downloads
-final activeDownloadsProvider = FutureProvider<List<dynamic>>((ref) async {
-  // TODO: Implement active downloads
-  return [];
+/// Provider for active downloads (stream-based)
+final activeDownloadsProvider = StreamProvider<List<DownloadTask>>((ref) {
+  final downloadManager = ref.watch(downloadManagerProvider);
+  return downloadManager.downloadsStream.map((map) => map.values.toList());
 });

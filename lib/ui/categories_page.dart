@@ -181,7 +181,7 @@ class CategoriesPage extends ConsumerWidget {
       data: (data) {
         return Column(
           children: [
-                        PageTitleWidget(title: "Categories"),
+                                    TitleText("Categories"),
             Expanded(
               child: CustomScrollView(
                 slivers: [
@@ -201,7 +201,7 @@ class CategoriesPage extends ConsumerWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => ResultsPage(
+                                  builder: (context) => ResultPage(
                                     title: data[index].title!,
                                     tag: data[index].tag!,
                                   ),
