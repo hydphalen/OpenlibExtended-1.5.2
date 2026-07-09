@@ -295,3 +295,44 @@ final downloadProvider = StateProvider<DownloadState>((ref) {
 
 final pdfCurrentPage = StateProvider<int>((ref) => 0);
 final totalPdfPage = StateProvider<int>((ref) => 0);
+
+// ====================================================================
+// PDF EXTERNAL APP PROVIDER
+// ====================================================================
+
+final openPdfWithExternalAppProvider = StateProvider<bool>((ref) => false);
+
+// ====================================================================
+// FILE PATH PROVIDER (Family)
+// ====================================================================
+
+final filePathProvider = FutureProvider.family<String, String>((ref, fileName) async {
+  return await getFilePath(fileName);
+});
+
+// ====================================================================
+// BOOK POSITION PROVIDER (Family)
+// ====================================================================
+
+final getBookPosition = FutureProvider.family<String?, String>((ref, fileName) async {
+  try {
+    final db = MyLibraryDb.instance;
+    return await db.getBookState(fileName);
+  } catch (e) {
+    return null;
+  }
+});
+
+// ====================================================================
+// SAVE PDF STATE FUNCTION
+// ====================================================================
+
+Future<void> savePdfState(String fileName, WidgetRef ref) async {
+  try {
+    final db = MyLibraryDb.instance;
+    final currentPage = ref.read(pdfCurrentPage);
+    await db.saveBookState(fileName, currentPage.toString());
+  } catch (e) {
+    // Ignore save errors
+  }
+}
