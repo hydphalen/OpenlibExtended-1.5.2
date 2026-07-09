@@ -340,6 +340,17 @@ final checkIdExists = FutureProvider.family<bool, String>((ref, md5) async {
   return await db.checkIdExists(md5);
 });
 
+final bookInfoProvider = FutureProvider.family<BookInfoData?, String>((ref, url) async {
+  final annasArchive = AnnasArchieve();
+  final donationKey = ref.read(donationKeyProvider);
+  return await annasArchive.bookInfo(url: url, donationKey: donationKey.isNotEmpty ? donationKey : null);
+});
+
+final getBookByIdProvider = FutureProvider.family<MyBook?, String>((ref, md5) async {
+  final db = MyLibraryDb.instance;
+  return await db.getId(md5);
+});
+
 // ====================================================================
 // FILE PATH PROVIDER (Family)
 // ====================================================================

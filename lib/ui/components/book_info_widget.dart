@@ -164,7 +164,7 @@ class BookInfoWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                                 Text(
-                  AppLocalizations.of(context)!.description,
+                                    AppLocalizations.of(context)!.descriptionLabel,
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w900,

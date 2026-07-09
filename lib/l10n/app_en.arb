@@ -1962,8 +1962,20 @@
   "@danish": {
     "description": "Language: Danish"
   },
-  "menu": "Menu",
+    "menu": "Menu",
   "@menu": {
     "description": "Menu label for reader help overlay"
+  },
+  "preparingDownload": "Preparing download...",
+  "@preparingDownload": {
+    "description": "Preparing download status message"
+  },
+  "descriptionLabel": "Description",
+  "@descriptionLabel": {
+    "description": "Description section label"
+  },
+  "open": "Open",
+  "@open": {
+    "description": "Open button text"
   }
 }
