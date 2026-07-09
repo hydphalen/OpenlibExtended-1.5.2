@@ -326,6 +326,21 @@ final myLibraryProvider = FutureProvider<List<MyBook>>((ref) async {
 });
 
 // ====================================================================
+// BOOK INFO PROVIDERS
+// ====================================================================
+
+final showManualDownloadButtonProvider = StateProvider<bool>((ref) => false);
+final donationKeyProvider = StateProvider<String>((ref) => '');
+final downloadManagerProvider = Provider<DownloadManager>((ref) {
+  return DownloadManager();
+});
+
+final checkIdExists = FutureProvider.family<bool, String>((ref, md5) async {
+  final db = MyLibraryDb.instance;
+  return await db.checkIdExists(md5);
+});
+
+// ====================================================================
 // FILE PATH PROVIDER (Family)
 // ====================================================================
 
