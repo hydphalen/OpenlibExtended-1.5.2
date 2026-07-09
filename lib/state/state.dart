@@ -422,3 +422,18 @@ final deleteFileFromMyLib = FutureProvider.family<void, FileName>((ref, fileName
     // Ignore delete errors
   }
 });
+
+// ====================================================================
+// INSTANCE MANAGER PROVIDERS
+// ====================================================================
+
+/// Provider for the InstanceManager singleton
+final instanceManagerProvider = Provider<InstanceManager>((ref) {
+  return InstanceManager();
+});
+
+/// Provider for the list of archive instances
+final archiveInstancesProvider = FutureProvider<List<ArchiveInstance>>((ref) async {
+  final manager = ref.read(instanceManagerProvider);
+  return await manager.getInstances();
+});

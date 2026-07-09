@@ -4,6 +4,14 @@
   "@appTitle": {
     "description": "The application title"
   },
+  "offline": "Offline",
+  "@offline": {
+    "description": "Offline status label"
+  },
+  "error": "Error",
+  "@error": {
+    "description": "Error label"
+  },
   "trending": "Trending",
   "@trending": {
     "description": "Trending tab label"

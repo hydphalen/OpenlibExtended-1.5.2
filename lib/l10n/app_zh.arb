@@ -4,6 +4,14 @@
   "@appTitle": {
     "description": "应用标题"
   },
+  "offline": "离线",
+  "@offline": {
+    "description": "离线状态标签"
+  },
+  "error": "错误",
+  "@error": {
+    "description": "错误标签"
+  },
   "trending": "趋势",
   "@trending": {
     "description": "趋势标签"
