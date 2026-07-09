@@ -247,6 +247,115 @@ final selectedYearState = StateProvider<String>((ref) => '');
 final enableFiltersState = StateProvider<bool>((ref) => false);
 
 // ====================================================================
+// STATIC FILTER MAPPINGS (for search functionality)
+// ====================================================================
+
+Map<String, String> typeValues = {
+  'All': '',
+  'Any Books': 'book_any',
+  'Unknown Books': 'book_unknown',
+  'Fiction Books': 'book_fiction',
+  'Non-fiction Books': 'book_nonfiction',
+  'Comic Books': 'book_comic',
+  'Magazine': 'magazine',
+  'Standards Document': 'standards_document',
+  'Journal Article': 'journal_article'
+};
+
+Map<String, String> sortValues = {
+  'Most Relevant': '',
+  'Newest': 'newest',
+  'Oldest': 'oldest',
+  'Largest': 'largest',
+  'Smallest': 'smallest',
+};
+
+List<String> fileType = ["All", "PDF", "Epub", "Cbr", "Cbz"];
+
+Map<String, String> languageValues = {
+  'All': "",
+  'English': "en",
+  'Spanish': "es",
+  'French': "fr",
+  'German': "de",
+  'Italian': "it",
+  'Portuguese': "pt",
+  'Russian': "ru",
+  'Chinese': "zh",
+  'Japanese': "ja",
+  'Korean': "ko",
+  'Arabic': "ar",
+  'Hindi': "hi",
+  'Malayalam': "ml",
+  'Dutch': "nl",
+  'Polish': "pl",
+  'Turkish': "tr",
+  'Swedish': "sv",
+  'Indonesian': "id",
+  'Vietnamese': "vi",
+  'Czech': "cs",
+  'Greek': "el",
+  'Romanian': "ro",
+  'Hungarian': "hu",
+  'Ukrainian': "uk",
+  'Hebrew': "he",
+  'Thai': "th",
+  'Persian': "fa",
+  'Bengali': "bn",
+  'Finnish': "fi",
+  'Norwegian': "no",
+  'Danish': "da",
+};
+
+List<String> yearValues = [
+  "All",
+  "2025",
+  "2024",
+  "2023",
+  "2022",
+  "2021",
+  "2020",
+  "2019",
+  "2018",
+  "2017",
+  "2016",
+  "2015",
+  "2010-2014",
+  "2005-2009",
+  "2000-2004",
+  "1990-1999",
+  "1980-1989",
+  "Before 1980",
+];
+
+// ====================================================================
+// DERIVED FILTER VALUE PROVIDERS
+// ====================================================================
+
+final getTypeValue = Provider.autoDispose<String>((ref) {
+  return typeValues[ref.watch(selectedTypeState)] ?? '';
+});
+
+final getSortValue = Provider.autoDispose<String>((ref) {
+  return sortValues[ref.watch(selectedSortState)] ?? '';
+});
+
+final getFileTypeValue = Provider.autoDispose<String>((ref) {
+  final selectedFile = ref.watch(selectedFileTypeState);
+  return selectedFile == "All" ? '' : selectedFile.toLowerCase();
+});
+
+final getLanguageValue = Provider.autoDispose<String>((ref) {
+  return languageValues[ref.watch(selectedLanguageState)] ?? '';
+});
+
+final getYearValue = Provider.autoDispose<String>((ref) {
+  return ref.watch(selectedYearState) == "All"
+      ? ''
+      : ref.watch(selectedYearState);
+});
+
+// ====================================================================
 // BOOK DETAIL STATE (Example of more complex state)
 // ====================================================================
 
@@ -475,21 +584,54 @@ final cookieProvider = StateProvider<String>((ref) => '');
 // ====================================================================
 
 /// Provider for trending books
-final getTrendingBooks = FutureProvider<List<dynamic>>((ref) async {
-  // TODO: Implement trending books fetching
-  return [];
+final getTrendingBooks = FutureProvider<List<TrendingBookData>>((ref) async {
+  GoodReads goodReads = GoodReads();
+  final penguinTrending = PenguinRandomHouse();
+  final bookDigits = BookDigits();
+
+  List<TrendingBookData> trendingBooks =
+      await Future.wait<List<TrendingBookData>>([
+    goodReads.trendingBooks(),
+    penguinTrending.trendingBooks(),
+    bookDigits.trendingBooks(),
+  ]).then((List<List<TrendingBookData>> listOfData) =>
+          listOfData.expand((element) => element).toList());
+
+  if (trendingBooks.isEmpty) {
+    throw Exception('Nothing Trending Today :(');
+  }
+  trendingBooks.shuffle();
+  return trendingBooks;
 });
 
 /// Provider for search results
-final searchProvider = FutureProvider.family<List<dynamic>, String>((ref, query) async {
-  // TODO: Implement search
-  return [];
+final searchProvider = FutureProvider.family
+    .autoDispose<List<BookData>, String>((ref, searchQuery) async {
+  if (searchQuery.isEmpty) {
+    return [];
+  }
+
+  final AnnasArchieve annasArchieve = AnnasArchieve();
+  List<BookData> data = await annasArchieve.searchBooks(
+      searchQuery: searchQuery,
+      content: ref.watch(getTypeValue),
+      sort: ref.watch(getSortValue),
+      fileType: ref.watch(getFileTypeValue),
+      language: ref.watch(getLanguageValue),
+      year: ref.watch(getYearValue),
+      enableFilters: ref.watch(enableFiltersState));
+  return data;
 });
 
 /// Provider for subcategory type list
-final getSubCategoryTypeList = FutureProvider<List<dynamic>>((ref) async {
-  // TODO: Implement subcategory type list
-  return [];
+final getSubCategoryTypeList = FutureProvider.family
+    .autoDispose<List<CategoryBookData>, String>((ref, url) async {
+  SubCategoriesTypeList subCategoriesTypeList = SubCategoriesTypeList();
+  List<CategoryBookData> subCategories =
+      await subCategoriesTypeList.categoriesBooks(url: url);
+  List<CategoryBookData> uniqueArray = subCategories.toSet().toList();
+  uniqueArray.shuffle();
+  return uniqueArray;
 });
 
 // ====================================================================
