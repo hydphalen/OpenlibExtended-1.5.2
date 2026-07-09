@@ -303,6 +303,15 @@ final totalPdfPage = StateProvider<int>((ref) => 0);
 final openPdfWithExternalAppProvider = StateProvider<bool>((ref) => false);
 
 // ====================================================================
+// DOWNLOAD STATE PROVIDERS
+// ====================================================================
+
+final mirrorStatusProvider = StateProvider<String>((ref) => '');
+final downloadState = StateProvider<ProcessState>((ref) => ProcessState.waiting);
+final checkSumState = StateProvider<CheckSumProcessState>((ref) => CheckSumProcessState.waiting);
+final cancelCurrentDownload = StateProvider<CancelToken?>((ref) => null);
+
+// ====================================================================
 // FILE PATH PROVIDER (Family)
 // ====================================================================
 
