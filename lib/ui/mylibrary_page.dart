@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 // Project imports:
+import 'package:openlib/gen_l10n/app_localizations.dart';
 import 'package:openlib/services/files.dart' show syncLibraryWithDisk;
 import 'package:openlib/services/platform_utils.dart';
 import 'package:openlib/state/state.dart' show myLibraryProvider;

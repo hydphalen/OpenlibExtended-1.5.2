@@ -23,11 +23,11 @@ import 'package:openlib/state/state.dart'
         selectedFileTypeState,
         selectedLanguageState,
         selectedYearState,
-        typeValues,
-        fileType,
-        sortValues,
-        languageValues,
-        yearValues,
+        getTypeValues,
+        getFileType,
+        getSortValues,
+        getLanguageValues,
+        getYearValues,
         enableFiltersState;
 
 // ====================================================================
@@ -282,7 +282,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                   ),
                   icon: const Icon(Icons.arrow_drop_down),
                   initialValue: dropdownTypeValue,
-                  items: typeValues.keys
+                  items: getTypeValues(AppLocalizations.of(context)!).keys
                       .toList()
                       .map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
@@ -326,7 +326,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                     ),
                   ),
                   initialValue: dropdownSortValue,
-                  items: sortValues.keys
+                  items: getSortValues(AppLocalizations.of(context)!).keys
                       .toList()
                       .map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
@@ -370,7 +370,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                     ),
                   ),
                   initialValue: dropDownFileTypeValue,
-                  items: fileType.map<DropdownMenuItem<String>>((String value) {
+                  items: getFileType(AppLocalizations.of(context)!).map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
                       child: Text(
@@ -414,7 +414,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                     ),
                   ),
                   initialValue: dropdownLanguageValue,
-                  items: languageValues.keys
+                  items: getLanguageValues(AppLocalizations.of(context)!).keys
                       .toList()
                       .map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
@@ -461,7 +461,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                   ),
                   initialValue: dropdownYearValue,
                   items:
-                      yearValues.map<DropdownMenuItem<String>>((String value) {
+                      getYearValues(AppLocalizations.of(context)!).map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
                       child: Text(

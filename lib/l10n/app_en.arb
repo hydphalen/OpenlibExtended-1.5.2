@@ -46,6 +46,14 @@
   "@settings": {
     "description": "Settings page title"
   },
+  "home": "Home",
+  "@home": {
+    "description": "Home tab label"
+  },
+  "library": "Library",
+  "@library": {
+    "description": "Library tab label"
+  },
   "search": "Search",
   "@search": {
     "description": "Search page title"

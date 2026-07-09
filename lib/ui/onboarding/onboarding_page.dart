@@ -465,7 +465,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                   onTap: () {
                     ref
                         .read(themeModeProvider.notifier)
-                        .state = ThemeMode.light;
+                        .setTheme(ThemeMode.light);
                   }),
               const SizedBox(width: 20),
               _ThemeCard(
@@ -475,7 +475,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                   onTap: () {
                     ref
                         .read(themeModeProvider.notifier)
-                        .state = ThemeMode.dark;
+                        .setTheme(ThemeMode.dark);
                   }),
             ],
           ),

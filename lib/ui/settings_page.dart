@@ -185,9 +185,9 @@ class SettingsPage extends ConsumerWidget {
                     DropdownMenuItem(
                         value: ThemeMode.dark, child: Text(AppLocalizations.of(context)!.darkTheme)),
                   ],
-                                    onChanged: (ThemeMode? val) {
+                                                                        onChanged: (ThemeMode? val) {
                     if (val != null) {
-                      ref.read(themeModeProvider.notifier).state = val;
+                      ref.read(themeModeProvider.notifier).setTheme(val);
                     }
                   },
                 ),

@@ -322,7 +322,7 @@ final getDownloadedFileSize = Provider<int>((ref) => ref.watch(downloadedFileSiz
 
 final myLibraryProvider = FutureProvider<List<MyBook>>((ref) async {
   final db = MyLibraryDb.instance;
-  return await db.getAllBooks();
+  return await db.getAll();
 });
 
 // ====================================================================
@@ -452,7 +452,7 @@ final autoRankInstancesProvider = StateProvider<bool>((ref) => false);
 // ====================================================================
 
 /// Theme mode provider
-final themeModeProvider = StateProvider<ThemeMode>((ref) => ThemeMode.system);
+final themeModeProvider = StateNotifierProvider<ThemeModeNotifier, ThemeMode>((ref) => ThemeModeNotifier(ThemeMode.system));
 
 /// Font size scale provider
 final fontSizeScaleProvider = StateProvider<double>((ref) => 1.0);

@@ -46,6 +46,14 @@
   "@settings": {
     "description": "设置页面标题"
   },
+  "home": "首页",
+  "@home": {
+    "description": "首页标签"
+  },
+  "library": "书库",
+  "@library": {
+    "description": "书库标签"
+  },
   "search": "搜索",
   "@search": {
     "description": "搜索页面标题"
