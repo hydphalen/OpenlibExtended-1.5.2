@@ -1974,8 +1974,33 @@
   "@descriptionLabel": {
     "description": "Description section label"
   },
-  "open": "Open",
+    "open": "Open",
   "@open": {
     "description": "Open button text"
+  },
+  "browserWindowOpened": "Browser window opened",
+  "@browserWindowOpened": {
+    "description": "Browser window opened status"
+  },
+  "openingBrowserWindow": "Opening browser window...",
+  "@openingBrowserWindow": {
+    "description": "Opening browser window status"
+  },
+  "completeVerificationInBrowser": "Please complete verification in the browser window",
+  "@completeVerificationInBrowser": {
+    "description": "Complete verification instruction"
+  },
+  "downloadLinksFound": "{count} download links found",
+  "@downloadLinksFound": {
+    "description": "Download links found count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "verifyingAccess": "Verifying access...",
+  "@verifyingAccess": {
+    "description": "Verifying access status"
   }
 }

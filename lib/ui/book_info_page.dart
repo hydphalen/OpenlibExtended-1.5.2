@@ -53,7 +53,8 @@ class BookInfoPage extends ConsumerWidget {
         title: const Text("OpenlibExtended"),
         titleTextStyle: Theme.of(context).textTheme.displayLarge,
         actions: [
-          bookInfo.maybeWhen(data: (data) {
+                    bookInfo.maybeWhen(data: (data) {
+            if (data == null) return const SizedBox.shrink();
             return IconButton(
               icon: Icon(
                 Icons.share_sharp,
@@ -69,9 +70,12 @@ class BookInfoPage extends ConsumerWidget {
           })
         ],
       ),
-      body: bookInfo.when(
+            body: bookInfo.when(
         skipLoadingOnRefresh: false,
         data: (data) {
+          if (data == null) {
+            return const Center(child: Text("No data available"));
+          }
           return BookInfoWidget(
               data: data, child: ActionButtonWidget(data: data));
         },
