@@ -26,7 +26,7 @@
 - **书库管理** — 追踪藏书、发现热门书籍、导出文件
 
 ## 📸 截图预览（当然，他会是中文的）
-
+只是图没更新🌚
 [<img src="screenshots/Screenshot_1.png" width=160>](screenshots/Screenshot_1.png)
 [<img src="screenshots/Screenshot_2.png" width=160>](screenshots/Screenshot_2.png)
 [<img src="screenshots/Screenshot_3.png" width=160>](screenshots/Screenshot_3.png)
@@ -59,3 +59,4 @@ flutter run
 ## ⚠️ 免责声明
 
 本应用仅为技术学习用途，所有书籍版权归原作者所有。请遵守当地法律法规，仅用于个人学习。
+有任何问题反馈请提交issue
